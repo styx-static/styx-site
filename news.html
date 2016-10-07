@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1">
+
+  <title>News - Styx Static Site Generator</title>
+
+  <link
+    href="https://styx-static.github.io/styx-site/feed.xml"
+    type="application/atom+xml"
+    rel="alternate"
+    title="Styx"
+    />
+
+
+  <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <script src="https://use.fontawesome.com/8f4021a465.js"></script>
+
+  <link
+      rel="stylesheet"
+      href="https://styx-static.github.io/styx-site/style.css">
+</head>
+
+<body class="with-navbar">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://styx-static.github.io/styx-site">
+  Styx
+</a>
+
+    </div>
+
+    <div class="collapse navbar-collapse navbar-right" id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
+
+<li><a href="https://styx-static.github.io/styx-site/documentation.html">Documentation</a></li>
+
+<li><a href="https://github.com/styx-static/styx/">GitHub <i class="fa fa-github" aria-hidden="true"></i>
+</a></li>
+
+<li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i>
+</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+  <div class="container">
+  <div class="container">
+  <article>
+    <header class="article-header">
+      <h1><a href="https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html">Styx 0.1.0 released</a></h1>
+
+      <time pubdate="pubdate" datetime="2016-10-07" class="text-right">2016-10-07</time>
+
+    </header>
+    <p>First release of Styx!</p>
+
+<p>Styx is a functional static site generator based on the <a href="http://nixos.org/nix/">Nix package manager</a>.</p>
+
+<p>It is possible to test this release of Styx in a <code>nix-shell</code>:</p>
+
+<pre><code>$ nix-shell -p $(nix-build https://github.com/ericsagnes/styx/archive/0.1.0.tar.gz)
+$ styx --help
+</code></pre>
+
+<p>Styx can be installed with the <code>nix-env</code> command:</p>
+
+<pre><code>$ nix-env -i $(nix-build https://github.com/ericsagnes/styx/archive/0.1.0.tar.gz)
+$ styx --help
+</code></pre>
+
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-1-0.html">Styx 0.1.0 Documentation</a>.</p>
+
+<p>If you want to contribute to Styx, please join the <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+
+<p>Bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+
+  </article>
+</div>
+
+
+  
+</div>
+
+
+  <div class="navbar navbar-fixed-bottom" id="footer">
+    <div class="container">
+    <footer>
+      <p class="text-center">2016 - <a href="https://github.com/styx-static/styx-site/">Made with Styx!</a></p>
+    </footer>
+    </div>
+  </div>
+
+</body>
+</html>

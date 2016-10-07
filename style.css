@@ -1,0 +1,106 @@
+/* Body
+ */
+body.with-navbar{
+  padding-top: 50px;
+}
+body {
+  padding-bottom: 70px;
+}
+body>footer {
+    border-top: 1px solid #e8e8e8;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+/* Header
+ */
+.site-header {
+    border-top: 5px solid #424242;
+    border-bottom: 1px solid #e8e8e8;
+    min-height: 56px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.site-title {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 64px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+}
+.navbar-brand{
+  color: #fff !important;
+  font-size:1.6em !important;
+  font-weight: bold ! important;
+}
+.navbar-nav a {
+  color: #fff !important;
+  font-weight: bold;
+}
+.navbar-nav li:hover{
+  background: #fff;
+}
+.navbar-nav a:hover{
+  color: #000 !important;
+}
+
+/* Index
+ */
+.jumbotron {
+  margin-bottom: 0;
+}
+.quick-start h2{
+  text-align: center;
+  margin:10px 0;
+}
+.quick-start>p{
+  font-size: 1.3em;
+}
+.console{
+  font-size: 1.4em;
+  border-radius: 8px;
+  width: 80%;
+  padding: 1em;
+  margin:0 auto 1em auto;
+  color: #fff;
+  background: #333;
+}
+.console p{
+  margin: 0;
+}
+.console p::before{
+  content: "$ ";
+}
+
+/* Footer
+ */
+#footer {
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+#footer p{
+  line-height: 50px;
+  margin: 0;
+}
+
+/* Article
+ */
+article header {
+  margin-bottom: 2em;
+}
+.article-archives{
+  margin-top: 30px;
+}
+.article-archives article:first-child{
+  border-top: 1px solid #ccc;
+}
+.article-archives article{
+  margin:0;
+  padding: .5em .8em;
+  font-size: 1.2em;
+  border-bottom: 1px solid #ccc;
+}
+.article-archives article time{
+  float: right;
+  font-size: .9em;
+}

@@ -1,0 +1,49 @@
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:planet="http://namespace.uri/"
+      xmlns:indexing="urn:atom-extension:indexing"
+      indexing:index="no">
+
+  <access:restriction xmlns:access="http://www.bloglines.com/about/specs/fac-1.0" relationship="deny"/>
+
+  <title>Styx</title>
+  <updated>2016-10-07T01:52:31Z</updated>
+  <generator>Styx @version@</generator>
+  <id>https://styx-static.github.io/styx-site/atom.xml</id>
+  <link href="https://styx-static.github.io/styx-site/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://styx-static.github.io/styx-site" rel="alternate"/>
+  
+  <entry>
+  <id>https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html</id>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html" rel="alternate" type="text/html"/>
+  <updated>2016-10-07T00:00:00Z</updated>
+  <title>Styx 0.1.0 released</title>
+  <summary type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>First release of Styx!</p>
+
+<p>Styx is a functional static site generator based on the <a href="http://nixos.org/nix/">Nix package manager</a>.</p>
+
+<p>It is possible to test this release of Styx in a <code>nix-shell</code>:</p>
+
+<pre><code>$ nix-shell -p $(nix-build https://github.com/ericsagnes/styx/archive/0.1.0.tar.gz)
+$ styx --help
+</code></pre>
+
+<p>Styx can be installed with the <code>nix-env</code> command:</p>
+
+<pre><code>$ nix-env -i $(nix-build https://github.com/ericsagnes/styx/archive/0.1.0.tar.gz)
+$ styx --help
+</code></pre>
+
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-1-0.html">Styx 0.1.0 Documentation</a>.</p>
+
+<p>If you want to contribute to Styx, please join the <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+
+<p>Bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+
+    </div>
+  </summary>
+</entry>
+
+
+</feed>
