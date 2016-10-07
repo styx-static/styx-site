@@ -23,7 +23,7 @@ let
         <p>styx new myblog</p>
         <p>cd myblog && styx serve</p>
       </div>
-      <p class="text-center">Then have a look to the <a href="/documentation.html">documentation</a> to learn how to customize your site.</p>
+      <p class="text-center">Then have a look to the <a href="${conf.siteUrl}/documentation.html">documentation</a> to learn how to customize your site.</p>
       </div>
     '';
 in
