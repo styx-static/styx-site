@@ -6,7 +6,7 @@
   <access:restriction xmlns:access="http://www.bloglines.com/about/specs/fac-1.0" relationship="deny"/>
 
   <title>Styx</title>
-  <updated>2016-10-07T09:43:41Z</updated>
+  <updated>2016-10-07T09:51:22Z</updated>
   <generator>Styx @version@</generator>
   <id>https://styx-static.github.io/styx-site/atom.xml</id>
   <link href="https://styx-static.github.io/styx-site/atom.xml" rel="self" type="application/atom+xml"/>
