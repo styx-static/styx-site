@@ -8,8 +8,8 @@
   # Directory where templates are located
   templatesDir = ./templates;
 
-  # Directory where static files are located
-  staticDir = ./static;
+  # Directory where themes are located
+  themesDir = ./themes;
 
   # Site id, used in the caching scheme. [a-z0-9\-_]+
   # Default value can be used

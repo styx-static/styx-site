@@ -17,7 +17,9 @@ let
           ''}
           ${date}
         </header>
+        <div class="container">
         ${post.content}
+        </div>
       </article>
     </div>
   '';

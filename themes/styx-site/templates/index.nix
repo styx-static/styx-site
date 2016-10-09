@@ -21,7 +21,7 @@ let
       <div class="console">
         <p>nix-shell -p $(nix-build https://github.com/styx-static/styx/archive/latest.tar.gz)</p>
         <p>styx new myblog</p>
-        <p>cd myblog && styx serve</p>
+        <p>cd myblog && styx preview</p>
       </div>
       <p class="text-center">Then have a look to the <a href="${conf.siteUrl}/documentation.html">documentation</a> to learn how to customize your site.</p>
       </div>
