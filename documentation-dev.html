@@ -430,24 +430,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_why_use_styx">1.1. Why use Styx</a></li>
+<li><a href="#_styx_overview">1.1. Styx Overview</a></li>
 </ul>
 </li>
 <li><a href="#_installation">2. Installation</a></li>
 <li><a href="#_quick_start">3. Quick Start</a></li>
 <li><a href="#_command_line_interface">4. Command line interface</a>
 <ul class="sectlevel2">
-<li><a href="#_generic_commands">4.1. Generic commands</a></li>
-<li><a href="#_build">4.2. Build</a></li>
-<li><a href="#_serve">4.3. Serve</a></li>
-<li><a href="#_deploy">4.4. Deploy</a></li>
+<li><a href="#_generic_flags">4.1. Generic flags</a></li>
+<li><a href="#_new">4.2. New</a></li>
+<li><a href="#_build">4.3. Build</a></li>
+<li><a href="#_preview">4.4. Preview</a></li>
+<li><a href="#_live">4.5. Live</a></li>
+<li><a href="#_serve">4.6. Serve</a></li>
+<li><a href="#_deploy">4.7. Deploy</a></li>
 </ul>
 </li>
 <li><a href="#_basics">5. Basics</a>
 <ul class="sectlevel2">
 <li><a href="#_configuration">5.1. Configuration</a></li>
 <li><a href="#_directory_structure">5.2. Directory Structure</a></li>
-<li><a href="#defaultnix">5.3. default.nix</a>
+<li><a href="#sitenix">5.3. site.nix</a>
 <ul class="sectlevel3">
 <li><a href="#_skeleton">5.3.1. Skeleton</a></li>
 <li><a href="#_main_logic">5.3.2. Main Logic</a></li>
@@ -460,49 +463,57 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_pages">6.1. Pages</a></li>
 <li><a href="#_posts">6.2. Posts</a></li>
 <li><a href="#_drafts">6.3. Drafts</a></li>
-<li><a href="#_custom_content">6.4. Custom content</a></li>
-<li><a href="#_static_files">6.5. Static files</a></li>
+<li><a href="#_substitutions">6.4. Substitutions</a></li>
+<li><a href="#_metadata">6.5. Metadata</a></li>
 </ul>
 </li>
-<li><a href="#_customization">7. Customization</a>
+<li><a href="#_themes">7. Themes</a>
 <ul class="sectlevel2">
-<li><a href="#_templates">7.1. Templates</a>
+<li><a href="#_structure">7.1. Structure</a></li>
+<li><a href="#_themes_in_site_nix">7.2. Themes in site.nix</a></li>
+<li><a href="#_combining_themes">7.3. Combining Themes</a></li>
+</ul>
+</li>
+<li><a href="#_templates">8. Templates</a>
+<ul class="sectlevel2">
+<li><a href="#_text_handling_basics">8.1. Text handling basics</a></li>
+<li><a href="#_layout_templates">8.2. Layout templates</a></li>
+<li><a href="#_partial_templates">8.3. Partial templates</a></li>
+<li><a href="#_template_environment">8.4. Template environment</a>
 <ul class="sectlevel3">
-<li><a href="#_text_handling_basics">7.1.1. Text handling basics</a></li>
-<li><a href="#_layout_templates">7.1.2. Layout templates</a></li>
-<li><a href="#_partial_templates">7.1.3. Partial templates</a></li>
-<li><a href="#_template_environment">7.1.4. Template environment</a></li>
+<li><a href="#_template_environment_in_templates">8.4.1. Template environment in templates</a></li>
 </ul>
 </li>
-<li><a href="#_calling_templates_in_templates">7.2. Calling templates in templates</a></li>
-<li><a href="#_applying_templates_to_multiple_contents">7.3. Applying templates to multiple contents</a></li>
+<li><a href="#_calling_templates_in_templates">8.5. Calling templates in templates</a></li>
+<li><a href="#_applying_templates_to_multiple_contents">8.6. Applying templates to multiple contents</a></li>
 </ul>
 </li>
-<li><a href="#_library">8. Library</a>
+<li><a href="#_library">9. Library</a>
 <ul class="sectlevel2">
-<li><a href="#_generation">8.1. generation</a></li>
-<li><a href="#_nixpkgs">8.2. nixpkgs</a></li>
-<li><a href="#_content_2">8.3. content</a></li>
-<li><a href="#_template">8.4. template</a></li>
-<li><a href="#_utils">8.5. utils</a></li>
+<li><a href="#_generation">9.1. generation</a></li>
+<li><a href="#_nixpkgs">9.2. nixpkgs</a></li>
+<li><a href="#_content_2">9.3. content</a></li>
+<li><a href="#_template">9.4. template</a></li>
+<li><a href="#_themes_2">9.5. themes</a></li>
+<li><a href="#_utils">9.6. utils</a></li>
 </ul>
 </li>
-<li><a href="#_cookbook">9. Cookbook</a>
+<li><a href="#_cookbook">10. Cookbook</a>
 <ul class="sectlevel2">
-<li><a href="#_navbar">9.1. NavBar</a></li>
-<li><a href="#_pagination">9.2. Pagination</a></li>
-<li><a href="#_breadcrumbs">9.3. Breadcrumbs</a></li>
+<li><a href="#_navbar">10.1. NavBar</a></li>
+<li><a href="#_pagination">10.2. Pagination</a></li>
+<li><a href="#_breadcrumbs">10.3. Breadcrumbs</a></li>
 </ul>
 </li>
-<li><a href="#_deployment">10. Deployment</a>
+<li><a href="#_deployment">11. Deployment</a>
 <ul class="sectlevel2">
-<li><a href="#_github_pages">10.1. GitHub pages</a></li>
-<li><a href="#_other">10.2. Other</a></li>
+<li><a href="#_github_pages">11.1. GitHub pages</a></li>
+<li><a href="#_other">11.2. Other</a></li>
 </ul>
 </li>
-<li><a href="#_release_notes">11. Release Notes</a>
+<li><a href="#_release_notes">12. Release Notes</a>
 <ul class="sectlevel2">
-<li><a href="#_styx_0_1_0_2016_10_7">11.1. Styx 0.1.0 - 2016/10/7</a></li>
+<li><a href="#_styx_0_1_0_2016_10_07">12.1. Styx 0.1.0 - 2016/10/07</a></li>
 </ul>
 </li>
 </ul>
@@ -516,11 +527,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Styx is a functional static site generator written in Nix expression language.</p>
 </div>
 <div class="paragraph">
-<p>Styx is aimed to be flexible and easy to customize, also Styx is using the Nix package manager so it has a very effective caching system.
-External applications can be used in Styx in a very easy way without having to install them.</p>
+<p>Styx is aimed to be flexible and easy to customize. It is based on the Nix package manager, so it get many of its advantages: caching system, determinism to name a few.
+External applications can be used in Styx in a very easy way without having to install them by using the Nix package manager.</p>
 </div>
 <div class="sect2">
-<h3 id="_why_use_styx"><a class="anchor" href="#_why_use_styx"></a>1.1. Why use Styx</h3>
+<h3 id="_styx_overview"><a class="anchor" href="#_styx_overview"></a>1.1. Styx Overview</h3>
 <div class="paragraph">
 <p>Pros:</p>
 </div>
@@ -536,7 +547,7 @@ External applications can be used in Styx in a very easy way without having to i
 <p>Light weight: Styx has very few dependencies.</p>
 </li>
 <li>
-<p>Flexible: Styx is very flexible and make it is easy to implement new features.</p>
+<p>Flexibility: Styx is very flexible and make it is easy to implement new features.</p>
 </li>
 </ul>
 </div>
@@ -595,7 +606,7 @@ Refer to the <a href="http://nixos.org/nix/manual/#chap-installation">Nix instal
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ nix-shell -p $(nix-build https://github.com/styx-static/styx/archive/latest.tar.gz) <i class="conum" data-value="1"></i><b>(1)</b>
 [nix-shell]$ styx new myblog <i class="conum" data-value="2"></i><b>(2)</b>
 [nix-shell]$ cd myblog <i class="conum" data-value="3"></i><b>(3)</b>
-[nix-shell:~/myblog]$ styx serve <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+[nix-shell:~/myblog]$ styx preview <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -614,9 +625,15 @@ Refer to the <a href="http://nixos.org/nix/manual/#chap-installation">Nix instal
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Serve the site on a local server.</td>
+<td>Start a preview the site on a local server.</td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>Your styx site will be available at <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>.</p>
+</div>
+<div class="paragraph">
+<p>Now, take a look at the <code>site.nix</code> to see how the site is defined. There are many comments, but in doubt check the <a href="#sitenix">site.nix</a> section, it explains <code>site.nix</code> in details.</p>
 </div>
 </div>
 </div>
@@ -627,7 +644,7 @@ Refer to the <a href="http://nixos.org/nix/manual/#chap-installation">Nix instal
 <p>The Styx provides a command line program <code>styx</code>.</p>
 </div>
 <div class="sect2">
-<h3 id="_generic_commands"><a class="anchor" href="#_generic_commands"></a>4.1. Generic commands</h3>
+<h3 id="_generic_flags"><a class="anchor" href="#_generic_flags"></a>4.1. Generic flags</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1"><code>styx --help</code></dt>
@@ -642,7 +659,29 @@ Refer to the <a href="http://nixos.org/nix/manual/#chap-installation">Nix instal
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build"><a class="anchor" href="#_build"></a>4.2. Build</h3>
+<h3 id="_new"><a class="anchor" href="#_new"></a>4.2. New</h3>
+<div class="paragraph">
+<p>The <code>new</code> command is used to create a new Styx site.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>styx new</code></dt>
+<dd>
+<p>Create a Styx site in "styx-site" directory in current path.</p>
+</dd>
+<dt class="hdlist1"><code>styx-new -o "myblog"</code></dt>
+<dd>
+<p>Create a Styx site in <code>myblog</code> directory in current path.</p>
+</dd>
+<dt class="hdlist1"><code>styx-new -o "myblog" --target /tmp</code></dt>
+<dd>
+<p>Create a Styx site in <code>myblog</code> directory in <code>/tmp</code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_build"><a class="anchor" href="#_build"></a>4.3. Build</h3>
 <div class="paragraph">
 <p>The <code>build</code> command is used to build a Styx site. It must be used in a Styx site root file.</p>
 </div>
@@ -672,7 +711,69 @@ The <code>nix-build</code> <code>--show-trace</code>, <code>--arg NAME VALUE</co
 </div>
 </div>
 <div class="sect2">
-<h3 id="_serve"><a class="anchor" href="#_serve"></a>4.3. Serve</h3>
+<h3 id="_preview"><a class="anchor" href="#_preview"></a>4.4. Preview</h3>
+<div class="paragraph">
+<p>The <code>preview</code> command is used to launch a server that will list on localhost (127.0.0.1) port 8080 by default. The preview command will override <code>conf.siteUrl</code> to preserve links.</p>
+</div>
+<div class="paragraph">
+<p>The server can be stopped by pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>styx preview</code></dt>
+<dd>
+<p>Start a preview server on 127.0.0.1:8080.</p>
+</dd>
+<dt class="hdlist1"><code>styx preview --port 9090</code></dt>
+<dd>
+<p>Start a preview server on 127.0.0.1:9090.</p>
+</dd>
+<dt class="hdlist1"><code>styx preview --port 9090 --drafts</code></dt>
+<dd>
+<p>Start a preview server on 127.0.0.1:9090 with drafts rendered.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_live"><a class="anchor" href="#_live"></a>4.5. Live</h3>
+<div class="paragraph">
+<p>The <code>live</code> is similar to preview, with the unique difference that site is automatically rebuilt when a change is made.</p>
+</div>
+<div class="paragraph">
+<p>The live mode should be quitted by pressing <kbd>q</kbd>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>styx live</code></dt>
+<dd>
+<p>Start a live preview server on 127.0.0.1:8080.</p>
+</dd>
+<dt class="hdlist1"><code>styx preview --port 9090</code></dt>
+<dd>
+<p>Start a live preview server on 127.0.0.1:9090.</p>
+</dd>
+<dt class="hdlist1"><code>styx preview --port 9090 --drafts</code></dt>
+<dd>
+<p>Start a live preview server on 127.0.0.1:9090 with drafts rendered.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If the live mode is not quitted by pressing <kbd>q</kbd>, there is a possibility that the server process will stay alive in backgroud. The server process can be found by running <code>ps aux | grep caddy</code> and killed with the <code>kill</code> command.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_serve"><a class="anchor" href="#_serve"></a>4.6. Serve</h3>
 <div class="paragraph">
 <p>The <code>serve</code> command is used to build a site and launch a local server. This allow to check the site without having to deploying it.
 The server can be stopped by pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>C</kbd></span>.</p>
@@ -687,9 +788,9 @@ The server can be stopped by pressing <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>
 <dd>
 <p>Will serve on the port <code>9090</code>.</p>
 </dd>
-<dt class="hdlist1"><code>styx-serve --preview</code></dt>
+<dt class="hdlist1"><code>styx serve --detach</code></dt>
 <dd>
-<p>Enable preview mode. In preview mode drafts are displayed.</p>
+<p>Will serve on the localhost on port <code>8080</code> and run the server on background, process can be found by running <code>ps aux | grep caddy</code>.</p>
 </dd>
 </dl>
 </div>
@@ -707,7 +808,7 @@ The <code>nix-build</code> <code>--show-trace</code>, <code>--arg NAME VALUE</co
 </div>
 </div>
 <div class="sect2">
-<h3 id="_deploy"><a class="anchor" href="#_deploy"></a>4.4. Deploy</h3>
+<h3 id="_deploy"><a class="anchor" href="#_deploy"></a>4.7. Deploy</h3>
 <div class="paragraph">
 <p>The`deploy` command is used to deploy A styx site on a remote server.
 Currently only GitHub pages are supported.</p>
@@ -745,7 +846,37 @@ The Nix expression language is a lazy evaluated functional language with unconve
 <div class="listingblock">
 <div class="title">conf.nix</div>
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">include::../sample/conf.nix[]</code></pre>
+<pre class="highlight"><code class="language-nix" data-lang="nix">{
+  # Directory where templates are located
+  pagesDir = ./pages;
+
+  # Directory where posts are located
+  postsDir = ./posts;
+
+  # Directory where drafts are located
+  draftsDir = ./drafts;
+
+  # Directory where the themes are located
+  themesDir = ./themes;
+
+  # Directory where static files are located
+  staticDir = ./static;
+
+  # URL of the site, must be set to the url of the domain the site will be deployed
+  siteUrl = "http://yourdomain.com";
+
+  # Site title, used in the site header and the atom feed
+  siteTitle = "Styx Sample Site";
+
+  # Site description used in the base template
+  siteDescription = "Write a description for your new site here.";
+
+  # Maximum number of posts on the index page
+  postsOnIndexPage = 3;
+
+  # Maximum number of posts per archive page
+  postsPerArchivePage = 5;
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -765,17 +896,9 @@ The Nix expression language is a lazy evaluated functional language with unconve
 <dd>
 <p>Directory where drafts are located.</p>
 </dd>
-<dt class="hdlist1"><code>templatesDir</code></dt>
+<dt class="hdlist1"><code>themesDir</code></dt>
 <dd>
-<p>Directory where templates are located.</p>
-</dd>
-<dt class="hdlist1"><code>staticDir</code></dt>
-<dd>
-<p>Directory where static files are located.</p>
-</dd>
-<dt class="hdlist1"><code>siteId</code></dt>
-<dd>
-<p>Site id, used in the caching scheme. Should composed of lowercase letters, numbers, <code>-</code> and <code>_</code>. Spaces are not allowed.</p>
+<p>Directory where themes are located.</p>
 </dd>
 <dt class="hdlist1"><code>siteURL</code></dt>
 <dd>
@@ -805,13 +928,13 @@ The Nix expression language is a lazy evaluated functional language with unconve
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>├── conf.nix <i class="conum" data-value="1"></i><b>(1)</b>
-├── default.nix <i class="conum" data-value="2"></i><b>(2)</b>
+├── site.nix <i class="conum" data-value="2"></i><b>(2)</b>
 ├── drafts/ <i class="conum" data-value="3"></i><b>(3)</b>
 ├── lib/ <i class="conum" data-value="4"></i><b>(4)</b>
 ├── pages/ <i class="conum" data-value="5"></i><b>(5)</b>
 ├── posts/ <i class="conum" data-value="6"></i><b>(6)</b>
-├── static/ <i class="conum" data-value="7"></i><b>(7)</b>
-└── templates/ <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
+├── templates/ <i class="conum" data-value="7"></i><b>(7)</b>
+└── themes/ <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -822,7 +945,7 @@ The Nix expression language is a lazy evaluated functional language with unconve
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>default.nix</code> is the main file for site generation, see <a href="#defaultnix">default.nix</a> for details.</td>
+<td><code>site.nix</code> is the main file for site generation, see <a href="#sitenix">site.nix</a> for details.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -842,22 +965,22 @@ The Nix expression language is a lazy evaluated functional language with unconve
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td><code>static/</code> is the default directory containing static files, see <a href="#_static_files">Static files</a> for details.</td>
+<td><code>templates/</code> is the default directory containing templates files, see <a href="#_templates">Templates</a> for details.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td><code>templates/</code> is the default directory containing templates files, see <a href="#_templates">Templates</a> for details.</td>
+<td><code>themes/</code> is the default directory containing themes, see <a href="#_themes">Themes</a> for details.</td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="defaultnix"><a class="anchor" href="#defaultnix"></a>5.3. default.nix</h3>
+<h3 id="sitenix"><a class="anchor" href="#sitenix"></a>5.3. site.nix</h3>
 <div class="paragraph">
-<p><code>default.nix</code> is the central file of a Styx site and is responsible for generating the website.</p>
+<p><code>site.nix</code> is the central file of a Styx site and is responsible for generating the website.</p>
 </div>
 <div class="paragraph">
-<p><code>default.nix</code> consists in a single function that generate a site when evaluated.</p>
+<p><code>site.nix</code> consists in a single function that generate a site when evaluated.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -872,24 +995,21 @@ Functions in the Nix expression language are declared in a <code>head: body</cod
 </table>
 </div>
 <div class="paragraph">
-<p>Sample site <code>default.nix</code> show many of the Styx possibilities, so might feel a little complicated for a new user.</p>
-</div>
-<div class="paragraph">
-<p>A standard site <code>default.nix</code> can be lot simpler than the sample one.</p>
-</div>
-<div class="paragraph">
-<p>The following sections will explain <code>default.nix</code> parts by parts.</p>
+<p>The following sections will explain <code>site.nix</code> parts by parts.</p>
 </div>
 <div class="sect3">
 <h4 id="_skeleton"><a class="anchor" href="#_skeleton"></a>5.3.1. Skeleton</h4>
 <div class="paragraph">
 <p>The skeleton is the boiler-plate code of Styx, it should be edited at own risks as any change in it might lead to unexpected results.</p>
 </div>
+<div class="paragraph">
+<p>It is not required to understand how the skeleton work to make a Styx site, so this section can be safely skipped.</p>
+</div>
 <div class="listingblock">
-<div class="title"><code>default.nix</code> skeleton</div>
+<div class="title"><code>site.nix</code> skeleton</div>
 <div class="content">
 <pre class="highlight"><code class="language-nix" data-lang="nix">{ pkgs ? import &lt;nixpkgs&gt; {} <i class="conum" data-value="1"></i><b>(1)</b>
-, previewMode ? false <i class="conum" data-value="2"></i><b>(2)</b>
+, renderDrafts ? false <i class="conum" data-value="2"></i><b>(2)</b>
 , siteUrl ? null
 , lastChange ? null
 }@args: <i class="conum" data-value="3"></i><b>(3)</b>
@@ -901,7 +1021,7 @@ let <i class="conum" data-value="6"></i><b>(6)</b>
 
 # Main Logic <i class="conum" data-value="7"></i><b>(7)</b>
 
-in generateSite { inherit conf; pages = pageList; } <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
+in generateSite { inherit files pagesList; } <i class="conum" data-value="8"></i><b>(8)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -912,7 +1032,7 @@ in generateSite { inherit conf; pages = pageList; } <i class="conum" data-value=
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>previewMode ? false</code> means that <code>previewMode</code> default value is <code>false</code>.</td>
+<td><code>renderDrafts ? false</code> means that <code>renderDrafts</code> default value is <code>false</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -920,7 +1040,7 @@ in generateSite { inherit conf; pages = pageList; } <i class="conum" data-value=
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><code>let</code> is a construction to declare local variables, a <code>let</code> block finish by a <code>in</code>. Any variable defined in a let is available in the let scope and in the scope right after the <code>in</code>.
+<td><code>let</code> is a construction to declare local variables, a <code>let</code> block finish by a <code>in</code>. Any variable defined in a <code>let</code> is available in the <code>let</code> scope and in the scope right after the <code>in</code>.
 <code>let a = 1; 1 + a</code> will result in <code>2</code>.
 <code>let</code> are used to structure code in an easier to understand manner. This line import the <code>lib/default.nix</code> file and set it to a <code>lib</code> variable.
 The <code>lib</code> variable is an attribute set containing Styx library functions.</td>
@@ -940,7 +1060,7 @@ So in the previous line <code>lib</code> is imported in the <code>lib</code> loc
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td>This is what the whole <code>default.nix</code> function return. <code>generateSite</code> is a function that generate the site. All the logic in the "Main Logic" part is meant to prepare <code>generateSite</code> arguments.</td>
+<td>This is what the whole <code>site.nix</code> function return. <code>generateSite</code> is a function that generate the site. All the logic in the "Main Logic" part is meant to prepare <code>generateSite</code> arguments.</td>
 </tr>
 </table>
 </div>
@@ -951,7 +1071,7 @@ So in the previous line <code>lib</code> is imported in the <code>lib</code> loc
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-The default parameters in <code>default.nix</code> head: <code>pkgs</code>, <code>previewMode</code>, <code>siteUrl</code> and <code>lastChange</code> are set and expected by Styx. Removing or changing them will break the site generation process.
+The default parameters in <code>site.nix</code> head: <code>pkgs</code>, <code>renderDrafts</code>, <code>siteUrl</code> and <code>lastChange</code> are set and expected by Styx. Removing or changing them will break the site generation process.
 </td>
 </tr>
 </table>
@@ -960,27 +1080,51 @@ The default parameters in <code>default.nix</code> head: <code>pkgs</code>, <cod
 <div class="sect3">
 <h4 id="_main_logic"><a class="anchor" href="#_main_logic"></a>5.3.2. Main Logic</h4>
 <div class="paragraph">
-<p>Main logic part can be divided in three parts: setup, template declaration and pages declaration.
-The order of declarations in the main logic part is not important and can be changed to fit preference.</p>
+<p>Main logic part can be divided in three parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_setup">Setup</a></p>
+</li>
+<li>
+<p><a href="#_templates_declaration">Templates declaration</a></p>
+</li>
+<li>
+<p><a href="#_pages_declaration">Pages declaration</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The order of declarations in the main logic part is not important and can be changed to fit preference.</p>
+</div>
+<div class="paragraph">
+<p>Also the main logic part being in a <code>let</code> block, it is possible to refer any of its variables at any position. (It is possible to use a variable before declaring it)</p>
 </div>
 <div class="sect4">
 <h5 id="_setup"><a class="anchor" href="#_setup"></a>Setup</h5>
 <div class="paragraph">
-<p>This part contains some boiler-plate code. Variables can be declared at will to fit any special needs.
+<p>This part contains some boiler-plate code. New variables can be declared at will to fit any special needs.
 (Comments removed in favor of call-out explanations)</p>
 </div>
 <div class="listingblock">
-<div class="title">Setup section in default.nix</div>
+<div class="title">Setup section</div>
 <div class="content">
 <pre class="highlight"><code class="language-nix" data-lang="nix">  conf = overrideConf (import ./conf.nix) args; <i class="conum" data-value="1"></i><b>(1)</b>
 
-  state = { inherit lastChange; }; <i class="conum" data-value="2"></i><b>(2)</b>
+  themes = [ "default" ]; <i class="conum" data-value="2"></i><b>(2)</b>
 
-  genericEnv = { inherit conf state lib templates; }; <i class="conum" data-value="3"></i><b>(3)</b>
+  state = { inherit lastChange; }; <i class="conum" data-value="3"></i><b>(3)</b>
 
-  loadTemplate = loadTemplateWithEnv genericEnv; <i class="conum" data-value="4"></i><b>(4)</b>
+  templates = lib.themes.loadTemplates { <i class="conum" data-value="4"></i><b>(4)</b>
+    inherit themes defaultEnvironment customEnvironments;
+    themesDir = conf.themesDir;
+  };
 
-  navbar = [ (head pages.archives) pages.about ]; <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+  files = lib.themes.loadFiles { <i class="conum" data-value="5"></i><b>(5)</b>
+    inherit themes;
+    themesDir = conf.themesDir;
+  };</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -991,34 +1135,20 @@ The order of declarations in the main logic part is not important and can be cha
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Setting a <code>state</code> local variable containing "impure" values. It contains only the <code>lastChange</code> variable coming from <code>default.nix</code> main function head. (Skeleton point 1)
-<code>lastChange</code> value is automatically set by the Styx command.</td>
+<td>Setting used themes, themes should be a list of theme names.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>This initialize a generic template environment. Most of templates expect to have access to <code>conf</code>, <code>state</code>, <code>lib</code> and <code>templates</code>. It is not recommended to remove any of these.
-On the other hand it is fine to add new attributes to the default environment to fit special needs.</td>
+<td>Setting a <code>state</code> local variable containing "impure" values. It contains only the <code>lastChange</code> variable coming from <code>site.nix</code> main function head. (Skeleton point 1)
+<code>lastChange</code> value is automatically set by the Styx command.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Defining a helper function <code>loadTemplate</code> that loads a template with the default environment. This function is defined taking advantage of η-reduction so its argument is not specified.
-<code>loadTemplate</code> is actively used during template declaration.</td>
+<td>Loading themes templates.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>This define a <code>navbar</code> local variable containing pages to include in the NavBar. For more details about Navbar setting, see the <a href="#_navbar">NavBar</a> section.</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-η-reduction is the process to drop a function abstraction. For example, <code>x: a x</code> is equivalent, and can be reduced to <code>a</code>.
-</td>
+<td>Loading themes static files.</td>
 </tr>
 </table>
 </div>
@@ -1026,26 +1156,20 @@ On the other hand it is fine to add new attributes to the default environment to
 <div class="sect4">
 <h5 id="_templates_declaration"><a class="anchor" href="#_templates_declaration"></a>Templates declaration</h5>
 <div class="paragraph">
-<p>The template declaration part consists in declaring all the templates that will used. Templates are grouped in a single attribute set.</p>
+<p>Templates are automatically loaded via the theme system.</p>
 </div>
 <div class="paragraph">
-<p>Template environment used to load templates can be extended on a per template basis to fit special needs.</p>
-</div>
-<div class="paragraph">
-<p>The sample site contains many similar templates declarations, so this section will only present interesting examples.</p>
+<p>This section is reposible for setting custom template environments to specific templates. For more details on template environments, see <a href="#_template_environment">Template environment</a>.</p>
 </div>
 <div class="listingblock">
-<div class="title">Templates declaration</div>
+<div class="title">Templates section</div>
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">  templates = { <i class="conum" data-value="1"></i><b>(1)</b>
-    index   = loadTemplate "index.nix"; <i class="conum" data-value="2"></i><b>(2)</b>
-    layout  = loadTemplateWithEnv  <i class="conum" data-value="3"></i><b>(3)</b>
-                (genericEnv // { inherit navbar; feed = pages.feed; }) <i class="conum" data-value="4"></i><b>(4)</b>
-                "layout.nix"; <i class="conum" data-value="5"></i><b>(5)</b>
-    navbar = { <i class="conum" data-value="6"></i><b>(6)</b>
-      main = loadTemplate "navbar.main.nix";
-      brand = loadTemplate "navbar.brand.nix";
-    };
+<pre class="highlight"><code class="language-nix" data-lang="nix">  defaultEnvironment = { inherit conf state lib templates; }; <i class="conum" data-value="1"></i><b>(1)</b>
+
+  navbar = [ (head pages.archives) pages.about ]; <i class="conum" data-value="2"></i><b>(2)</b>
+
+  customEnvironments = { <i class="conum" data-value="3"></i><b>(3)</b>
+    layout = defaultEnvironment // { inherit navbar; feed = pages.feed; }; <i class="conum" data-value="4"></i><b>(4)</b>
   };</code></pre>
 </div>
 </div>
@@ -1053,29 +1177,22 @@ On the other hand it is fine to add new attributes to the default environment to
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Declaring a <code>templates</code> attribute set where all the templates will be declared.</td>
+<td>This initialize a default template environment. Most of templates expect to have access to <code>conf</code>, <code>state</code>, <code>lib</code> and <code>templates</code>. It is not recommended to remove any of these.
+On the other hand it is fine to add new attributes to the default environment to fit special needs.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Declaring an <code>index</code> variable that holds the <code>index.nix</code> template loaded with the generic template environment.</td>
+<td>This define a <code>navbar</code> local variable containing pages to include in the NavBar. For more details about Navbar setting, see the <a href="#_navbar">NavBar</a> section.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Declaring a <code>layout</code> template that holds the layout template, this use the <code>loadTemplateWithEnv</code> function so a custom environment can be passed as the first argument.</td>
+<td><code>customEnvironments</code> should be a set with a similar structure to <code>templates</code>, but with keys that defines a custom environment for the template. Any template that is not part of <code>customEnvironments</code> will use the <code>defaultEnvironment</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>The environment passed to the template is the generic environment extended with a variable <code>feed</code> that holds the feed page (<code>pages.feed</code>) and the <code>navbar</code> variable that holds the list of pages to show in the NavBar.
+<td>The environment passed to the layout template is the default environment extended with a variable <code>feed</code> that holds the feed page (<code>pages.feed</code>) and the <code>navbar</code> variable that holds the list of pages to show in the NavBar.
 The base template is managing the main layout of the site and the <code>head</code> section of the HTML document.
 As we want to have a link to the feed in it, we add the feed page to a variable so it can be used in the template. Similar for the NavBar.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>The template file to load, <code>layout.nix</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Declaring templates in a sub attribute set. Templates in a subset can be accessed with <code>.</code>, for example the navbar main template is accessed by <code>templates.navbar.main</code>.</td>
 </tr>
 </table>
 </div>
@@ -1115,7 +1232,7 @@ The feed page is an exception as it use the site title from <code>conf</code> an
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Pages declaration 1/2</div>
+<div class="title">Pages section 1/2</div>
 <div class="content">
 <pre class="highlight"><code class="language-nix" data-lang="nix">  pages = rec { <i class="conum" data-value="1"></i><b>(1)</b>
     index = { <i class="conum" data-value="2"></i><b>(2)</b>
@@ -1159,7 +1276,7 @@ The <code>rec</code> keyword make the set recursive, so it is possible to refer 
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Setting page breadcrumbs, for details on the breadcrumbs system see the <a href="#_breadcrumbs">Breadcrumbs</a> section.</td>
+<td>Setting page breadcrumbs, see the <a href="#_breadcrumbs">Breadcrumbs</a> for details.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
@@ -1168,7 +1285,7 @@ The <code>rec</code> keyword make the set recursive, so it is possible to refer 
 </table>
 </div>
 <div class="listingblock">
-<div class="title">Pages declaration 2/2</div>
+<div class="title">Pages section 2/2</div>
 <div class="content">
 <pre class="highlight"><code class="language-nix" data-lang="nix">    archives = splitPage { <i class="conum" data-value="1"></i><b>(1)</b>
       baseHref = "archives/posts";
@@ -1187,15 +1304,16 @@ The <code>rec</code> keyword make the set recursive, so it is possible to refer 
     };
 
     posts = let  <i class="conum" data-value="3"></i><b>(3)</b>
-      posts = getPosts conf.postsDir "posts"; <i class="conum" data-value="4"></i><b>(4)</b>
-      drafts = optionals previewMode (getDrafts conf.draftsDir "drafts"); <i class="conum" data-value="5"></i><b>(5)</b>
-      preparePosts = p: p // { template = templates.post.full; breadcrumbs = with pages; [ index (head archives) ]; }; <i class="conum" data-value="6"></i><b>(6)</b>
-    in sortPosts (map preparePosts (posts ++ drafts)); <i class="conum" data-value="7"></i><b>(7)</b>
+      substitutions = { inherit conf; }; <i class="conum" data-value="4"></i><b>(4)</b>
+      posts = getPosts { inherit substitutions; from = conf.postsDir; to = "posts"; }; <i class="conum" data-value="5"></i><b>(5)</b>
+      drafts = optionals renderDrafts (getDrafts { inherit substitutions; from = conf.draftsDir; to = "drafts"; }); <i class="conum" data-value="6"></i><b>(6)</b>
+      preparePosts = p: p // { template = templates.post.full; breadcrumbs = with pages; [ index (head archives) ]; }; <i class="conum" data-value="7"></i><b>(7)</b>
+    in sortPosts (map preparePosts (posts ++ drafts)); <i class="conum" data-value="8"></i><b>(8)</b>
   };
 
-  pageList =
-    let list = (pagesToList pages); <i class="conum" data-value="8"></i><b>(8)</b>
-    in map (setDefaultLayout templates.layout) list; <i class="conum" data-value="9"></i><b>(9)</b></code></pre>
+  pagesList =
+    let list = (pagesToList pages); <i class="conum" data-value="9"></i><b>(9)</b>
+    in map (setDefaultLayout templates.layout) list; <i class="conum" data-value="10"></i><b>(10)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1215,26 +1333,30 @@ Also, as the feed page does not need a layout, the layout function is set to <co
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Fetching the posts and setting their output path to <code>posts</code>.</td>
+<td>Adding <code>conf</code> to the substitutions, see <a href="#_substitutions">Substitutions</a> for details.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>Fetching the drafts only if <code>previewMode</code> is enabled. (by using the <code>--preview</code> flag to the Nix command)</td>
+<td>Fetching the posts and setting their output path to <code>posts</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>Declaring a <code>preparePost</code> function that take a post and extends it by setting a template and breadcrumbs.</td>
+<td>Fetching the drafts only if <code>renderDrafts</code> is <code>true</code>. (by using the Styx command <code>--drafts</code> flag)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td>Finally merging the posts and drafts in a list, setting the template and breadcrumbs to each, and sorting the list so the posts are in chronological order.</td>
+<td>Declaring a <code>preparePost</code> function that take a post and extends it by setting a template and breadcrumbs.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="8"></i><b>8</b></td>
-<td><code>generateSite</code> needs a list of pages, so we convert the <code>pages</code> attribute set to a <code>pageList</code> list with the <code>pagesToList</code> function.</td>
+<td>Finally merging the posts and drafts in a list, setting the template and breadcrumbs to each, and sorting the list so the posts are in chronological order.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="9"></i><b>9</b></td>
+<td><code>generateSite</code> needs a list of pages, so we convert the <code>pages</code> attribute set to a <code>pagesList</code> list with the <code>pagesToList</code> function.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
 <td>Then, <code>setDefaultLayout</code> is used to set a layout template to all the pages that don&#8217;t set the <code>layout</code> attribute.</td>
 </tr>
 </table>
@@ -1313,7 +1435,7 @@ The layout being common to most of the pages, the default layout is usually set 
     href = "about.html";
     template = templates.about;
     breadcrumbs = [ index ];
-  } // (parsePage conf.pagesDir "about.md");</code></pre>
+  } // (parsePage { dir = conf.pagesDir; file = "about.md"; });</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1323,7 +1445,7 @@ The layout being common to most of the pages, the default layout is usually set 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>parsePage</code> return a set with <code>title</code> and <code>content</code>. <code>content</code> is the converted HTML source of the page.
+<code>parsePage</code> return a set with <code>title</code> and <code>content</code>, the converted HTML source of the page.
 </td>
 </tr>
 </table>
@@ -1332,7 +1454,10 @@ The layout being common to most of the pages, the default layout is usually set 
 <div class="sect2">
 <h3 id="_posts"><a class="anchor" href="#_posts"></a>6.2. Posts</h3>
 <div class="paragraph">
-<p>Posts are a special type of pages. By default, Styx read files in markdown format from <code>conf.postsDir</code>, but it is possible to specify a custom directory to the <code>getPosts</code> function.</p>
+<p>Posts are a special type of pages that defines some extra attributes.</p>
+</div>
+<div class="paragraph">
+<p>By default, Styx read files in markdown format from <code>conf.postsDir</code>, but it is possible to specify a custom directory to the <code>getPosts</code> function.</p>
 </div>
 <div class="paragraph">
 <p>Post files should follow the <code>YYYY-MM-DD-TITLE.md</code> convention to be loaded. During build, Styx with display a message if it cannot load a post file.</p>
@@ -1343,19 +1468,19 @@ The layout being common to most of the pages, the default layout is usually set 
 <div class="ulist">
 <ul>
 <li>
-<p><code>timestamp</code>: Timestamp of the post in the <code>YYYY-MM-DD-TITLE</code> format.</p>
+<p><code>title</code>: Post title</p>
+</li>
+<li>
+<p><code>content</code>: Post content in HTML format.</p>
 </li>
 <li>
 <p><code>href</code>: Relative URL to the post.</p>
 </li>
 <li>
-<p><code>title</code>: Post title</p>
+<p><code>timestamp</code>: Timestamp of the post in the <code>YYYY-MM-DD-TITLE</code> format.</p>
 </li>
 <li>
 <p><code>id</code>: Name part of the post file name.</p>
-</li>
-<li>
-<p><code>content</code>: Post content in HTML format.</p>
 </li>
 </ul>
 </div>
@@ -1366,7 +1491,7 @@ The layout being common to most of the pages, the default layout is usually set 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>getPosts</code> function does not set a <code>template</code> and a <code>layout</code> key, so posts generated by it are imcomplete pages. These keys can be set afterwards.
+The <code>getPosts</code> function does not set <code>template</code> and <code>layout</code> keys. So posts generated by it are imcomplete pages, but these keys can be set afterwards.
 </td>
 </tr>
 </table>
@@ -1375,8 +1500,10 @@ The <code>getPosts</code> function does not set a <code>template</code> and a <c
 <div class="sect2">
 <h3 id="_drafts"><a class="anchor" href="#_drafts"></a>6.3. Drafts</h3>
 <div class="paragraph">
-<p>Drafts are a special type of posts that are only generated when the <code>--preview</code> flag is passed to the Styx command.
-By default, Styx read files in markdown format from <code>conf.draftsDir</code>, but it is possible to specify a custom directory to the <code>getDrafts</code> function.</p>
+<p>Drafts are a special type of posts that are generated when the <code>--drafts</code> flag is passed to the Styx command.</p>
+</div>
+<div class="paragraph">
+<p>By default, Styx read files in markdown format from <code>conf.draftsDir</code>, but it is possible to specify a custom directory to the <code>getDrafts</code> function.</p>
 </div>
 <div class="paragraph">
 <p>Drafts attribute sets generated by the <code>parseDraft</code> function have the following attributes:</p>
@@ -1384,19 +1511,19 @@ By default, Styx read files in markdown format from <code>conf.draftsDir</code>,
 <div class="ulist">
 <ul>
 <li>
-<p><code>timestamp</code>: Timestamp of the post in the <code>YYYY-MM-DD-TITLE</code> format.</p>
+<p><code>title</code>: Post title</p>
+</li>
+<li>
+<p><code>content</code>: Post content in HTML format.</p>
 </li>
 <li>
 <p><code>href</code>: Relative URL to the post.</p>
 </li>
 <li>
-<p><code>title</code>: Post title</p>
+<p><code>timestamp</code>: Timestamp of the post in the <code>YYYY-MM-DD-TITLE</code> format.</p>
 </li>
 <li>
 <p><code>id</code>: Name part of the post file name.</p>
-</li>
-<li>
-<p><code>content</code>: Post content in HTML format.</p>
 </li>
 <li>
 <p><code>isDraft</code>: set to <code>true</code>.</p>
@@ -1417,49 +1544,265 @@ The only difference between posts and drafts is the presence of the <code>isDraf
 </div>
 </div>
 <div class="sect2">
-<h3 id="_custom_content"><a class="anchor" href="#_custom_content"></a>6.4. Custom content</h3>
+<h3 id="_substitutions"><a class="anchor" href="#_substitutions"></a>6.4. Substitutions</h3>
 <div class="paragraph">
-<p>There is no limitation in the type of content Styx can generate.
-The page attribute and the template environment can be extended to include any key that could fit special needs.</p>
+<p>Subtitutions are a way to use some variables of <code>site,nix</code> in mardown files.</p>
 </div>
 <div class="paragraph">
-<p>It is also possible to use any program provided in the nixpkgs packages in library functions.</p>
+<p>Substitutions are a set that must be passed to the <code>getPosts</code>,  <code>getDrafts</code> or <code>parsePage</code> arguments.</p>
 </div>
 <div class="listingblock">
-<div class="title">Using an external program</div>
+<div class="title">Setting substitutions in <code>default.nix</code></div>
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">  title = readFile (pkgs.runCommand "${timestamp}-${id}.title" {} ''
-    ${pkgs.xidel}/bin/xidel ${html} -e "//h1[1]/node()" -q &gt; $out <i class="conum" data-value="1"></i><b>(1)</b>
-    echo -n `tr -d '\n' &lt; $out` &gt; $out
-  '');</code></pre>
+<pre class="highlight"><code class="language-nix" data-lang="nix">  posts = let
+    substitutions = { inherit conf; }; <i class="conum" data-value="1"></i><b>(1)</b>
+    posts = getPosts { inherit substitutions; from = conf.postsDir; to = "posts"; }; <i class="conum" data-value="2"></i><b>(2)</b>
+    drafts = optionals renderDrafts (getDrafts { inherit substitutions; from = conf.draftsDir; to = "drafts"; }); <i class="conum" data-value="3"></i><b>(3)</b>
+    preparePosts = p: p // { template = templates.post.full; breadcrumbs = with pages; [ index (head archives) ]; };
+  in sortPosts (map preparePosts (posts ++ drafts));</code></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Using the <a href="http://www.videlibri.de/xidel.html">Xidel</a> program to fetch the first title text of the post.</td>
+<td>Creating a subtitution set containing <code>conf</code>. <code>{ inherit conf; }</code> is a shorhand for <code>{ conf = conf; }</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Pass the substitutions to <code>getPosts</code> argument set.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Pass the substitutions to <code>getDrafts</code> argument set.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In the markdown file, substitutions are used by surround it by <code>@</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It impossible to use any nix expression in the substitution.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Using a substitution in a mardown file</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">  Learn more in the [Styx 0.1.0 Documentation](@conf.siteUrl@/documentation-v0-1-0.html). <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>As <code>conf</code> is in the substitution set, it is possible to access any of its values by surrounding it by <code>@</code>.</td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_static_files"><a class="anchor" href="#_static_files"></a>6.5. Static files</h3>
+<h3 id="_metadata"><a class="anchor" href="#_metadata"></a>6.5. Metadata</h3>
 <div class="paragraph">
-<p>Static files are the files that are added to the generated site folder.
-Static files should be in the <code>conf.staticDir</code> directory.</p>
+<p>It is possible to set metadata to markdown files that will be merged to the page attribute set.
+File metadata must a valid nix set between <code>{---</code> and <code>---}</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Adding metadata to a markdown file</div>
+<div class="content">
+<pre class="highlight"><code class="language-markdown" data-lang="markdown">{---
+{
+  title = "Hello World!";
+}
+---}
+
+Lorem ipsum ...</code></pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_customization"><a class="anchor" href="#_customization"></a>7. Customization</h2>
+<h2 id="_themes"><a class="anchor" href="#_themes"></a>7. Themes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section explains how to customize a Styx site.</p>
+<p>Themes are used handle templates and static files and are the main way to customize Styx sites.</p>
+</div>
+<div class="paragraph">
+<p>Styx comes with a simple <code>default</code> theme.</p>
 </div>
 <div class="sect2">
-<h3 id="_templates"><a class="anchor" href="#_templates"></a>7.1. Templates</h3>
+<h3 id="_structure"><a class="anchor" href="#_structure"></a>7.1. Structure</h3>
+<div class="paragraph">
+<p>Themes are stored in <code>conf.themesDir</code>, <code>themes</code> by default, and every theme is stored in its own directory.</p>
+</div>
+<div class="listingblock">
+<div class="title">Anatomy of a Styx theme</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">themes
+└── NAME <i class="conum" data-value="1"></i><b>(1)</b>
+    ├── files <i class="conum" data-value="2"></i><b>(2)</b>
+    └── templates <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Name of the theme. The name should be a valid folder name.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>files</code> is a folder holding static files for the themes. All the files in this folder will be copied in the generated site.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>templates</code> is a folder storing all the templates files.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Every template in the <code>templates</code> will be accessible by its file basename in the <code>templates</code> attribute set.
+Folders are converted to nested sets.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of a template directory structure</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">├── archive.nix
+└── post
+    ├── full.nix
+    └── list.nix</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Generated attribute set</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates = {
+  archive = ./archive.nix;
+  posts = {
+    full = ./posts/full.nix;
+    list = ./posts/list.nix;
+  };
+};</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_themes_in_site_nix"><a class="anchor" href="#_themes_in_site_nix"></a>7.2. Themes in site.nix</h3>
+<div class="paragraph">
+<p>Themes are declared as a list in the <code>themes</code> variable.</p>
+</div>
+<div class="listingblock">
+<div class="title">Declaring used themes</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">  themes = [ "default" ]; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>themes</code> variable is a list of theme names, it is possible to set multiple themes. In that cases, themes at the head of the list have a higher priority.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Themes related files are automatically loaded in <code>site.nix</code> via the <code>lib.themes.loadTemplates</code> and <code>lib.themes.loadFiles</code> functions.</p>
+</div>
+<div class="listingblock">
+<div class="title">Loading theme related files</div>
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">  templates = lib.themes.loadTemplates { <i class="conum" data-value="1"></i><b>(1)</b>
+    inherit themes defaultEnvironment customEnvironments;
+    themesDir = conf.themesDir;
+  };
+
+  files = lib.themes.loadFiles { <i class="conum" data-value="2"></i><b>(2)</b>
+    inherit themes;
+    themesDir = conf.themesDir;
+  };
+
+  themes = [ "default" ];</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Load themes templates. See <a href="#themes.loadFiles">loadFiles</a> for details.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Load themes files. See <a href="#themes.loadTemplates">loadTemplates</a> for details.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_combining_themes"><a class="anchor" href="#_combining_themes"></a>7.3. Combining Themes</h3>
+<div class="paragraph">
+<p>In <code>site.nix</code>, themes are declared as a list. If multiple themes in the list provide the same file or template, the one from the first theme to declare it will be used.</p>
+</div>
+<div class="paragraph">
+<p>This allows to "extends" themes without modifying them.</p>
+</div>
+<div class="paragraph">
+<p>For example, to use the default theme but only change the <code>layout</code> template. It is possible to create a new theme, and copy the <code>layout.nix</code> template in the new theme <code>templates</code> folder and change only this file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Creating a new foo theme</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ mkdir themes/foo <i class="conum" data-value="1"></i><b>(1)</b>
+$ mkdir themes/foo/{templates,files} <i class="conum" data-value="2"></i><b>(2)</b>
+$ cp themes/{default,foo}/templates/layout.nix <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Create the theme directory.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Create the theme required directories.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Copying <code>default</code> theme <code>layout.nix</code> to <code>foo</code> theme.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After a new theme has been created, it must be load in the <code>site.nix</code> to be used.</p>
+</div>
+<div class="listingblock">
+<div class="title">Using foo and default themes in <code>site.nix</code></div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">  themes = [ "foo" "default" ]; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This will use foo and default theme, with foo having a higher priority than default.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_templates"><a class="anchor" href="#_templates"></a>8. Templates</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Styx templates are functions that return text or page attribute sets when fully evaluated.</p>
 </div>
@@ -1472,7 +1815,7 @@ Static files should be in the <code>conf.staticDir</code> directory.</p>
 <p>Layout templates, responsible for the final rendering of a page, it must return text. (page attribute set <code>layout</code> key)</p>
 </li>
 <li>
-<p>Partial templates responsible for the partial rendering of a page, it should return a page attibute set, but in some special cases can return text. (page attribute set <code>template</code> key)</p>
+<p>Partial templates, responsible for the partial rendering of a page, it should return a page attibute set, but in some special cases can return text. (page attribute set <code>template</code> key)</p>
 </li>
 </ul>
 </div>
@@ -1482,15 +1825,15 @@ Static files should be in the <code>conf.staticDir</code> directory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The partial template evaluate the page attribute set, this generate a partial result that is stored in the page attribute set <code>content</code> key.</p>
+<p>The partial template evaluate the page attribute set and generates a partial result that is stored in the page attribute set <code>content</code> key.</p>
 </li>
 <li>
 <p>The layout template evaluate the page attribute set returned by the partial template and produce the final source of the page.</p>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_text_handling_basics"><a class="anchor" href="#_text_handling_basics"></a>7.1.1. Text handling basics</h4>
+<div class="sect2">
+<h3 id="_text_handling_basics"><a class="anchor" href="#_text_handling_basics"></a>8.1. Text handling basics</h3>
 <div class="paragraph">
 <p>Most of the work in template is done by manipulating text.</p>
 </div>
@@ -1533,8 +1876,8 @@ Static files should be in the <code>conf.staticDir</code> directory.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_layout_templates"><a class="anchor" href="#_layout_templates"></a>7.1.2. Layout templates</h4>
+<div class="sect2">
+<h3 id="_layout_templates"><a class="anchor" href="#_layout_templates"></a>8.2. Layout templates</h3>
 <div class="paragraph">
 <p>The layout template is responsible for rendering the final source of the page.
 The layout template function usually takes a template environment, and a page attribute set with a <code>content</code>. (There are exceptions)</p>
@@ -1543,7 +1886,7 @@ The layout template function usually takes a template environment, and a page at
 <p>In a HTML context, the layout template is usually responsible of the HTML code that is not directly related to the content, like the <code>head</code> tag.</p>
 </div>
 <div class="listingblock">
-<div class="title">Simple layout template.</div>
+<div class="title">Layout template example</div>
 <div class="content">
 <pre class="highlight"><code class="language-nix" data-lang="nix">env:
 page:
@@ -1572,16 +1915,19 @@ Layout templates are just functions, in case the partial template return the ful
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_partial_templates"><a class="anchor" href="#_partial_templates"></a>7.1.3. Partial templates</h4>
+<div class="sect2">
+<h3 id="_partial_templates"><a class="anchor" href="#_partial_templates"></a>8.3. Partial templates</h3>
 <div class="paragraph">
 <p>Partial templates are similar to the layout templates, with the only difference that their result will be evaluated by the layout template.
-The partial template should set or update the <code>content</code> attribute of the page attribute set so the layout template can render the final source.
-Partial templates can also add other attributes to the page attribute to fit any special need.</p>
+The partial template should set or update the <code>content</code> attribute of the page attribute set so the layout template can render the final source.</p>
+</div>
+<div class="paragraph">
+<p>Partial templates can also add other attributes to the page attribute to fit any special need.</p>
 </div>
 <div class="listingblock">
+<div class="title">Example of a partial template</div>
 <div class="content">
-<pre>{ templates, ... }:
+<pre class="highlight"><code class="language-nix" data-lang="nix">{ templates, ... }:
 page:
 let
   content =
@@ -1589,15 +1935,28 @@ let
       &lt;h1&gt;${page.title}&lt;/h1&gt;
     '';
 in
-  page // { inherit content; }</pre>
+  page // { inherit content; }</code></pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In some cases, it is useful to have the partial template to return the final source of the page.
+By setting the page <code>layout</code> to the <code>id</code> function, it is possible to bypass the layout template and have the partial template result being the final source source of the page.
+</td>
+</tr>
+</table>
 </div>
-<div class="sect3">
-<h4 id="_template_environment"><a class="anchor" href="#_template_environment"></a>7.1.4. Template environment</h4>
+</div>
+<div class="sect2">
+<h3 id="_template_environment"><a class="anchor" href="#_template_environment"></a>8.4. Template environment</h3>
 <div class="paragraph">
 <p>The template environment is the first parameter of the template function.
-It is defined when loading the template in <code>default.nix</code>.</p>
+It is defined when loading the template in <code>site.nix</code>.</p>
 </div>
 <div class="paragraph">
 <p>The default template environment consists in:</p>
@@ -1608,19 +1967,40 @@ It is defined when loading the template in <code>default.nix</code>.</p>
 <p><code>conf</code>: the configuration attribute set</p>
 </li>
 <li>
-<p><code>templates</code>: the templates attribute set</p>
+<p><code>lib</code>: the library attribute set, it contains Styx and nixpkgs functions.</p>
 </li>
 <li>
 <p><code>state</code>: the state attribute set, by default it only holds the timestamp of the generation</p>
 </li>
 <li>
-<p><code>lib</code>: the library attribute set, it contains Styx and nixpkgs functions.</p>
+<p><code>templates</code>: the templates attribute set</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>It is possible to extend the template environment at will.</p>
+<p>It is possible to extend the default template environment to fit custom needs.</p>
 </div>
+<div class="paragraph">
+<p>It is possible to set a specific template environment to a specific template by declaring it in the <code>customTemplateEnvironments</code> set.</p>
+</div>
+<div class="listingblock">
+<div class="title">Setting custom template environments</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">  customEnvironments = {
+    layout = defaultEnvironment // { inherit navbar; feed = pages.feed; }; <i class="conum" data-value="1"></i><b>(1)</b>
+  };</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The environment passed to the <code>layout</code> template is the default environment extended with <code>feed</code> and <code>navbar</code> variables.</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_template_environment_in_templates"><a class="anchor" href="#_template_environment_in_templates"></a>8.4.1. Template environment in templates</h4>
 <div class="paragraph">
 <p>There are two ways of writing the <code>environment</code> in the template, as a set or as a deconstructed set.</p>
 </div>
@@ -1663,7 +2043,7 @@ page: <i class="conum" data-value="1"></i><b>(1)</b>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_calling_templates_in_templates"><a class="anchor" href="#_calling_templates_in_templates"></a>7.2. Calling templates in templates</h3>
+<h3 id="_calling_templates_in_templates"><a class="anchor" href="#_calling_templates_in_templates"></a>8.5. Calling templates in templates</h3>
 <div class="paragraph">
 <p>It is possible to call templates in a template by accessing to the <code>templates</code> attribute of the template generic environment.</p>
 </div>
@@ -1703,28 +2083,32 @@ Trying to call the current template will trigger an infinite loop and make the s
 </div>
 </div>
 <div class="sect2">
-<h3 id="_applying_templates_to_multiple_contents"><a class="anchor" href="#_applying_templates_to_multiple_contents"></a>7.3. Applying templates to multiple contents</h3>
+<h3 id="_applying_templates_to_multiple_contents"><a class="anchor" href="#_applying_templates_to_multiple_contents"></a>8.6. Applying templates to multiple contents</h3>
 <div class="paragraph">
 <p>The <code>mapTemplate</code> function can be used to map a template to a list of contents.</p>
 </div>
 <div class="listingblock">
 <div class="title">Applying a template to multiple contents</div>
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">${mapTemplate templates.post.list page.posts}</code></pre>
+<pre class="highlight"><code class="language-nix" data-lang="nix">{ templates, ... }:
+page:
+''
+  ${mapTemplate templates.post.list page.posts}
+''</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_library"><a class="anchor" href="#_library"></a>8. Library</h2>
+<h2 id="_library"><a class="anchor" href="#_library"></a>9. Library</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The library contains various functions that are used through Styx source.
 The functions are grouped in namespaces, but are also all included in the top-level scope to be used in an easy way.</p>
 </div>
 <div class="sect2">
-<h3 id="_generation"><a class="anchor" href="#_generation"></a>8.1. generation</h3>
+<h3 id="_generation"><a class="anchor" href="#_generation"></a>9.1. generation</h3>
 <div class="paragraph">
 <p>This namespace contains functions related to content generation.</p>
 </div>
@@ -1737,7 +2121,7 @@ The functions are grouped in namespaces, but are also all included in the top-le
 <dl>
 <dt class="hdlist1">Description</dt>
 <dd>
-<p>Generate a site with a list of pages. This is the function returned by <code>default.nix</code>.</p>
+<p>Generate a site with a list of pages. This is the function returned by <code>site.nix</code>.</p>
 </dd>
 <dt class="hdlist1">Parameter Type</dt>
 <dd>
@@ -1748,10 +2132,10 @@ The functions are grouped in namespaces, but are also all included in the top-le
 <div class="ulist">
 <ul>
 <li>
-<p><code>conf</code>: The configuration set.</p>
+<p><code>files</code>: A list of folders to copy in the site.</p>
 </li>
 <li>
-<p><code>pages</code>: A list of pages to generate.</p>
+<p><code>pagesList</code>: A list of pages to generate.</p>
 </li>
 <li>
 <p><code>preGen</code> (optional): A set of commands to execute before generating the site.</p>
@@ -1771,7 +2155,7 @@ The functions are grouped in namespaces, but are also all included in the top-le
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">generateSite { inherit conf; pages = pageList; }</code></pre>
+<pre class="highlight"><code class="language-nix" data-lang="nix">generateSite { inherit conf pagesList; }</code></pre>
 </div>
 </div>
 </dd>
@@ -1786,7 +2170,7 @@ The functions are grouped in namespaces, but are also all included in the top-le
 <dl>
 <dt class="hdlist1">Description</dt>
 <dd>
-<p>Convert an attribute set of pages to a list of pages. Useful to convert the <code>pages</code> attribute set in <code>default.nix</code> to a page list for <code>generateSite</code>.
+<p>Convert an attribute set of pages to a list of pages. Useful to convert the <code>pages</code> attribute set in <code>site.nix</code> to a page list for <code>generateSite</code>.
 Parameter Type: Standard</p>
 </dd>
 <dt class="hdlist1">Parameters</dt>
@@ -1815,7 +2199,7 @@ Parameter Type: Standard</p>
   } // (parsePage conf.pagesDir "about.md");
 };
 
-pageList = pagesToList pages;</code></pre>
+pagesList = pagesToList pages;</code></pre>
 </div>
 </div>
 </dd>
@@ -1882,13 +2266,13 @@ pageList = pagesToList pages;</code></pre>
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_nixpkgs"><a class="anchor" href="#_nixpkgs"></a>8.2. nixpkgs</h3>
+<h3 id="_nixpkgs"><a class="anchor" href="#_nixpkgs"></a>9.2. nixpkgs</h3>
 <div class="paragraph">
 <p>This namespace include the nixpkgs library and <a href="http://nixos.org/nix/manual/#ssec-builtins">builtins</a> functions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_content_2"><a class="anchor" href="#_content_2"></a>8.3. content</h3>
+<h3 id="_content_2"><a class="anchor" href="#_content_2"></a>9.3. content</h3>
 <div class="paragraph">
 <p>This namespace contains functions to manipulate content, especially posts.</p>
 </div>
@@ -1905,17 +2289,20 @@ pageList = pagesToList pages;</code></pre>
 </dd>
 <dt class="hdlist1">Parameter Type</dt>
 <dd>
-<p>Standard</p>
+<p>Attribute Set</p>
 </dd>
 <dt class="hdlist1">Parameters</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p><code>postsDir</code>: Path to the folder containing the posts.</p>
+<p><code>from</code>: Path to the folder containing the posts.</p>
 </li>
 <li>
-<p><code>outDir</code>: Part before the name of the post attribute set <code>href</code>. Should not contain leading and trailing <code>/</code>.</p>
+<p><code>to</code>: Part before the name of the post attribute set <code>href</code>. Should not contain leading and trailing <code>/</code>.</p>
+</li>
+<li>
+<p><code>substitutions</code>: An attribute set containing substitutions (Optional). For details, see <a href="#_substitutions">Substitutions</a>.</p>
 </li>
 </ul>
 </div>
@@ -1929,7 +2316,7 @@ pageList = pagesToList pages;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">posts = getPosts conf.postsDir "posts";</code></pre>
+<pre class="highlight"><code class="language-nix" data-lang="nix">posts = getPosts { from = conf.postsDir; to = "posts"; };</code></pre>
 </div>
 </div>
 </dd>
@@ -1961,17 +2348,20 @@ For a post in a file <code>2016-09-12-welcome-to-styx.md</code> and an <code>out
 </dd>
 <dt class="hdlist1">Parameter Type</dt>
 <dd>
-<p>Standard</p>
+<p>Attribute Set</p>
 </dd>
 <dt class="hdlist1">Parameters</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p><code>draftsDir</code>: Path to the folder containing the drafts.</p>
+<p><code>from</code>: Path to the folder containing the posts.</p>
 </li>
 <li>
-<p><code>outDir</code>: Part before the name of the draft attribute set <code>href</code>. Should not contain leading and trailing <code>/</code>.</p>
+<p><code>to</code>: Part before the name of the post attribute set <code>href</code>. Should not contain leading and trailing <code>/</code>.</p>
+</li>
+<li>
+<p><code>substitutions</code>: An attribute set containing substitutions (Optional). For details, see <a href="#_substitutions">Substitutions</a>.</p>
 </li>
 </ul>
 </div>
@@ -1985,7 +2375,7 @@ For a post in a file <code>2016-09-12-welcome-to-styx.md</code> and an <code>out
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">posts = getDrafts conf.draftsDir;</code></pre>
+<pre class="highlight"><code class="language-nix" data-lang="nix">posts = getDrafts { from = conf.draftsDir; to = "drafts"; };</code></pre>
 </div>
 </div>
 </dd>
@@ -2004,17 +2394,20 @@ For a post in a file <code>2016-09-12-welcome-to-styx.md</code> and an <code>out
 </dd>
 <dt class="hdlist1">Parameter Type</dt>
 <dd>
-<p>Standard</p>
+<p>Attribute Set</p>
 </dd>
 <dt class="hdlist1">Parameters</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p><code>pageDir</code>: Path to the folder containing the page.</p>
+<p><code>dir</code>: Path to the folder containing the page.</p>
 </li>
 <li>
-<p><code>filename</code>: Page file name.</p>
+<p><code>file</code>: Page file name.</p>
+</li>
+<li>
+<p><code>substitutions</code>: An attribute set containing substitutions (Optional). For details, see <a href="#_substitutions">Substitutions</a>.</p>
 </li>
 </ul>
 </div>
@@ -2032,7 +2425,7 @@ For a post in a file <code>2016-09-12-welcome-to-styx.md</code> and an <code>out
     href = "about.html";
     template = templates.about;
     breadcrumbs = [ index ];
-  } // (parsePage conf.pagesDir "about.md");</code></pre>
+  } // (parsePage { dir = conf.pagesDir; file = "about.md"; });</code></pre>
 </div>
 </div>
 </dd>
@@ -2136,9 +2529,9 @@ For a post in a file <code>2016-09-12-welcome-to-styx.md</code> and an <code>out
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_template"><a class="anchor" href="#_template"></a>8.4. template</h3>
+<h3 id="_template"><a class="anchor" href="#_template"></a>9.4. template</h3>
 <div class="paragraph">
-<p>This namespace contains functions to manipulate templates.</p>
+<p>This namespace contains functions useful in templates.</p>
 </div>
 <hr>
 <div class="dlist">
@@ -2274,7 +2667,116 @@ htmlAttr "class" [ "foo" "bar" ]
 <hr>
 </div>
 <div class="sect2">
-<h3 id="_utils"><a class="anchor" href="#_utils"></a>8.5. utils</h3>
+<h3 id="_themes_2"><a class="anchor" href="#_themes_2"></a>9.5. themes</h3>
+<div class="paragraph">
+<p>This namespace contains functions to load themes data.</p>
+</div>
+<hr>
+<div id="themes.loadFiles" class="dlist">
+<dl>
+<dt class="hdlist1"><code>loadFiles</code></dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Load a themes set static files.</p>
+</dd>
+<dt class="hdlist1">Parameter Type</dt>
+<dd>
+<p>Attribute set</p>
+</dd>
+<dt class="hdlist1">Parameters</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><code>themes</code>: List of themes names to load static files from.</p>
+</li>
+<li>
+<p><code>themesDir</code>: Directory of the themes.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Return</dt>
+<dd>
+<p>List of static files folders.</p>
+</dd>
+<dt class="hdlist1">Example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">  files = lib.themes.loadFiles {
+    themes = [ "default" ];
+    themesDir = conf.themesDir;
+  };</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+<div id="themes.loadTemplates" class="dlist">
+<dl>
+<dt class="hdlist1"><code>loadTemplates</code></dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Load a theme set templates.</p>
+</dd>
+<dt class="hdlist1">Parameter Type</dt>
+<dd>
+<p>Attribute set</p>
+</dd>
+<dt class="hdlist1">Parameters</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><code>themes</code>: List of themes names to load static files from.</p>
+</li>
+<li>
+<p><code>themesDir</code>: Directory of the themes.</p>
+</li>
+<li>
+<p><code>defaultEnvironment</code>: The default environment to load templates with.</p>
+</li>
+<li>
+<p><code>customEnvironments</code>: A set of with a similar structure to the template set which values are environment to pass to the template. Any template that is not in <code>customEnvironments</code> will use the <code>defaultEnvironment</code>.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Return</dt>
+<dd>
+<p>List of static files folders.</p>
+</dd>
+<dt class="hdlist1">Example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">  templates = lib.themes.loadTemplates rec {
+    themes = [ "default" ];
+    themesDir = conf.themesDir;
+    defaultEnvironment = { inherit conf state lib templates; };
+    customEnvironment = {
+      layout = defaultEnvironment // { inherit navbar; feed = pages.feed; };
+    };
+  };</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_utils"><a class="anchor" href="#_utils"></a>9.6. utils</h3>
 <div class="paragraph">
 <p>This namespace contains various utility functions.</p>
 </div>
@@ -2324,49 +2826,6 @@ htmlAttr "class" [ "foo" "bar" ]
 <hr>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><code>loadTemplateWithEnv</code></dt>
-<dd>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Description</dt>
-<dd>
-<p>Load a template with a template environment.</p>
-</dd>
-<dt class="hdlist1">Parameter Type</dt>
-<dd>
-<p>Standard</p>
-</dd>
-<dt class="hdlist1">Parameters</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p><code>env</code>: The template environment set.</p>
-</li>
-<li>
-<p><code>template</code>: The template file to load, relatively to <code>conf.templatesDir</code>.</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Return</dt>
-<dd>
-<p>The template function.</p>
-</dd>
-<dt class="hdlist1">Example</dt>
-</dl>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">index = loadTemplateWithEnv { inherit conf state lib templates; } "index.nix";</code></pre>
-</div>
-</div>
-</dd>
-</dl>
-</div>
-<hr>
-<div class="dlist">
-<dl>
 <dt class="hdlist1"><code>setDefaultLayout</code></dt>
 <dd>
 <div class="dlist">
@@ -2401,7 +2860,7 @@ htmlAttr "class" [ "foo" "bar" ]
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-nix" data-lang="nix">  pageList =
+<pre class="highlight"><code class="language-nix" data-lang="nix">  pagesList =
     let list = (pagesToList pages);
     in map (setDefaultLayout templates.layout) list;</code></pre>
 </div>
@@ -2457,12 +2916,12 @@ htmlAttr "class" [ "foo" "bar" ]
 </div>
 </div>
 <div class="sect1">
-<h2 id="_cookbook"><a class="anchor" href="#_cookbook"></a>9. Cookbook</h2>
+<h2 id="_cookbook"><a class="anchor" href="#_cookbook"></a>10. Cookbook</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_navbar"><a class="anchor" href="#_navbar"></a>9.1. NavBar</h3>
+<h3 id="_navbar"><a class="anchor" href="#_navbar"></a>10.1. NavBar</h3>
 <div class="paragraph">
-<p>The sample <code>default.nix</code> is setting a NavBar.
+<p>There is an example of NavBar setting in the default <code>site.nix</code>.
 Because the NavBar is a site wide feature is should be applied to the layout template (<code>layout.nix</code>).</p>
 </div>
 <div class="paragraph">
@@ -2473,7 +2932,7 @@ Because the NavBar is a site wide feature is should be applied to the layout tem
 <li>
 <p>Extending the base template environment to include a list of pages that should be in the NavBar.</p>
 <div class="paragraph">
-<p>Example from <code>default.nix</code>:</p>
+<p>Example from <code>site.nix</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2481,9 +2940,9 @@ Because the NavBar is a site wide feature is should be applied to the layout tem
              archive = (head pages.archives) // { title = "Archives"; }; <i class="conum" data-value="2"></i><b>(2)</b>
            in [ archive pages.about ]; <i class="conum" data-value="3"></i><b>(3)</b>
 
-  templates.layout = loadTemplateWithEnv <i class="conum" data-value="4"></i><b>(4)</b>
-                     (genericEnv // { inherit navbar; feed = pages.feed; }) <i class="conum" data-value="5"></i><b>(5)</b>
-                     "layout.nix"; <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
+  customEnvironments = { <i class="conum" data-value="4"></i><b>(4)</b>
+    layout = defaultEnvironment // { inherit navbar; feed = pages.feed; }; <i class="conum" data-value="5"></i><b>(5)</b>
+  };</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2502,16 +2961,11 @@ Because the NavBar is a site wide feature is should be applied to the layout tem
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Loading the <code>templates.layout</code> template file.</td>
+<td>Declares custom template environments. Custom environements are a set mimicking the templates atteibute set, ut where the value is the environment to apply to the template.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td>The first parameter of the <code>loadTemplateWithEnv</code> must be an environment attribute set.
-<code>genericEnv</code> is the generic template environment, but as we want to pass the <code>navbar</code> variable to the template, we extends the environment with <code>navbar</code>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td>The template file to load.</td>
+<td><code>defaultEnvironment</code> is the default template environment, but as we want to pass the <code>navbar</code> variable to the template, we extends the environment with <code>navbar</code>.</td>
 </tr>
 </table>
 </div>
@@ -2567,7 +3021,7 @@ To set the NavBar brand to something different than <code>conf.siteTitle</code>,
 </div>
 </div>
 <div class="sect2">
-<h3 id="_pagination"><a class="anchor" href="#_pagination"></a>9.2. Pagination</h3>
+<h3 id="_pagination"><a class="anchor" href="#_pagination"></a>10.2. Pagination</h3>
 <div class="paragraph">
 <p>The <code>pagination.nix</code> template provide a generic way to generate a pagination.</p>
 </div>
@@ -2614,9 +3068,21 @@ To set the NavBar brand to something different than <code>conf.siteTitle</code>,
 <div class="paragraph">
 <p>It is then possible to use the previous snippet in the used template to add a pagination.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The pagination is only displayed if there is more than one page to display.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_breadcrumbs"><a class="anchor" href="#_breadcrumbs"></a>9.3. Breadcrumbs</h3>
+<h3 id="_breadcrumbs"><a class="anchor" href="#_breadcrumbs"></a>10.3. Breadcrumbs</h3>
 <div class="paragraph">
 <p>Breadcrumbs are enbaled by adding a <code>breadcrumbs</code> attribute with the list of pages to include in the breadcrumbs to a page attribute set.
 A page attribute set without a breadcrumbs attribute will not display breadcrumbs.</p>
@@ -2642,12 +3108,12 @@ A page attribute set without a breadcrumbs attribute will not display breadcrumb
 </div>
 </div>
 <div class="sect1">
-<h2 id="_deployment"><a class="anchor" href="#_deployment"></a>10. Deployment</h2>
+<h2 id="_deployment"><a class="anchor" href="#_deployment"></a>11. Deployment</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_github_pages"><a class="anchor" href="#_github_pages"></a>10.1. GitHub pages</h3>
+<h3 id="_github_pages"><a class="anchor" href="#_github_pages"></a>11.1. GitHub pages</h3>
 <div class="paragraph">
-<p>Styx support basic deployment to github pages.</p>
+<p>Styx support basic deployment to GitHub pages.</p>
 </div>
 <div class="paragraph">
 <p>This is a two step process, initialization og the <code>gh-pages</code> branch and update of the <code>gh-branch</code> with the built site.</p>
@@ -2699,21 +3165,18 @@ This means that two successive <code>styx deploy --gh-pages</code> will create c
 </div>
 </div>
 <div class="sect2">
-<h3 id="_other"><a class="anchor" href="#_other"></a>10.2. Other</h3>
+<h3 id="_other"><a class="anchor" href="#_other"></a>11.2. Other</h3>
 <div class="paragraph">
-<p>Styx does not yet provide a universal deployment method.</p>
-</div>
-<div class="paragraph">
-<p>But <code>rsync</code> can be used to deploy a Styx site to a remote server via ssh.</p>
+<p>Styx does not yet provide a universal deployment method, but <code>rsync</code> can be used to deploy a Styx site to a remote server via ssh.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_release_notes"><a class="anchor" href="#_release_notes"></a>11. Release Notes</h2>
+<h2 id="_release_notes"><a class="anchor" href="#_release_notes"></a>12. Release Notes</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_styx_0_1_0_2016_10_7"><a class="anchor" href="#_styx_0_1_0_2016_10_7"></a>11.1. Styx 0.1.0 - 2016/10/7</h3>
+<h3 id="_styx_0_1_0_2016_10_07"><a class="anchor" href="#_styx_0_1_0_2016_10_07"></a>12.1. Styx 0.1.0 - 2016/10/07</h3>
 <div class="paragraph">
 <p>Initial release of Styx.</p>
 </div>
