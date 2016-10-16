@@ -3,7 +3,7 @@ with lib;
 post:
 let
   date = ''
-    <time pubdate="pubdate" datetime="${post.timestamp}" class="text-right">${post.timestamp}</time>
+    <time pubdate="pubdate" datetime="${post.date}" class="text-right">${post.date}</time>
   '';
   draftIcon = optionalString (attrByPath ["isDraft"] false post) " <span class=\"glyphicon glyphicon-pencil\"></span>";
   content = ''

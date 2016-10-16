@@ -1,53 +1,58 @@
 /* Body
  */
-body.with-navbar{
-  padding-top: 50px;
-}
 body {
+  padding-top: 50px;
   padding-bottom: 70px;
 }
 body>footer {
-    border-top: 1px solid #e8e8e8;
-    padding: 30px 0;
-    margin-top: 30px;
+  border-top: 1px solid #e8e8e8;
+  padding: 30px 0;
+  margin-top: 30px;
 }
 
 /* Header
  */
 .site-header {
-    border-top: 5px solid #424242;
-    border-bottom: 1px solid #e8e8e8;
-    min-height: 56px;
-    margin-bottom: 30px;
-    position: relative;
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+  min-height: 56px;
+  margin-bottom: 30px;
+  position: relative;
 }
 .site-title {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 64px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 64px;
+  letter-spacing: -1px;
+  margin-bottom: 0;
 }
 .navbar-brand{
-  color: #fff !important;
   font-size:1.6em !important;
   font-weight: bold ! important;
 }
 .navbar-nav a {
-  color: #fff !important;
   font-weight: bold;
 }
 .navbar-nav li:hover{
-  background: #fff;
 }
 .navbar-nav a:hover{
-  color: #000 !important;
+}
+
+nav.navbar {
+  background: #fafafa linear-gradient(to bottom, #fff, #f2f2f2) repeat-x;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Index
  */
 .jumbotron {
   margin-bottom: 0;
+  background: url(@siteUrl@/background-2.jpg);
+  text-shadow: 0 2px 2px #000, 2px 0 2px #000;
+  color: #fff;
+}
+.jumbotron a{
+  color: #fff;
 }
 .quick-start h2{
   text-align: center;

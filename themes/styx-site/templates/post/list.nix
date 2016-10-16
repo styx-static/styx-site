@@ -8,7 +8,7 @@ in
     <article class="article-list">
       <a href="${conf.siteUrl}/${post.href}">
         <strong>${draftIcon}${post.title}</strong>
-        <time pubdate="pubdate" datetime="${post.timestamp}">${post.timestamp}</time>
+        <time pubdate="pubdate" datetime="${post.date}">${post.date}</time>
       </a>
     </article>
   ''

@@ -1,73 +1,106 @@
+/*-----------------------------------------------------------------------------
+   Init
+
+   Initialization of Styx, should not be edited
+-----------------------------------------------------------------------------*/
+
 { pkgs ? import <nixpkgs> {}
+, styxLib
 , renderDrafts ? false
 , siteUrl ? null
 , lastChange ? null
 }@args:
 
-let lib = import ./lib pkgs;
+let lib = import styxLib pkgs;
 in with lib;
 
 let
 
-/* Basic setup
+  /* Configuration loading
+  */
+  conf = let
+    conf       = import ./conf.nix;
+    themesConf = lib.themes.loadConf { inherit themes themesDir; };
+    mergedConf = recursiveUpdate themesConf conf;
+  in
+    overrideConf mergedConf args;
 
-   This section is boilerplate code that should not need to be edited
-*/
-
-  conf = overrideConf (import ./conf.nix) args;
-
-  themes = [ "styx-site" "default" ];
-
+  /* Site state
+  */
   state = { inherit lastChange; };
 
+  /* Load themes templates
+  */
   templates = lib.themes.loadTemplates {
-    inherit themes defaultEnvironment customEnvironments;
-    themesDir = conf.themesDir;
+    inherit themes defaultEnvironment customEnvironments themesDir;
   };
 
+  /* Load themes static files
+  */
   files = lib.themes.loadFiles {
-    inherit themes;
-    themesDir = conf.themesDir;
+    inherit themes themesDir;
   };
 
 
-/* Templates
+/*-----------------------------------------------------------------------------
+   Themes setup
 
-   This section declare template environments
-   The code below is sample and should be customized to fit needs
-*/
+-----------------------------------------------------------------------------*/
 
-  # Helper to create font awesome icons
-  faIcon = code:
-    ''
-      <i class="fa fa-${code}" aria-hidden="true"></i>
-    '';
+  /* Themes location
+  */
+  themesDir = ./themes;
 
-  # NavBar setup
-  navbar = let
-    documentation = { title = "Documentation"; href = "documentation.html"; };
-    github = { title = "GitHub ${faIcon "github"}"; href = "https://github.com/styx-static/styx/"; };
-    rss = { title = faIcon "rss-square"; href = pages.feed.href; };
-  in
-    [ pages.news documentation github rss ];
+  /* Themes used
+  */
+  themes = [ "styx-site" "showcase" ];
 
-  defaultEnvironment = { inherit conf state lib templates; };
 
-  # Custom environments for templates
+/*-----------------------------------------------------------------------------
+   Template environments
+
+-----------------------------------------------------------------------------*/
+
+  /* Default template environment
+  */
+  defaultEnvironment = { inherit conf state lib templates data pages; };
+
+  /* Custom environments for specific templates
+  */
   customEnvironments = {
-    # Adding navbar and feed variables to the layout template environment
-    layout = defaultEnvironment // { inherit navbar; feed = pages.feed; };
+    partials.head = defaultEnvironment // { feed = pages.feed; };
+  };
+
+/*-----------------------------------------------------------------------------
+   Data
+
+   This section declares the data used by the site
+   the data set is included in the default template environment
+-----------------------------------------------------------------------------*/
+
+  data = {
+    # loading a list of contents
+    posts  = let
+      postsList = loadDir { inherit substitutions; dir = ./posts; };
+      # include drafts only when renderDrafts is true
+      draftsList = optionals renderDrafts (loadDir { inherit substitutions; dir = ./drafts; isDraft = true; });
+    in sortBy "date" "dsc" (postsList ++ draftsList);
+    # Navbar data
+    navbar = let
+      documentation = { title = "Documentation"; href = "documentation.html"; };
+      github = { title = "GitHub ${templates.icon.fa "github"}"; href = "https://github.com/styx-static/styx/"; };
+      rss = { title = templates.icon.fa "rss-square"; href = pages.feed.href; };
+    in
+      [ pages.news documentation github rss ];
   };
 
 
-/* Pages
+/*-----------------------------------------------------------------------------
+   Pages
 
-   This section declare the site pages
-   Every page in this set will be rendered
-   The code below is sample and should be customized to fit needs
-*/
+   This section declares the pages that will be generated
+-----------------------------------------------------------------------------*/
 
-  # Page declarations
   pages = rec {
 
     index = {
@@ -83,27 +116,32 @@ let
       inherit posts;
     };
 
-    feed = { href = "feed.xml"; template = templates.feed; posts = take 10 posts; layout = id; };
+    feed = {
+      href = "feed.xml";
+      template = templates.feed;
+      items = take 10 pages.posts;
+      layout = id;
+    };
 
-    posts = let
-      substitutions = { inherit conf; };
-      posts = getPosts { inherit substitutions; from = conf.postsDir; to = "posts"; };
-      drafts = optionals renderDrafts (getDrafts { inherit substitutions; from = conf.draftsDir; to = "drafts"; });
-      preparePosts = p: p // { template = templates.post.full; };
-    in sortPosts (map preparePosts (posts ++ drafts));
+    posts = mkPageList {
+      data = data.posts;
+      hrefPrefix = "posts/";
+      template = templates.post.full;
+    };
 
   };
 
-  # Convert the `pages` attribute set to a list and set a default layout
-  pagesList =
-    let list = (pagesToList pages);
+
+/*-----------------------------------------------------------------------------
+   generateSite arguments preparation
+
+-----------------------------------------------------------------------------*/
+
+  pagesList = let
+    # converting pages attribute set to a list
+    list = pagesToList pages;
+    # setting a default layout
     in map (setDefaultLayout templates.layout) list;
-
-
-/* Site rendering
-
-   This render the site, for custom needs it is possible to use the `preGen` and `postGen` hooks
-*/
 
   # fecth the versions to create the documentations
   fetchStyx = version:
@@ -113,14 +151,25 @@ let
     # mater
     dev = fetchStyx "master";
     # latest stable
-    latest = v0-2-0;
+    latest = v0-3-0;
     # All the stable versions from here
+    v0-3-0 = fetchStyx "v0.3.0";
     v0-2-0 = fetchStyx "v0.2.0";
     v0-1-0 = fetchStyx "v0.1.0";
   };
 
+  substitutions = {
+    siteUrl = conf.siteUrl;
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Site rendering
+
+-----------------------------------------------------------------------------*/
+
 in generateSite {
-  inherit files pagesList;
+  inherit files pagesList substitutions;
 
   # generating all versions documentation
   postGen = ''

@@ -20,7 +20,7 @@ with lib;
         href="${conf.siteUrl}/${feed.href}"
         type="application/atom+xml"
         rel="alternate"
-        title="${conf.siteTitle}"
+        title="${conf.theme.site.title}"
         />
       ''}
   
@@ -49,15 +49,7 @@ with lib;
   
     <body${optionalString (navbar != false) " ${htmlAttr "class" "with-navbar"}"}>
   
-      ${if (navbar != false)
-          then (templates.navbar.main navbar)
-          else ''
-            <header class="site-header">
-              <div class="container wrapper">
-                <a class="site-title" href="${conf.siteUrl}">${conf.siteTitle}</a>
-              </div>
-            </header>
-          ''}
+      ${templates.partials.navbar.main}
 
       ${page.content}
 

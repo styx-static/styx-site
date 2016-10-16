@@ -20,10 +20,9 @@ let
       <h2>Quick Start</h2>
       <div class="console">
         <p>nix-shell -p $(nix-build https://github.com/styx-static/styx/archive/latest.tar.gz)</p>
-        <p>styx new myblog</p>
-        <p>cd myblog && styx preview</p>
+        <p>styx new mysite && cd mysite</p>
       </div>
-      <p class="text-center">Then have a look to the <a href="${conf.siteUrl}/documentation.html">documentation</a> to learn how to customize your site.</p>
+      <p class="text-center">Then have a look at readme.md file or at the <a href="${conf.siteUrl}/documentation.html">documentation</a> to learn how to customize your site.</p>
       </div>
     '';
 in
