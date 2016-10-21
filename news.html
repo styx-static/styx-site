@@ -7,13 +7,7 @@
 
   <title>News - Styx Static Site Generator</title>
 
-  <link
-  href="https://styx-static.github.io/styx-site/feed.xml"
-  type="application/atom+xml"
-  rel="alternate"
-  title="Styx"
-  />
-
+  
 
   <link
     rel="stylesheet"
@@ -38,9 +32,9 @@
       href="https://styx-static.github.io/styx-site/style.css">
 </head>
 
-<body class="with-navbar">
+<body>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
 
     <div class="navbar-header">
@@ -56,9 +50,9 @@
 
     </div>
 
-    <div class="collapse navbar-collapse navbar-right" id="navbar">
-      <ul class="nav navbar-nav">
-        <li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+  <li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
 
 <li><a href="https://styx-static.github.io/styx-site/documentation.html">Documentation</a></li>
 
@@ -68,7 +62,8 @@
 <li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i>
 </a></li>
 
-      </ul>
+</ul>
+
     </div>
 
   </div>
@@ -79,24 +74,28 @@
   <div class="container">
   <article>
     <header class="article-header">
-      <h1><a href="https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html">Styx 0.2.0 released</a></h1>
+      <h1><a href="https://styx-static.github.io/styx-site/posts/2016-10-26-styx-0.3.0-released.html">Styx 0.3.0 released</a></h1>
 
-      <time pubdate="pubdate" datetime="2016-10-10" class="text-right">2016-10-10</time>
+      <time pubdate="pubdate" datetime="2016-10-26" class="text-right">2016-10-26</time>
 
     </header>
     <div class="container">
     <p>Highlights:</p>
 
 <ul>
-<li>New live preview mode</li>
-<li>Content metadata / front-matter</li>
-<li>Content substitutions</li>
-<li>Themes</li>
+<li>Themes as first class citizens</li>
+<li>New themes</li>
+<li>Styx library not required in <code>site.nix</code></li>
+<li>Taxonomies</li>
+<li>New functions in library, new sub libraries</li>
+<li>AsciiDoc support</li>
+<li>Multipages</li>
+<li>Easier updates</li>
 </ul>
 
-<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation-v0-2-0.html#_release_notes">release notes</a>.</p>
+<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation-v0-3-0.html#_release_notes">release notes</a>.</p>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-2-0.html">Styx 0.2.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-3-0.html">Styx 0.3.0 Documentation</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
@@ -108,6 +107,13 @@
 
 
   <div class="container article-archives">
+<article class="article-list">
+  <a href="https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html">
+    <strong>Styx 0.2.0 released</strong>
+    <time pubdate="pubdate" datetime="2016-10-10">2016-10-10</time>
+  </a>
+</article>
+
 <article class="article-list">
   <a href="https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html">
     <strong>Styx 0.1.0 released</strong>
