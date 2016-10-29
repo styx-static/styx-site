@@ -423,7 +423,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>Styx manual</h1>
 <div class="details">
-<span id="revnumber">version 0.3.0</span>
+<span id="revnumber">version 0.3.1</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -643,7 +643,7 @@ Refer to the <a href="http://nixos.org/nix/manual/#chap-installation">Nix instal
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ styx new styx-showcase <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ styx new site styx-showcase <i class="conum" data-value="1"></i><b>(1)</b>
 $ cd styx-showcase <i class="conum" data-value="2"></i><b>(2)</b>
 $ git clone https://github.com/styx-static/styx-theme-showcase.git themes/showcase <i class="conum" data-value="3"></i><b>(3)</b>
 $ styx preview --in themes/showcase/example <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
@@ -2203,7 +2203,7 @@ page:
 <div class="listingblock">
 <div class="title">Creating a new foo theme</div>
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ styx new theme --in themes <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ styx new theme foo --in themes <i class="conum" data-value="1"></i><b>(1)</b>
 $ cp themes/{showcase,foo}/templates/layout.nix <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
