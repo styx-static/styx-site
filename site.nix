@@ -143,20 +143,17 @@ let
     # setting a default layout
     in map (setDefaultLayout templates.layout) list;
 
-  # fecth the versions to create the documentations
+  # fetch the versions to create the documentations
   fetchStyx = version:
     import (fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz") { inherit pkgs; };
 
-  styxVersions = rec {
-    # mater
-    dev = fetchStyx "master";
-    # latest stable
-    latest = v0-3-0;
-    # All the stable versions from here
-    v0-3-0 = fetchStyx "v0.3.0";
-    v0-2-0 = fetchStyx "v0.2.0";
-    v0-1-0 = fetchStyx "v0.1.0";
-  };
+  versions = [
+    "v0.3.1"
+    "v0.3.0"
+    "v0.2.0"
+    "v0.1.0"
+    "master"
+  ];
 
   substitutions = {
     siteUrl = conf.siteUrl;
@@ -173,9 +170,9 @@ in generateSite {
 
   # generating all versions documentation
   postGen = ''
-    ${concatStringsSep "\n" (mapAttrsToList (version: styx: ''
-      cp ${styx}/share/doc/styx/index.html $out/documentation-${version}.html
-    '') styxVersions)}
-    cp ${styxVersions.latest}/share/doc/styx/index.html $out/documentation.html
+    ${concatStringsSep "\n" (map (version: ''
+      cp ${fetchStyx version}/share/doc/styx/index.html $out/documentation-${version}.html
+    '') versions)}
+    cp ${fetchStyx (head versions)}/share/doc/styx/index.html $out/documentation.html
   '';
 }
