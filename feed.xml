@@ -6,13 +6,45 @@
   <access:restriction xmlns:access="http://www.bloglines.com/about/specs/fac-1.0" relationship="deny"/>
 
   <title>Styx</title>
-  <updated>2016-10-29T05:06:44Z</updated>
+  <updated>2016-12-07T00:00:00Z"</updated>
   <generator>Styx</generator>
   <id>https://styx-static.github.io/styx-site/feed.xml</id>
   <link href="https://styx-static.github.io/styx-site/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://styx-static.github.io/styx-site" rel="alternate"/>
   
   <entry>
+  <id>https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html</id>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html" rel="alternate" type="text/html"/>
+  <updated>2016-12-07T00:00:00Z</updated>
+  <title>Styx 0.4.0 released</title>
+  <summary type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>Highlights:</p>
+
+<ul>
+<li>Better integration with the &lt;&lt;NixOps,Nix ecosystem&gt;&gt;, styx sites can be called from nix expressions with <code>callPackage</code></li>
+<li>Themes can be used from the <code>styx-themes</code> set of packages</li>
+<li>new <code>manual</code> subcommand to open the HTML documentation in a browser</li>
+</ul>
+
+<p>Breaking Changes</p>
+
+<ul>
+<li>Removal of the <code>state</code> variable in <code>site.nix</code></li>
+<li><code>site.nix</code> init section was refactored</li>
+</ul>
+
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-4-0.html">Styx 0.4.0 Documentation</a>.</p>
+
+<p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+
+<p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+
+    </div>
+  </summary>
+</entry>
+
+<entry>
   <id>https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html</id>
   <link href="https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html" rel="alternate" type="text/html"/>
   <updated>2016-10-29T00:00:00Z</updated>

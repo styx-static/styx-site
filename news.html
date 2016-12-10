@@ -74,20 +74,28 @@
   <div class="container">
   <article>
     <header class="article-header">
-      <h1><a href="https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html">Styx 0.3.1 released</a></h1>
+      <h1><a href="https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html">Styx 0.4.0 released</a></h1>
 
-      <time pubdate="pubdate" datetime="2016-10-29" class="text-right">2016-10-29</time>
+      <time pubdate="pubdate" datetime="2016-12-07" class="text-right">2016-12-07</time>
 
     </header>
     <div class="container">
-    <p>This release contains the following bug fixes:</p>
+    <p>Highlights:</p>
 
 <ul>
-<li><code>styx server</code> and <code>styx preview</code> command <code>--site-url</code> flag handling</li>
-<li><code>styx --help</code> fix</li>
+<li>Better integration with the &lt;&lt;NixOps,Nix ecosystem&gt;&gt;, styx sites can be called from nix expressions with <code>callPackage</code></li>
+<li>Themes can be used from the <code>styx-themes</code> set of packages</li>
+<li>new <code>manual</code> subcommand to open the HTML documentation in a browser</li>
 </ul>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-3-1.html">Styx 0.3.1 Documentation</a>.</p>
+<p>Breaking Changes</p>
+
+<ul>
+<li>Removal of the <code>state</code> variable in <code>site.nix</code></li>
+<li><code>site.nix</code> init section was refactored</li>
+</ul>
+
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-4-0.html">Styx 0.4.0 Documentation</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
@@ -99,6 +107,13 @@
 
 
   <div class="container article-archives">
+<article class="article-list">
+  <a href="https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html">
+    <strong>Styx 0.3.1 released</strong>
+    <time pubdate="pubdate" datetime="2016-10-29">2016-10-29</time>
+  </a>
+</article>
+
 <article class="article-list">
   <a href="https://styx-static.github.io/styx-site/posts/2016-10-26-styx-0.3.0-released.html">
     <strong>Styx 0.3.0 released</strong>
