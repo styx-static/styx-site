@@ -19,7 +19,7 @@ let
       <div class="container quick-start">
       <h2>Quick Start</h2>
       <div class="console">
-        <p>nix-shell -p $(nix-build https://github.com/styx-static/styx/archive/latest.tar.gz)</p>
+        <p>nix-shell -p styx</p>
         <p>styx new site mysite && cd mysite</p>
       </div>
       <p class="text-center">Then have a look at readme.md file or at the <a href="${conf.siteUrl}/documentation.html">documentation</a> to learn how to customize your site.</p>

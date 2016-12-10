@@ -4,15 +4,16 @@
    Initialization of Styx, should not be edited
 -----------------------------------------------------------------------------*/
 
-{ pkgs ? import <nixpkgs> {}
-, styxLib
+{ lib, styx, styx-themes, runCommand, writeText
 , renderDrafts ? false
 , siteUrl ? null
-, lastChange ? null
 }@args:
 
-let lib = import styxLib pkgs;
-in with lib;
+let styxLib = import "${styx}/share/styx/lib" {
+  inherit lib;
+  pkgs = { inherit styx runCommand writeText; };
+};
+in with styxLib;
 
 let
 
@@ -20,26 +21,20 @@ let
   */
   conf = let
     conf       = import ./conf.nix;
-    themesConf = lib.themes.loadConf { inherit themes themesDir; };
+    themesConf = styxLib.themes.loadConf themes;
     mergedConf = recursiveUpdate themesConf conf;
   in
     overrideConf mergedConf args;
 
-  /* Site state
-  */
-  state = { inherit lastChange; };
-
   /* Load themes templates
   */
-  templates = lib.themes.loadTemplates {
-    inherit themes defaultEnvironment customEnvironments themesDir;
+  templates = styxLib.themes.loadTemplates {
+    inherit themes defaultEnvironment customEnvironments;
   };
 
   /* Load themes static files
   */
-  files = lib.themes.loadFiles {
-    inherit themes themesDir;
-  };
+  files = styxLib.themes.loadFiles themes;
 
 
 /*-----------------------------------------------------------------------------
@@ -47,13 +42,9 @@ let
 
 -----------------------------------------------------------------------------*/
 
-  /* Themes location
-  */
-  themesDir = ./themes;
-
   /* Themes used
   */
-  themes = [ "styx-site" "showcase" ];
+  themes = [ ./themes/styx-site styx-themes.showcase ];
 
 
 /*-----------------------------------------------------------------------------
@@ -63,7 +54,7 @@ let
 
   /* Default template environment
   */
-  defaultEnvironment = { inherit conf state lib templates data pages; };
+  defaultEnvironment = { inherit conf templates data pages; lib = styxLib; };
 
   /* Custom environments for specific templates
   */
@@ -145,9 +136,10 @@ let
 
   # fetch the versions to create the documentations
   fetchStyx = version:
-    import (fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz") { inherit pkgs; };
+    import (fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz") {};
 
   versions = [
+    "v0.4.0"
     "v0.3.1"
     "v0.3.0"
     "v0.2.0"
