@@ -2,7 +2,6 @@
 , navbar ? false
 , feed ? false
 , ... }:
-
 page:
 with lib;
   ''
@@ -49,7 +48,7 @@ with lib;
   
     <body${optionalString (navbar != false) " ${htmlAttr "class" "with-navbar"}"}>
   
-      ${templates.partials.navbar.main}
+      ${templates.partials.navbar.main page}
 
       ${page.content}
 
