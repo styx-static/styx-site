@@ -1,14 +1,14 @@
-{ conf, lib, ... }:
+{ templates, lib, ... }:
+page:
 with lib;
-post:
-let
-  draftIcon = optionalString (attrByPath ["isDraft"] false post) "<span class=\"glyphicon glyphicon-file\"></span> ";
-in
-  ''
-    <article class="article-list">
-      <a href="${conf.siteUrl}/${post.href}">
-        <strong>${draftIcon}${post.title}</strong>
-        <time pubdate="pubdate" datetime="${post.date}">${post.date}</time>
-      </a>
-    </article>
-  ''
+''
+  <article class="article-list">
+    ${templates.tag.ilink {
+      inherit page;
+      content = ''
+        <strong>${templates.post.draft-icon page}${page.title}</strong>
+        <time datetime="${(parseDate page.date).T}">${(parseDate page.date).date.num}</time>
+      '';
+    }}
+  </article>
+''

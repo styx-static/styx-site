@@ -5,7 +5,8 @@
 
   theme = {
     site.title = "Styx";
-    navbar.brand = "Styx";
+    lib.bootstrap.enable = true;
+    lib.font-awesome.enable = true;
   };
 
 }

@@ -23,7 +23,10 @@ rec {
   /* list the themes to load, paths or packages can be used
      items at the end of the list have higher priority
   */
-  themes = [ styx-themes.showcase ./themes/styx-site ];
+  themes = [
+    styx-themes.generic-templates
+    ./themes/styx-site
+  ];
 
   /* Loading the themes data
   */
@@ -54,9 +57,9 @@ rec {
 
     navbar = [
       pages.news
-      { title = "Documentation"; href = "documentation.html"; }
-      { title = "GitHub ${templates.icon.fa "github"}"; href = "https://github.com/styx-static/styx/"; }
-      { title = templates.icon.fa "rss-square"; href = pages.feed.href; }
+      { title = "Documentation"; path = "/documentation.html"; }
+      { title = "GitHub ${templates.icon.font-awesome "github"}"; url = "https://github.com/styx-static/styx/"; }
+      (pages.feed // { navbarTitle = templates.icon.font-awesome "rss-square"; })
     ];
 
   };
@@ -71,28 +74,28 @@ rec {
   pages = rec {
 
     index = {
-      title = "Home";
-      href  = "index.html";
+      title    = "Home";
+      path     = "/index.html";
       template = templates.index;
     };
 
     news = {
-      title = "News";
-      href  = "news.html";
+      title    = "News";
+      path     = "/news.html";
       template = templates.news;
     };
 
     feed = {
-      href = "feed.xml";
-      template = templates.feed;
-      items = lib.take 10 pages.posts;
-      layout = lib.id;
+      path     = "/feed.xml";
+      template = templates.feed.atom;
+      items    = lib.take 10 pages.posts;
+      layout   = lib.id;
     };
 
     posts = lib.mkPageList {
-      data = data.posts;
-      hrefPrefix = "posts/";
-      template = templates.post.full;
+      data       = data.posts;
+      pathPrefix = "/posts/";
+      template   = templates.post.full;
     };
 
   };

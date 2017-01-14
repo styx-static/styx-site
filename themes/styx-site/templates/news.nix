@@ -1,19 +1,13 @@
-{ conf, templates, lib, pages, ... }:
+{ templates, lib, pages, ... }:
 with lib;
-page:
+normalTemplate (page: ''
+  <div class="container">
+    ${(templates.post.full ((head pages.posts) // { linkTitle = true; })).content}
 
-let
-  content = 
-    ''
-      <div class="container">
-        ${(templates.post.full ((head pages.posts) // { linkTitle = true; })).content}
-
-        ${optionalString ((length pages.posts) >1) ''
-          <div class="container article-archives">
-          ${mapTemplate templates.post.list (drop 1 pages.posts)}
-          </div>
-        ''}
+    ${optionalString ((length pages.posts) >1) ''
+      <div class="container article-archives">
+      ${mapTemplate templates.post.list (drop 1 pages.posts)}
       </div>
-    '';
-in
-  page // { inherit content; }
+    ''}
+  </div>
+'')

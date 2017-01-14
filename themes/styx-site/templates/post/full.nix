@@ -1,27 +1,25 @@
-{ lib, templates, conf, ... }:
+{ lib, templates, ... }:
 with lib;
-post:
-let
-  date = ''
-    <time pubdate="pubdate" datetime="${post.date}" class="text-right">${post.date}</time>
-  '';
-  draftIcon = optionalString (attrByPath ["isDraft"] false post) " <span class=\"glyphicon glyphicon-pencil\"></span>";
-  content = ''
-    <div class="container">
-      <article>
-        <header class="article-header">
-          ${if (post ? linkTitle) then ''
-          <h1><a ${htmlAttr "href" "${conf.siteUrl}/${post.href}"}>${post.title}</a>${draftIcon}</h1>
-          '' else ''
-          <h1>${post.title}${draftIcon}</h1>
-          ''}
-          ${date}
-        </header>
-        <div class="container">
-        ${post.content}
-        </div>
-      </article>
-    </div>
-  '';
-in
-  post // { inherit content; }
+normalTemplate (page: ''
+  <div class="container">
+    <article>
+      <header class="article-header">
+        ${if (page ? linkTitle) then ''
+        <h1>${
+          templates.tag.ilink {
+            inherit page;
+            content = page.title;
+          }
+        + (templates.post.draft-icon page)
+        }</h1>
+        '' else ''
+        <h1>${page.title}${templates.post.draft-icon page}</h1>
+        ''}
+        <time datetime="${(parseDate page.date).T}">${(parseDate page.date).date.num}</time>
+      </header>
+      <div class="container">
+      ${page.content}
+      </div>
+    </article>
+  </div>
+'')
