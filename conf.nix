@@ -4,7 +4,7 @@
   siteUrl = "https://styx-static.github.io/styx-site";
 
   theme = {
-    site.title = "Styx";
+    site.title = "Styx Static Site Generator";
     lib.bootstrap.enable = true;
     lib.font-awesome.enable = true;
   };

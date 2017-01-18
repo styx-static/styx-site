@@ -1,3 +1,3 @@
 {
-  name = "styx-site";
+  id = "styx-site";
 }

@@ -6,6 +6,7 @@
 { lib, styx, runCommand, writeText
 , styx-themes
 , extraConf ? {}
+, imagemagick
 }@args:
 
 rec {
@@ -33,7 +34,7 @@ rec {
   themesData = styxLib.themes.load {
     inherit styxLib themes;
     templates.extraEnv = { inherit data pages; };
-    conf.extra = [ (import ./conf.nix) extraConf ];
+    conf.extra = [ ./conf.nix extraConf ];
   };
 
   /* Bringing the themes data to the scope
@@ -57,10 +58,29 @@ rec {
 
     navbar = [
       pages.news
-      { title = "Documentation"; path = "/documentation.html"; }
+      { title = "Documentation"; path = "/documentation/index.html"; }
+      pages.themesList
       { title = "GitHub ${templates.icon.font-awesome "github"}"; url = "https://github.com/styx-static/styx/"; }
       (pages.feed // { navbarTitle = templates.icon.font-awesome "rss-square"; })
     ];
+
+    # themes meta information to generate the themes list
+    themes = with lib;
+      let
+        themesDrv = (filterAttrs (k: v: isDerivation v) styx-themes);
+        data      = map (t: styxLib.themes.loadData { inherit styxLib; theme = t; }) (attrValues themesDrv);
+        # adding screenshot data
+        data'     = map (t:
+                      let
+                        preMeta = { meta.name = t.meta.id; };
+                        postMeta = if t.meta ? screenshot 
+                                   then { meta = {
+                                      screenshotPath = "/imgs/themes/${t.meta.id}.png";
+                                      thumbnailPath  = "/imgs/themes/${t.meta.id}-thumb.png";
+                                   }; } else {};
+                      in styxLib.utils.merge [ preMeta t postMeta ]
+                    ) data;
+      in data';
 
   };
 
@@ -96,7 +116,23 @@ rec {
       data       = data.posts;
       pathPrefix = "/posts/";
       template   = templates.post.full;
+        breadcrumbs = with pages; [ index news ];
     };
+
+    themesList = {
+      title    = "Themes";
+      path     = "/themes.html";
+      template = templates.theme-list;
+    };
+
+    themes = lib.map (t:
+      t // {
+        path        = "/themes/${t.id}.html";
+        template    = templates.theme.full;
+        title       = t.meta.name;
+        breadcrumbs = with pages; [ index themesList ];
+      }
+    ) data.themes;
 
   };
 
@@ -106,6 +142,7 @@ rec {
 
 -----------------------------------------------------------------------------*/
 
+  
   pagesList = lib.pagesToList {
     inherit pages;
     default = { layout = templates.layout; };
@@ -116,27 +153,46 @@ rec {
     import (fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz") {};
 
   versions = [
+    "v0.5.0"
     "v0.4.0"
     "v0.3.1"
     "v0.3.0"
     "v0.2.0"
     "v0.1.0"
-    "master"
   ];
 
   substitutions = {
     siteUrl = conf.siteUrl;
+    doc = lib.fold (v: acc:
+      acc // { "${v}" = mkDocUrl v; }
+    ) {} versions;
   };
+
+  mkDocPath = v:
+    "/documentation/${v}/";
+
+  mkDocUrl = v:
+    conf.siteUrl + (mkDocPath v) + "index.html";
 
   site = lib.generateSite {
     inherit files pagesList substitutions;
 
-    # generating all versions documentation
-    postGen = ''
+    postGen = with lib; ''
+      # Themes screenshots
+      ${mapTemplate (t:
+        optionalString (t.meta ? screenshotPath) ''
+          mkdir -p $(dirname "$out${t.meta.screenshotPath}")
+          ${imagemagick}/bin/convert "${t.meta.screenshot}" "$out${t.meta.screenshotPath}"
+          ${imagemagick}/bin/convert "${t.meta.screenshot}" -resize 720 -gravity north -extent 720x500 "$out${t.meta.thumbnailPath}"
+        ''
+      ) data.themes}
+
+      # Manuals
       ${lib.concatStringsSep "\n" (map (version: ''
-        cp ${fetchStyx version}/share/doc/styx/index.html $out/documentation-${version}.html
+        mkdir -p $out/documentation/${version}/
+        cp -r ${fetchStyx version}/share/doc/styx/* $out${mkDocPath version}
       '') versions)}
-      cp ${fetchStyx (lib.head versions)}/share/doc/styx/index.html $out/documentation.html
+      cp -r ${fetchStyx (lib.head versions)}/share/doc/styx/* $out/documentation/
     '';
   };
 
