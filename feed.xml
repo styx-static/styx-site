@@ -1,28 +1,103 @@
-<feed xmlns="http://www.w3.org/2005/Atom"
-      xmlns:planet="http://namespace.uri/"
-      xmlns:indexing="urn:atom-extension:indexing"
-      indexing:index="no">
-
-  <access:restriction xmlns:access="http://www.bloglines.com/about/specs/fac-1.0" relationship="deny"/>
-
-  <title>Styx</title>
-  <updated>2016-12-07T00:00:00Z"</updated>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Styx Static Site Generator</title>
+  
   <generator>Styx</generator>
+  <updated>2017-01-19T00:00:00Z</updated>
   <id>https://styx-static.github.io/styx-site/feed.xml</id>
   <link href="https://styx-static.github.io/styx-site/feed.xml" rel="self" type="application/atom+xml"/>
-  <link href="https://styx-static.github.io/styx-site" rel="alternate"/>
+  <link href="https://styx-static.github.io/styx-site/" rel="alternate"/>
+  <author>
+  <name>Styx</name>
+</author>
+
+  
   
   <entry>
-  <id>https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html</id>
-  <link href="https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html" rel="alternate" type="text/html"/>
-  <updated>2016-12-07T00:00:00Z</updated>
-  <title>Styx 0.4.0 released</title>
-  <summary type="xhtml">
+  <id>https://styx-static.github.io/styx-site/posts/2017-01-19-styx-0.5.0-released.html</id>
+  <title>Styx 0.5.0 released</title>
+  <updated>2017-01-19T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2017-01-19-styx-0.5.0-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <p>Highlights:</p>
 
 <ul>
-<li>Better integration with the &lt;&lt;NixOps,Nix ecosystem&gt;&gt;, styx sites can be called from nix expressions with <code>callPackage</code></li>
+<li>New theme: <a href="">generic-templates</a>. The generic-templates theme provide a template framework and basic templates for common components.</li>
+<li>Showcase and Hyde themes have been ported to use generic-templates.</li>
+<li>Theme configuration interface can be typed, and site configuration is type-checked.</li>
+<li><code>styx-themes</code> themes link:./styx-themes.html[full documentation].</li>
+<li>Themes metadata.</li>
+<li>Interactive debugging with <code>nix-repl.</code></li>
+<li>simpler and shorter <code>site.nix</code></li>
+<li>Themes can provide function libraries.</li>
+<li>Content timestamps support time.</li>
+</ul>
+
+<p>Breaking Changes:</p>
+
+<ul>
+<li>Many, among others:</li>
+<li><code>site.nix</code> was greatly refactored.</li>
+<li>Themes <code>theme.nix</code> was removed, its functionality is divided in two files, <code>conf.nix</code> and <code>meta.nix</code>. <code>conf.nix</code> for configuration interface and <code>meta.nix</code> for theme metadata.</li>
+<li>Themes <code>meta.nix</code> file <strong>must</strong> be present and <strong>must</strong> declare a <code>id</code> attribute specifying the theme identifier.</li>
+<li><code>lib.pages.setDefaultLayout</code> was removed (default pages values can be set with the <code>default</code> argument of <code>lib.generation.pagesToList</code>).</li>
+<li>all occurences of <code>href</code> in function names / parameters and template variables has been replaced with <code>path</code>, pages <code>path</code> attribute must start with a <code>/</code>.</li>
+</ul>
+
+<p>Upgrading:</p>
+
+<p>This release brings many incompatible changes that requires to refactor <code>site.nix</code> to upgrade.<br/>
+Changes involve, among others, the init section of <code>site.nix</code>, <code>site.nix</code> returning a set instead of a <code>generateSite</code> call and <code>href</code> occurrences replaced by <code>path</code> (<code>path</code> attributes must start with a <code>/</code>).</p>
+
+<hr />
+
+<p>Thoughts:</p>
+
+<p>At the moment of writing, styx 0.5.0 is only available in the <code>nixpkgs-unstable</code> channel.<br/>
+If you are on a different channel and want to test / install styx 0.5.0, use the following command:</p>
+
+<p>Testing with nix-shell:</p>
+
+<pre><code>$ nix-shell -p styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+</code></pre>
+
+<p>Installing:</p>
+
+<pre><code>$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable-small.tar.gz
+</code></pre>
+
+<p>Note that the <code>build</code>, <code>preview</code>, <code>live</code>, <code>serve</code> and <code>deploy</code> commands require system active <code>nixpkgs</code> to provide the same version of styx as the one used, 0.5.0.<br/>
+For these commands <code>-I nixpkgs=...</code> can also be used to set the version of <code>nixpkgs</code> to use, for example:</p>
+
+<pre><code>$ styx preview -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+</code></pre>
+
+<hr />
+
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.5.0/index.html">Styx 0.5.0 Documentation</a>, <a href="https://styx-static.github.io/styx-site/documentation/v0.5.0/index.html#v0.5.0">release notes</a>.</p>
+
+<p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+
+<p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+
+    </div>
+  </content>
+</entry>
+
+<entry>
+  <id>https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html</id>
+  <title>Styx 0.4.0 released</title>
+  <updated>2016-12-07T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>Highlights:</p>
+
+<ul>
+<li>Better integration with the Nix ecosystem, styx sites can be called from nix expressions with <code>callPackage</code></li>
 <li>Themes can be used from the <code>styx-themes</code> set of packages</li>
 <li>new <code>manual</code> subcommand to open the HTML documentation in a browser</li>
 </ul>
@@ -34,22 +109,23 @@
 <li><code>site.nix</code> init section was refactored</li>
 </ul>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-4-0.html">Styx 0.4.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.4.0/index.html">Styx 0.4.0 Documentation</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
     </div>
-  </summary>
+  </content>
 </entry>
 
 <entry>
   <id>https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html</id>
-  <link href="https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html" rel="alternate" type="text/html"/>
-  <updated>2016-10-29T00:00:00Z</updated>
   <title>Styx 0.3.1 released</title>
-  <summary type="xhtml">
+  <updated>2016-10-29T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <p>This release contains the following bug fixes:</p>
 
@@ -58,22 +134,23 @@
 <li><code>styx --help</code> fix</li>
 </ul>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-3-1.html">Styx 0.3.1 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.3.1/index.html">Styx 0.3.1 Documentation</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
     </div>
-  </summary>
+  </content>
 </entry>
 
 <entry>
   <id>https://styx-static.github.io/styx-site/posts/2016-10-26-styx-0.3.0-released.html</id>
-  <link href="https://styx-static.github.io/styx-site/posts/2016-10-26-styx-0.3.0-released.html" rel="alternate" type="text/html"/>
-  <updated>2016-10-26T00:00:00Z</updated>
   <title>Styx 0.3.0 released</title>
-  <summary type="xhtml">
+  <updated>2016-10-26T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-10-26-styx-0.3.0-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <p>Highlights:</p>
 
@@ -88,24 +165,25 @@
 <li>Easier updates</li>
 </ul>
 
-<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation-v0-3-0.html#_release_notes">release notes</a>.</p>
+<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation/v0.3.0/index.html#_release_notes">release notes</a>.</p>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-3-0.html">Styx 0.3.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.3.0/index.html">Styx 0.3.0 Documentation</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
     </div>
-  </summary>
+  </content>
 </entry>
 
 <entry>
   <id>https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html</id>
-  <link href="https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html" rel="alternate" type="text/html"/>
-  <updated>2016-10-10T00:00:00Z</updated>
   <title>Styx 0.2.0 released</title>
-  <summary type="xhtml">
+  <updated>2016-10-10T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <p>Highlights:</p>
 
@@ -116,24 +194,25 @@
 <li>Themes</li>
 </ul>
 
-<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation-v0-2-0.html#_release_notes">release notes</a>.</p>
+<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation/v0.2.0/index.html#_release_notes">release notes</a>.</p>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-2-0.html">Styx 0.2.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.2.0/index.html">Styx 0.2.0 Documentation</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
     </div>
-  </summary>
+  </content>
 </entry>
 
 <entry>
   <id>https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html</id>
-  <link href="https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html" rel="alternate" type="text/html"/>
-  <updated>2016-10-07T00:00:00Z</updated>
   <title>Styx 0.1.0 released</title>
-  <summary type="xhtml">
+  <updated>2016-10-07T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <p>First release of Styx!</p>
 
@@ -151,15 +230,14 @@ $ styx --help
 $ styx --help
 </code></pre>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation-v0-1-0.html">Styx 0.1.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.1.0/index.html">Styx 0.1.0 Documentation</a>.</p>
 
 <p>If you want to contribute to Styx, please join the <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
     </div>
-  </summary>
+  </content>
 </entry>
-
 
 </feed>

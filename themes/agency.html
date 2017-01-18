@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agency - Styx Static Site Generator</title>
+<link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="https://styx-static.github.io/styx-site/">Styx Static Site Generator</a>
+</div>
+<div class="collapse navbar-collapse" id="navbar">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
+<li><a href="https://styx-static.github.io/styx-site/documentation/index.html">Documentation</a></li>
+<li class="active"><a href="https://styx-static.github.io/styx-site/themes.html">Themes</a></li>
+<li><a href="https://github.com/styx-static/styx/">GitHub <i class="fa fa-github" aria-hidden="true"></i></a></li>
+<li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container theme-full">
+<h1 class="text-capitalize">Agency</h1>
+
+<div class="description"><div class="paragraph">
+<p>Port of the <a href="https://github.com/digitalcraftsman/hugo-agency-theme">Agency</a> theme for Styx.</p>
+</div>
+</div>
+
+<div class="longDescription"><div class="paragraph">
+<p>Originally made by <a href="https://github.com/digitalcraftsman">digitalcraftsman</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/digitalcraftsman/hugo-agency-theme">Original Theme</a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Agency Theme is a one page portfolio for companies and freelancers based on the original Bootstrap theme by David Miller. This Hugo theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a timeline, and a contact form.</p>
+</div>
+</blockquote>
+</div>
+</div>
+
+<p class="license">License: <a href="http://spdx.org/licenses/Apache-2.0">Apache License 2.0</a></p>
+
+<p class="links">
+  <a href="https://styx-static.github.io/styx-theme-agency" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+  <a href="https://github.com/styx-static/styx-theme-agency" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+  </p>
+
+<img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/agency.png" />
+
+<div class="conf"><div class="panel panel-primary">
+  <div class="panel-heading">Configuration interface</div>
+  
+  <div class="list-group-item">
+  <p><strong>about.endpoint</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Last about bubble text.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Be part<br>of our<br>story!"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>about.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of about events as attribute sets, requires <code>img</code>, <code>date</code>, <code>title</code>, and <code>content</code>.
+If set to the empty list <code>[]</code>, the about area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"content":"Lorem ipsum dolor sit amet consectetur.","date":"2009-2011","img":"1.jpg","title":"Our Humble Beginnings"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>about.subtitle</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Subtitle of the about area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet consectetur."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>about.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the about area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"About"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>clients</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of clients as attribute sets, requires <code>logo</code> and <code>link</code>.
+If set to the empty list <code>[]</code>, the clients area will not be displayed.";</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"link":"#","logo":"envato.jpg"},{"link":"#","logo":"designmodo.jpg"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.buttonText</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Text of the contact area button.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Send message"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.enable</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable contact area.</p>
+</div>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.form.email</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Contact form email input label</p>
+</div>
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><code>{"text":"Your Email *","warning":"Please enter your email address."}</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.form.message</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Contact form message input label</p>
+</div>
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><code>{"text":"Your Message *","warning":"Please enter a message."}</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.form.name</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Contact form name input label</p>
+</div>
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><code>{"text":"Your Name *","warning":"Please enter your name."}</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.form.phone</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Contact form phone input label</p>
+</div>
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><code>{"text":"Your Phone *","warning":"Please enter your phone number."}</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.form.receiver</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Contact area from receiver mail address.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"your@email.com"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.subtitle</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Subtitle of the contact area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet consectetur."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the contact area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet consectetur."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>footer.copyright</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Footer copyright text.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Published under the Apache License 2.0."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>footer.quicklinks</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Footer links.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"link":"#","text":"Privacy Policy"},{"link":"#","text":"Terms of Use"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>footer.social</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Social media links to display in the footer.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"icon":"fa-twitter","link":"#"},{"icon":"fa-facebook","link":"#"},{"icon":"fa-linkedin","link":"#"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>hero.buttonText</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Button text of the hero area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Tell me more"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>hero.subtitle</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Subtitle of the hero area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"It's nice to meet you"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>hero.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the hero area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Welcome To Our Studio!"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>menu.append</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Menu items to add at the end of the navigation.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"name":"Styx","url":"https://styx-static.github.io/styx-site/"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>menu.prepend</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Menu items to add at the beginning of the navigation.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"name":"Styx","url":"https://styx-static.github.io/styx-site/"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>portfolio.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of portfolio projects as attribute sets, requires <code>title</code>, <code>subtitle</code>, <code>img</code>, <code>preview</code>, <code>client</code>, <code>clientLink</code>, <code>category</code> and <code>content</code>.
+If set to the empty list <code>[]</code>, the portfolio area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"category":"Graphic Design","client":"Start Bootstrap","clientLink":"#","content":"Lorem ipsum dolor sit amet consectetur.","date":"2014-07-05","img":"roundicons.png","preview":"roundicons-preview.png","subtitle":"Lorem ipsum dolor sit amet consectetur.","title":"Round Icons"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>portfolio.subtitle</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Subtitle of the portgolio area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet consectetur."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>portfolio.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the portfolio area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Services"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>services.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of services as attribute sets, requires <code>title</code>, <code>icon</code> and <code>content</code> attributes.
+If set to the empty list <code>[]</code>, the services area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"content":"Lorem ipsum dolor sit amet consectetur.","icon":"fa-shopping-cart","title":"E-Commerce"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>services.subtitle</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Subtitle of the services area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet consectetur."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>services.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the services area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Services"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.author</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Content of the author <code>meta</code> tag.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Your name"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.description</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Content of the description <code>meta</code> tag.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Your description"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the site.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"The Agency"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>team.description</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Description of the team</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>team.members</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of team members as attribute sets, requires <code>img</code>, <code>name</code>, <code>position</code>, and <code>social</code>. <code>social</code> have the same format to <code>footer.social</code>.
+If set to the empty list <code>[]</code>, the team area will not be displayed.";</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"img":"1.jpg","name":"Kay Garland","position":"Lead Designer","social":[{"link":"#","type":"twitter"},{"link":"#","type":"facebook"},{"link":"#","type":"linkedin"}]}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>team.subtitle</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Subtitle of the team area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum dolor sit amet consectetur."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>team.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the team area.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"About"</code></dd></dl>
+</div>
+  
+</div></div>
+
+</div>
+
+<div class="navbar navbar-fixed-bottom" id="footer">
+  <div class="container">
+  <footer>
+    <p class="text-center">2017 - <a href="https://github.com/styx-static/styx-site/">Made with Styx!</a></p>
+  </footer>
+  </div>
+</div>
+<script crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

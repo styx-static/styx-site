@@ -51,14 +51,18 @@ nav.navbar {
   text-shadow: 0 2px 2px #000, 2px 0 2px #000;
   color: #fff;
 }
-.jumbotron a{
+.quick-start {
+  margin-top: 1em;
+}
+
+.jumbotron a {
   color: #fff;
 }
-.quick-start h2{
+.quick-start h2 {
   text-align: center;
   margin:10px 0;
 }
-.quick-start>p{
+.quick-start > p {
   font-size: 1.3em;
 }
 .console{
@@ -93,19 +97,78 @@ nav.navbar {
 article header {
   margin-bottom: 2em;
 }
-.article-archives{
+.article-archives {
   margin-top: 30px;
 }
-.article-archives article:first-child{
+.article-archives article:first-child {
   border-top: 1px solid #ccc;
 }
-.article-archives article{
+.article-archives article {
   margin:0;
   padding: .5em .8em;
   font-size: 1.2em;
   border-bottom: 1px solid #ccc;
 }
-.article-archives article time{
+.article-archives article time {
   float: right;
   font-size: .9em;
+}
+
+/* Theme list
+ */
+
+.theme-list {
+  margin-top: 2em;
+}
+
+.theme-thumbnail {
+  border: 1px solid #ccc;
+  margin-top: 2em;
+}
+.theme-thumbnail h1 {
+  margin: 0;
+  padding: 0;
+}
+.theme-thumbnail h1 a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: .8em;
+  padding: 0.3em 0;
+  text-transform: capitalize;
+  border-bottom:1px solid #eee;
+}
+
+.theme-full .conf {
+  margin: 1em 0;
+}
+
+.theme-full .conf dl {
+  margin: 0;
+}
+
+.theme-full .conf dd p {
+  margin: 0;
+}
+
+/* Top news
+*/
+
+.top-news {
+  margin-top: 2em;
+}
+
+.top-news h2{
+  text-align: center;
+  margin:10px 0;
+}
+
+.past-news {
+  margin:0;
+  padding: .5em .8em;
+  font-size: 1.2em;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  text-align: right;
 }

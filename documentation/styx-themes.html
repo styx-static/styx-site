@@ -1,0 +1,3908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="description" content="Styx themes documentation">
+<title>Styx-themes documentation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.no-bullet{list-style:none}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menu{color:rgba(0,0,0,.8)}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
+table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
+table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
+table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
+table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
+table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
+table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
+ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Styx-themes documentation</h1>
+<div class="details">
+<span id="revnumber">version 0.5.0</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_preface">Preface</a></li>
+<li><a href="#agency">1. Agency</a>
+<ul class="sectlevel2">
+<li><a href="#_configuration_interface">1.1. Configuration interface</a></li>
+<li><a href="#_example_site_source">1.2. Example site source</a></li>
+</ul>
+</li>
+<li><a href="#generic-templates">2. Generic templates</a>
+<ul class="sectlevel2">
+<li><a href="#_documentation">2.1. Documentation</a></li>
+<li><a href="#_configuration_interface_2">2.2. Configuration interface</a></li>
+<li><a href="#_example_site_source_2">2.3. Example site source</a></li>
+</ul>
+</li>
+<li><a href="#hyde">3. Hyde</a>
+<ul class="sectlevel2">
+<li><a href="#_configuration_interface_3">3.1. Configuration interface</a></li>
+<li><a href="#_example_site_source_3">3.2. Example site source</a></li>
+</ul>
+</li>
+<li><a href="#orbit">4. Orbit</a>
+<ul class="sectlevel2">
+<li><a href="#_configuration_interface_4">4.1. Configuration interface</a></li>
+<li><a href="#_example_site_source_4">4.2. Example site source</a></li>
+</ul>
+</li>
+<li><a href="#showcase">5. Showcase</a>
+<ul class="sectlevel2">
+<li><a href="#_configuration_interface_5">5.1. Configuration interface</a></li>
+<li><a href="#_example_site_source_5">5.2. Example site source</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_preface"><a class="anchor" href="#_preface"></a>Preface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document contains automatically generated documentation for themes included in the <code>styx-themes</code> package set.</p>
+</div>
+<div class="paragraph">
+<p>It is generated with a <a href="https://github.com/styx-static/styx/blob/master/scripts/doc.nix">nix expression</a> using each theme metadata and configuration interface.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="./index.html">Styx documentation</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="agency"><a class="anchor" href="#agency"></a>1. Agency</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Port of the <a href="https://github.com/digitalcraftsman/hugo-agency-theme">Agency</a> theme for Styx.</p>
+</div>
+<div class="paragraph">
+<p>Originally made by <a href="https://github.com/digitalcraftsman">digitalcraftsman</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/digitalcraftsman/hugo-agency-theme">Original Theme</a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Agency Theme is a one page portfolio for companies and freelancers based on the original Bootstrap theme by David Miller. This Hugo theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a timeline, and a contact form.</p>
+</div>
+</blockquote>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://styx-static.github.io/styx-theme-agency">Demo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/styx-static/styx-theme-agency">Homepage</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="imgs/agency.png" alt="Agency">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_interface"><a class="anchor" href="#_configuration_interface"></a>1.1. Configuration interface</h3>
+<hr>
+<div class="sect3">
+<h4 id="_about_endpoint"><a class="anchor" href="#_about_endpoint"></a>about.endpoint</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Last about bubble text.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Be part&lt;br&gt;of our&lt;br&gt;story!"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_about_items"><a class="anchor" href="#_about_items"></a>about.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of about events as attribute sets, requires <code>img</code>, <code>date</code>, <code>title</code>, and <code>content</code>.
+If set to the empty list <code>[]</code>, the about area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"content":"Lorem ipsum dolor sit amet consectetur.","date":"2009-2011","img":"1.jpg","title":"Our Humble Beginnings"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_about_subtitle"><a class="anchor" href="#_about_subtitle"></a>about.subtitle</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Subtitle of the about area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet consectetur."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_about_title"><a class="anchor" href="#_about_title"></a>about.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the about area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"About"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_clients"><a class="anchor" href="#_clients"></a>clients</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of clients as attribute sets, requires <code>logo</code> and <code>link</code>.
+If set to the empty list <code>[]</code>, the clients area will not be displayed.";</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"link":"#","logo":"envato.jpg"},{"link":"#","logo":"designmodo.jpg"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_buttontext"><a class="anchor" href="#_contact_buttontext"></a>contact.buttonText</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Text of the contact area button.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Send message"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_enable"><a class="anchor" href="#_contact_enable"></a>contact.enable</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Whether to enable contact area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>false</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>true</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_form_email"><a class="anchor" href="#_contact_form_email"></a>contact.form.email</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Contact form email input label</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>attribute set</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>{"text":"Your Email *","warning":"Please enter your email address."}</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_form_message"><a class="anchor" href="#_contact_form_message"></a>contact.form.message</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Contact form message input label</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>attribute set</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>{"text":"Your Message *","warning":"Please enter a message."}</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_form_name"><a class="anchor" href="#_contact_form_name"></a>contact.form.name</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Contact form name input label</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>attribute set</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>{"text":"Your Name *","warning":"Please enter your name."}</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_form_phone"><a class="anchor" href="#_contact_form_phone"></a>contact.form.phone</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Contact form phone input label</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>attribute set</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>{"text":"Your Phone *","warning":"Please enter your phone number."}</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_form_receiver"><a class="anchor" href="#_contact_form_receiver"></a>contact.form.receiver</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Contact area from receiver mail address.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"your@email.com"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_subtitle"><a class="anchor" href="#_contact_subtitle"></a>contact.subtitle</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Subtitle of the contact area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet consectetur."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_title"><a class="anchor" href="#_contact_title"></a>contact.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the contact area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet consectetur."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_footer_copyright"><a class="anchor" href="#_footer_copyright"></a>footer.copyright</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Footer copyright text.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Published under the Apache License 2.0."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_footer_quicklinks"><a class="anchor" href="#_footer_quicklinks"></a>footer.quicklinks</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Footer links.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"link":"#","text":"Privacy Policy"},{"link":"#","text":"Terms of Use"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_footer_social"><a class="anchor" href="#_footer_social"></a>footer.social</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Social media links to display in the footer.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"icon":"fa-twitter","link":"#"},{"icon":"fa-facebook","link":"#"},{"icon":"fa-linkedin","link":"#"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_hero_buttontext"><a class="anchor" href="#_hero_buttontext"></a>hero.buttonText</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Button text of the hero area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Tell me more"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_hero_subtitle"><a class="anchor" href="#_hero_subtitle"></a>hero.subtitle</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Subtitle of the hero area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"It's nice to meet you"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_hero_title"><a class="anchor" href="#_hero_title"></a>hero.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the hero area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Welcome To Our Studio!"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_menu_append"><a class="anchor" href="#_menu_append"></a>menu.append</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Menu items to add at the end of the navigation.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"name":"Styx","url":"https://styx-static.github.io/styx-site/"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_menu_prepend"><a class="anchor" href="#_menu_prepend"></a>menu.prepend</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Menu items to add at the beginning of the navigation.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"name":"Styx","url":"https://styx-static.github.io/styx-site/"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_portfolio_items"><a class="anchor" href="#_portfolio_items"></a>portfolio.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of portfolio projects as attribute sets, requires <code>title</code>, <code>subtitle</code>, <code>img</code>, <code>preview</code>, <code>client</code>, <code>clientLink</code>, <code>category</code> and <code>content</code>.
+If set to the empty list <code>[]</code>, the portfolio area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"category":"Graphic Design","client":"Start Bootstrap","clientLink":"#","content":"Lorem ipsum dolor sit amet consectetur.","date":"2014-07-05","img":"roundicons.png","preview":"roundicons-preview.png","subtitle":"Lorem ipsum dolor sit amet consectetur.","title":"Round Icons"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_portfolio_subtitle"><a class="anchor" href="#_portfolio_subtitle"></a>portfolio.subtitle</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Subtitle of the portgolio area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet consectetur."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_portfolio_title"><a class="anchor" href="#_portfolio_title"></a>portfolio.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the portfolio area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Services"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_services_items"><a class="anchor" href="#_services_items"></a>services.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of services as attribute sets, requires <code>title</code>, <code>icon</code> and <code>content</code> attributes.
+If set to the empty list <code>[]</code>, the services area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"content":"Lorem ipsum dolor sit amet consectetur.","icon":"fa-shopping-cart","title":"E-Commerce"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_services_subtitle"><a class="anchor" href="#_services_subtitle"></a>services.subtitle</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Subtitle of the services area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet consectetur."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_services_title"><a class="anchor" href="#_services_title"></a>services.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the services area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Services"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_author"><a class="anchor" href="#_site_author"></a>site.author</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Content of the author <code>meta</code> tag.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Your name"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_description"><a class="anchor" href="#_site_description"></a>site.description</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Content of the description <code>meta</code> tag.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Your description"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_title"><a class="anchor" href="#_site_title"></a>site.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the site.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"The Agency"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_team_description"><a class="anchor" href="#_team_description"></a>team.description</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Description of the team</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_team_members"><a class="anchor" href="#_team_members"></a>team.members</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of team members as attribute sets, requires <code>img</code>, <code>name</code>, <code>position</code>, and <code>social</code>. <code>social</code> have the same format to <code>footer.social</code>.
+If set to the empty list <code>[]</code>, the team area will not be displayed.";</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"img":"1.jpg","name":"Kay Garland","position":"Lead Designer","social":[{"link":"#","type":"twitter"},{"link":"#","type":"facebook"},{"link":"#","type":"linkedin"}]}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_team_subtitle"><a class="anchor" href="#_team_subtitle"></a>team.subtitle</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Subtitle of the team area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum dolor sit amet consectetur."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_team_title"><a class="anchor" href="#_team_title"></a>team.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the team area.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"About"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_site_source"><a class="anchor" href="#_example_site_source"></a>1.2. Example site source</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">/*-----------------------------------------------------------------------------
+   Init
+
+   Initialization of Styx, should not be edited
+-----------------------------------------------------------------------------*/
+{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Library loading
+  */
+  styxLib = import styx.lib args;
+
+
+/*-----------------------------------------------------------------------------
+   Themes setup
+
+-----------------------------------------------------------------------------*/
+
+  /* list the themes to load, paths or packages can be used
+     items at the end of the list have higher priority
+  */
+  themes = [
+    ../.
+  ];
+
+  /* Loading the themes data
+  */
+  themesData = styxLib.themes.load {
+    inherit styxLib themes;
+    templates.extraEnv = { inherit data pages; };
+    conf.extra = [ ./conf.nix extraConf ];
+  };
+
+  /* Bringing the themes data to the scope
+  */
+  inherit (themesData) conf lib files templates;
+
+
+/*-----------------------------------------------------------------------------
+   Data
+
+   This section declares the data used by the site
+-----------------------------------------------------------------------------*/
+
+  data = {
+
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Pages
+
+   This section declares the pages that will be generated
+-----------------------------------------------------------------------------*/
+
+  pages = rec {
+    index = {
+      path     = "/index.html";
+      template = templates.index;
+      layout   = lib.id;
+    };
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Site rendering
+
+-----------------------------------------------------------------------------*/
+
+  pagesList = [ pages.index ];
+
+  site = lib.generateSite { inherit files pagesList; };
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generic-templates"><a class="anchor" href="#generic-templates"></a>2. Generic templates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Generic theme providing a template framework and templates for <a href="http://getbootstrap.com/components/">bootstrap components</a>.</p>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://styx-static.github.io/styx-theme-generic-templates">Demo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/styx-static/styx-theme-generic-templates">Homepage</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="imgs/generic-templates.png" alt="Generic templates">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_documentation"><a class="anchor" href="#_documentation"></a>2.1. Documentation</h3>
+<div class="paragraph">
+<p>Generic-templates is a special theme providing a template framework and meant to be used as a base for other themes.</p>
+</div>
+<div class="paragraph">
+<p>Its main purpose is to be composed with other theme to reduce the amount of boilerplate code.</p>
+</div>
+<div class="paragraph">
+<p>Showcase and Hyde themes take advantage of generic-templates.</p>
+</div>
+<div class="paragraph">
+<p>This theme also provide templates for some <a href="http://getbootstrap.com/components/">bootstrap components</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_layout_structure"><a class="anchor" href="#_layout_structure"></a>2.1.1. Layout structure</h4>
+<div class="paragraph">
+<p>Generic templates provide a <code>templates.layout</code> template, divided in many partials that allow to quickly start or adapt a design to styx.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>layout</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.doctype</code>: The <code>doctype</code> can be changed via the configuration interface <code>theme.html.doctype</code>.</p>
+</li>
+<li>
+<p><code>partials.html</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.head.default</code>: See below for head templates division.</p>
+</li>
+<li>
+<p><code>partials.body</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.content-pre</code>: Pre content template, usually holds navigation bar, empty by default.</p>
+</li>
+<li>
+<p><code>partials.content</code>: Main content template, should be overriden to needs.</p>
+</li>
+<li>
+<p><code>partials.content-post</code>: Post content template, usually holds footer, empty by default.</p>
+</li>
+<li>
+<p><code>partials.js</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>lib.js.jquery</code>: Loading jquery javascript, controlled by <code>conf.theme.lib.jquery.enable</code>.</p>
+</li>
+<li>
+<p><code>lib.js.bootstrap</code>: Loading bootstrap javascript, controlled by <code>theme.lib.bootstrap.enable</code>.</p>
+</li>
+<li>
+<p><code>partials.js-custom</code>: Should be overriden to load custom javascript files, empty by default.</p>
+</li>
+<li>
+<p><code>partials.js-extra</code>: Add custom javascript that are set in the page attribute set <code>extraJS</code> attribute, allow to have custom javascript per page.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Head templates division:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.head.default</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.head.title-pre</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.head.meta</code>: Include a few default <code>meta</code> tags, can be overriden to fit needs.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>partials.head.title</code></p>
+</li>
+<li>
+<p><code>partials.head.title-post</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>partials.head.feed</code>: Create a link for <code>pages.feed</code> if it exists by default, can be overriden to fit needs.</p>
+</li>
+<li>
+<p><code>partials.head.css</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>lib.css.bootstrap</code>: Loading bootstrap css, controlled by <code>conf.theme.lib.bootstrap.enable</code>.</p>
+</li>
+<li>
+<p><code>lib.css.font-awesome</code>: Loading font-awesome css, controlled by <code>conf.theme.lib.font-awesome.enable</code>.</p>
+</li>
+<li>
+<p><code>partials.head.css-custom</code>: Should be overriden to load custom css files, empty by default.</p>
+</li>
+<li>
+<p><code>partials.head.css-extra</code>: Add custom css that are set in the page attribute set <code>extraCSS</code> attribute, allow to have custom css per page.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>partials.head.title-post-extra</code>: Can be overriden to fit needs, empty by default.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_overriding_a_template"><a class="anchor" href="#_overriding_a_template"></a>2.1.2. Overriding a template</h4>
+<div class="paragraph">
+<p>Any template from any theme can be overriden to fit needs.</p>
+</div>
+<div class="paragraph">
+<p>To override a template, just copy it to a custom theme and edit it:</p>
+</div>
+<div class="listingblock">
+<div class="title">Overriding the partials.content template</div>
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ styx new theme foo --in ./themes <i class="conum" data-value="1"></i><b>(1)</b>
+$ mkdir -p themes/foo/templates/partials/ <i class="conum" data-value="2"></i><b>(2)</b>
+$ cp $(nix-build -A --no-out-link styx-themes.generic-templates '&lt;nixpkgs&gt;')/templates/partials/content.nix themes/foo/templates/partials/content.nix <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Creating a new <code>foo</code> theme.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Create the <code>themes/foo/templates/partials/</code> directory.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Copy the generic-templates <code>templates/partials/content.nix</code> to the foo theme.<br>
+This code use nix-build to directly access the generic-templates source from the nix store.</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Combining generic-templates and my-theme</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">themes = [
+  styx-themes.generic-templates
+  ./themes/my-theme
+];</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_useful_templates"><a class="anchor" href="#_useful_templates"></a>2.1.3. Useful templates</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Examples in this section use <code>conf.siteUrl</code> as <code>http://domain.org</code>.
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="sect4">
+<h5 id="_templates_url"><a class="anchor" href="#_templates_url"></a>templates.url</h5>
+<div class="paragraph">
+<p>Convert a path starting with <code>/</code> to a full url, default implemetation use <code>conf.siteUrl</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.url "/foo.html"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">http://domain.org/foo.html</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_purl"><a class="anchor" href="#_templates_purl"></a>templates.purl</h5>
+<div class="paragraph">
+<p><code>purl</code> is for <strong>p</strong>age <strong>url</strong>, convert a page to its full url, default implementation use <code>templates.url</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.purl pages.about</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">http://domain.org/about.html</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_tag_ilink"><a class="anchor" href="#_templates_tag_ilink"></a>templates.tag.ilink</h5>
+<div class="paragraph">
+<p><code>ilink</code> is for <strong>i</strong>nternal <strong>link</strong>, takes a <code>content</code> and a <code>page</code> or a <code>path</code> and generate a link (<code>a</code> tag).</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.tag.ilink { page = pages.about; content = "about"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;a href="http://domain.org/about.html"&gt;about&lt;/a&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example 2</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.tag.ilink { path = "/foo"; content = "foo"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;a href="http://domain.org/foo"&gt;foo&lt;/a&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_tag_link_atom"><a class="anchor" href="#_templates_tag_link_atom"></a>templates.tag.link-atom</h5>
+<div class="paragraph">
+<p>Generate a <code>link</code> tag for an atom feed.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.tag.link-atom { href = "/feed.atom"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;link href="http://domain.org/feed.atom" rel="alternate" type="application/atom+xml" /&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_tag_link_css"><a class="anchor" href="#_templates_tag_link_css"></a>templates.tag.link-css</h5>
+<div class="paragraph">
+<p>Generate a <code>link</code> tag for an css file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.tag.link-css { href = "/css/style.css"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;link href="http://domain.org/css/style.css" rel="stylesheet" type="text/css" /&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_icon_bootstrap"><a class="anchor" href="#_templates_icon_bootstrap"></a>templates.icon.bootstrap</h5>
+<div class="paragraph">
+<p>Generate a bootstrap glyphicon markup from a glyphicon code.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.icon.bootstrap "picture"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;span class="glyphicon glyphicon-picture" aria-hidden="true"&gt;&lt;/span&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_icon_font_awesome"><a class="anchor" href="#_templates_icon_font_awesome"></a>templates.icon.font-awesome</h5>
+<div class="paragraph">
+<p>Generate a font-awesome icon markup from an icon code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.icon.font-awesome "code"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;i class="fa fa-code" aria-hidden="true"&gt;&lt;/i&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bootstrap_components"><a class="anchor" href="#_bootstrap_components"></a>2.1.4. Bootstrap components</h4>
+<hr>
+<div class="sect4">
+<h5 id="_templates_bootstrap_alert"><a class="anchor" href="#_templates_bootstrap_alert"></a>templates.bootstrap.alert</h5>
+<div class="paragraph">
+<p>Generate a bootstrap alert.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.alert { type = "success"; content = "alert"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div class="alert alert-success" role="alert"&gt;alert&lt;/div&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_badge"><a class="anchor" href="#_templates_bootstrap_badge"></a>templates.bootstrap.badge</h5>
+<div class="paragraph">
+<p>Generate a bootstrap badge.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.badge 42</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">&lt;span class="badge"&gt;42&lt;/span&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_breadcrumbs"><a class="anchor" href="#_templates_bootstrap_breadcrumbs"></a>templates.bootstrap.breadcrumbs</h5>
+<div class="paragraph">
+<p>Generate a page breadcrumbs, <code>page</code> page attribute set should have a <code>breadcrumbs</code> attribute containing a list of pages.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.breadcrumbs page.about</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;ol class="breadcrumb"&gt;
+&lt;li&gt;&lt;a href="http://domain.org/index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li class="active"&gt;About&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_label"><a class="anchor" href="#_templates_bootstrap_label"></a>templates.bootstrap.label</h5>
+<div class="paragraph">
+<p>Generate a bootstrap label.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.label { content = "default"; type = "default"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;span class="label label-default"&gt;default&lt;/span&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_navbar_default"><a class="anchor" href="#_templates_bootstrap_navbar_default"></a>templates.bootstrap.navbar.default</h5>
+<div class="paragraph">
+<p>Generates navbar, meant to be flexible it is divided in multiple parts.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.navbar.default {
+  inverted = true;
+  brand = ''&lt;a class="navbar-brand" href="#"&gt;Project Name&lt;/a&gt;'';
+  content = [
+    (templates.bootstrap.navbar.nav {
+      items = [
+        { title = "Home";    path = "/#"; }
+        { title = "About";   path = "/#about"; }
+        { title = "Contact"; path = "/#contact"; }
+      ];
+      # Hack for demonstration purposes, the current page attribute set should be passed
+      currentPage = { title = "Home"; path = "/#"; };
+    })
+  ];
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;nav class="navbar navbar-inverse"&gt;
+&lt;div class="container"&gt;
+&lt;div class="navbar-header"&gt;
+  &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"&gt;
+    &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;a class="navbar-brand" href="#"&gt;Project Name&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="collapse navbar-collapse" id="navbar"&gt;
+&lt;ul class="nav navbar-nav"&gt;
+&lt;li class="active"&gt;&lt;a href="http://domain.org/#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_pager"><a class="anchor" href="#_templates_bootstrap_pager"></a>templates.bootstrap.pager</h5>
+<div class="paragraph">
+<p>Generate a pager. <code>pages</code> should be a list of pages.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.pager {
+  pages = genList (x: { path = "/#${toString (x + 1)}"; }) 10;
+  index = 5;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;nav aria-label="..."&gt;
+&lt;ul class="pager"&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#4"&gt;Previous&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#6"&gt;Next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_pagination"><a class="anchor" href="#_templates_bootstrap_pagination"></a>templates.bootstrap.pagination</h5>
+<div class="paragraph">
+<p>generate a pagination. <code>pages</code> should be a list of pages.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.pagination {
+  pages = genList (x: { path = "/#${toString (x + 1)}"; }) 10;
+  index = 5;
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;nav aria-label="Page navigation" class="pagination"&gt;
+&lt;ul class="pagination"&gt;
+&lt;li&gt;
+&lt;a href="http://domain.org/#4" aria-label="Previous"&gt;
+&lt;span aria-hidden="true"&gt;&amp;laquo;&lt;/span&gt;
+&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#1"&gt;1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#2"&gt;2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#3"&gt;3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#4"&gt;4&lt;/a&gt;&lt;/li&gt;
+&lt;li class="active"&gt;&lt;a href="http://domain.org/#5"&gt;5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#6"&gt;6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#7"&gt;7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#8"&gt;8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#9"&gt;9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://domain.org/#10"&gt;10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href="http://domain.org/#6" aria-label="Next"&gt;
+&lt;span aria-hidden="true"&gt;&amp;raquo;&lt;/span&gt;
+&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_panel"><a class="anchor" href="#_templates_bootstrap_panel"></a>templates.bootstrap.panel</h5>
+<div class="paragraph">
+<p>Generate a bootstrap panel.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.panel {
+  type    = "danger";
+  heading = ''&lt;h3 class="panel-title"&gt;Panel title&lt;/h3&gt;'';
+  body    = "Panel content"; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div class="panel panel-danger"&gt;
+&lt;div class="panel-heading"&gt;&lt;h3 class="panel-title"&gt;Panel title&lt;/h3&gt;&lt;/div&gt;
+&lt;div class="panel-body"&gt;&lt;h3 class="panel-title"&gt;Panel title&lt;/h3&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_templates_bootstrap_progressbar"><a class="anchor" href="#_templates_bootstrap_progressbar"></a>templates.bootstrap.progressbar</h5>
+<div class="paragraph">
+<p>Generate a bootstrap progress bar.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">templates.bootstrap.progress-bar { value = 60; }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Results in</div>
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;div class="progress"&gt;
+&lt;div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"&gt;&lt;span class="sr-only"&gt;60% Complete&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_interface_2"><a class="anchor" href="#_configuration_interface_2"></a>2.2. Configuration interface</h3>
+<hr>
+<div class="sect3">
+<h4 id="_html_doctype"><a class="anchor" href="#_html_doctype"></a>html.doctype</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Doctype declaration to use.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>one of "html5", "html4", "xhtml1"</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"html5"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_lib_bootstrap_enable"><a class="anchor" href="#_lib_bootstrap_enable"></a>lib.bootstrap.enable</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Whether to enable bootstrap.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>false</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>true</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_lib_bootstrap_version"><a class="anchor" href="#_lib_bootstrap_version"></a>lib.bootstrap.version</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Selects bootstrap version to use.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"3.3.7"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_lib_font_awesome_enable"><a class="anchor" href="#_lib_font_awesome_enable"></a>lib.font-awesome.enable</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Whether to enable font awesome.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>false</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>true</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_lib_font_awesome_version"><a class="anchor" href="#_lib_font_awesome_version"></a>lib.font-awesome.version</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Selects font-awesome version to use.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"4.7.0"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_lib_jquery_enable"><a class="anchor" href="#_lib_jquery_enable"></a>lib.jquery.enable</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Whether to enable jQuery.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>false</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>true</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_lib_jquery_version"><a class="anchor" href="#_lib_jquery_version"></a>lib.jquery.version</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Selects jQuery version to use.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"3.1.1"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_title_2"><a class="anchor" href="#_site_title_2"></a>site.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>String to append to the site <code>title</code> tag contents.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Generic Templates"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_site_source_2"><a class="anchor" href="#_example_site_source_2"></a>2.3. Example site source</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">/*-----------------------------------------------------------------------------
+   Init
+
+   Initialization of Styx, should not be edited
+-----------------------------------------------------------------------------*/
+{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Library loading
+  */
+  styxLib = import styx.lib args;
+
+
+/*-----------------------------------------------------------------------------
+   Themes setup
+
+-----------------------------------------------------------------------------*/
+
+  /* list the themes to load, paths or packages can be used
+     items at the end of the list have higher priority
+  */
+  themes = [ ../. ];
+
+  /* Loading the themes data
+  */
+  themesData = styxLib.themes.load {
+    inherit styxLib themes;
+    templates.extraEnv = { inherit data pages; };
+    conf.extra = [ ./conf.nix extraConf ];
+  };
+
+  /* Bringing the themes data to the scope
+  */
+  inherit (themesData) conf lib files templates;
+
+
+/*-----------------------------------------------------------------------------
+   Data
+
+   This section declares the data used by the site
+-----------------------------------------------------------------------------*/
+
+  data = {
+    navbar = with pages; [ theme basic starter ];
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Pages
+
+   This section declares the pages that will be generated
+-----------------------------------------------------------------------------*/
+
+  /* http://getbootstrap.com/getting-started/#examples
+  */
+
+  pages = rec {
+
+    basic = {
+      layout   = templates.layout;
+      template = templates.examples.basic;
+      path     = "/basic.html";
+      # example of adding extra css / js to a page
+      #extraJS  = [ { src = "/pop.js"; crossorigin = "anonymous"; } ];
+      #extraCSS = [ { href = "/pop.css"; } ];
+      title    = "Bootstrap 101 Template";
+      navbarTitle = "Basic";
+    };
+
+    starter = {
+      layout   = templates.layout;
+      template = templates.examples.starter;
+      path     = "/starter.html";
+      title    = "Starter Template for Bootstrap";
+      navbarTitle = "Starter";
+    };
+
+    theme = {
+      layout   = templates.layout;
+      template = templates.examples.theme;
+      path     = "/index.html";
+      title    = "Theme Template for Bootstrap";
+      navbarTitle = "Theme";
+    };
+
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Site
+
+-----------------------------------------------------------------------------*/
+
+  /* Converting the pages attribute set to a list
+  */
+  pagesList = lib.pagesToList { inherit pages; };
+
+  /* Generating the site
+  */
+  site = lib.generateSite { inherit files pagesList; };
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hyde"><a class="anchor" href="#hyde"></a>3. Hyde</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Port of the <a href="https://github.com/poole/hyde">Hyde</a> theme.<br>
+Requires the <code>generic-templates</code> theme.</p>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://styx-static.github.io/styx-theme-generic-hyde">Demo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/styx-static/styx-theme-generic-hyde">Homepage</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="imgs/hyde.png" alt="Hyde">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_interface_3"><a class="anchor" href="#_configuration_interface_3"></a>3.1. Configuration interface</h3>
+<hr>
+<div class="sect3">
+<h4 id="_colorscheme"><a class="anchor" href="#_colorscheme"></a>colorScheme</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Selects the color scheme. Set to <code>null</code> for default black scheme.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>null or one of "08", "09", "0a", "0b", "0c", "0d", "0e", "0f"</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_description"><a class="anchor" href="#_description"></a>description</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Content of the description <code>meta</code> tag.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"An elegant open source and mobile first theme for styx made by &lt;a href=\"http://twitter.com/mdo\"&gt;@mdo&lt;/a&gt;. Originally made for Jekyll.\n"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_itemsperpage"><a class="anchor" href="#_itemsperpage"></a>itemsPerPage</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Number of posts per page.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>3</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_layout_reverse"><a class="anchor" href="#_layout_reverse"></a>layout.reverse</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Whether to enable reverse layout.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>boolean</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>false</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>true</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_site_source_3"><a class="anchor" href="#_example_site_source_3"></a>3.2. Example site source</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">/*-----------------------------------------------------------------------------
+   Init
+
+   Initialization of Styx, should not be edited
+-----------------------------------------------------------------------------*/
+{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Library loading
+  */
+  styxLib = import styx.lib args;
+
+
+/*-----------------------------------------------------------------------------
+   Themes setup
+
+-----------------------------------------------------------------------------*/
+
+  /* list the themes to load, paths or packages can be used
+     items at the end of the list have higher priority
+  */
+  themes = [
+    styx-themes.generic-templates
+    ../.
+  ];
+
+  /* Loading the themes data
+  */
+  themesData = styxLib.themes.load {
+    inherit styxLib themes;
+    templates.extraEnv = { inherit data pages; };
+    conf.extra = [ ./conf.nix extraConf ];
+  };
+
+  /* Bringing the themes data to the scope
+  */
+  inherit (themesData) conf lib files templates;
+
+
+/*-----------------------------------------------------------------------------
+   Data
+
+   This section declares the data used by the site
+-----------------------------------------------------------------------------*/
+
+  data = with lib; {
+    # loading a single page
+    about  = loadFile { dir = ./data/pages; file = "about.md"; };
+    # loading a list of contents
+    posts  = let
+      postsList = loadDir { dir = ./data/posts; };
+      draftsList = optionals (extraConf ? renderDrafts) (loadDir { dir = ./data/drafts; isDraft = true; });
+    in sortBy "date" "dsc" (postsList ++ draftsList);
+    menu = [ pages.about ];
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Pages
+
+   This section declares the pages that will be generated
+-----------------------------------------------------------------------------*/
+
+  pages = with lib; rec {
+
+    /* Index page
+       Splitting a list of items through multiple pages
+       For more complex needs, mkSplitCustom is available
+    */
+    index = mkSplit {
+      title        = "Home";
+      basePath     = "/index";
+      itemsPerPage = conf.theme.itemsPerPage;
+      template     = templates.index;
+      data         = posts;
+    };
+
+    /* About page
+       Example of generating a page from imported data
+    */
+    about = {
+      path     = "/about.html";
+      template = templates.page.full;
+    } // data.about;
+
+    /* Feed page
+    */
+    feed = {
+      path     = "/feed.xml";
+      template = templates.feed.atom;
+      # Bypassing the layout
+      layout   = id;
+      items    = take 10 posts;
+    };
+
+    /* 404 error page
+    */
+    e404 = {
+      path     = "/404.html";
+      template = templates.e404;
+    };
+
+    /* Posts pages (as a list of pages)
+    */
+    posts = mkPageList {
+      data        = data.posts;
+      pathPrefix  = "/posts/";
+      template    = templates.post.full;
+      breadcrumbs = [ (head pages.index) ];
+    };
+
+    /* Multipages handling
+    */
+    postsMultiTail = mkMultiTail {
+      data        = data.posts;
+      pathPrefix  = "/posts/";
+      template    = templates.post.full;
+      breadcrumbs = [ (head pages.index) ];
+    };
+
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Site rendering
+
+-----------------------------------------------------------------------------*/
+
+  # converting pages attribute set to a list
+  pagesList = lib.pagesToList {
+    inherit pages;
+    default = { layout = templates.layout; };
+  };
+
+  site = lib.generateSite { inherit files pagesList; };
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="orbit"><a class="anchor" href="#orbit"></a>4. Orbit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://github.com/xriley/Orbit-Theme">Orbit</a> theme port - great looking resume/CV template designed for developers by Xiaoying Riley.</p>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://styx-static.github.io/styx-theme-generic-orbit">Demo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/styx-static/styx-theme-generic-orbit">Homepage</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="imgs/orbit.png" alt="Orbit">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_interface_4"><a class="anchor" href="#_configuration_interface_4"></a>4.1. Configuration interface</h3>
+<hr>
+<div class="sect3">
+<h4 id="_colorscheme_2"><a class="anchor" href="#_colorscheme_2"></a>colorScheme</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Theme color scheme.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>one of 1, 2, 3, 4, 5, 6</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>1</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_contact_items_items"><a class="anchor" href="#_contact_items_items"></a>contact.items.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of contact link as attribute sets, requires <code>type</code>, <code>icon</code>, <code>url</code> and <code>title</code>.
+If set to the empty list <code>[]</code>, the skills area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"icon":"envelope","title":"john.doe@website.com","type":"email","url":"mailto: yourname@email.com"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_copyright"><a class="anchor" href="#_copyright"></a>copyright</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Footer copyright text.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"copyright"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_education_items"><a class="anchor" href="#_education_items"></a>education.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of education items as attribute sets, requires <code>degree</code>, <code>college</code> and <code>dates</code>.
+If set to the empty list <code>[]</code>, the education area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"college":"University of London","dates":"2006 - 2010","degree":"MSc in Computer Science"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_education_title"><a class="anchor" href="#_education_title"></a>education.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the education section.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Education"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_experiences_icon"><a class="anchor" href="#_experiences_icon"></a>experiences.icon</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Code of the font awesome icon of the experience title.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"briefcase"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_experiences_items"><a class="anchor" href="#_experiences_items"></a>experiences.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of experiences as attribute sets, requires <code>position</code>, <code>dates</code>, <code>company</code> and <code>content</code>.
+If set to the empty list <code>[]</code>, the experiences area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"company":"Startup Hubs, San Francisco","content":"lorem ipsum","dates":"2015 - Present","position":"Lead Developer"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_experiences_title"><a class="anchor" href="#_experiences_title"></a>experiences.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the experiences section</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Experiences"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_interests_items"><a class="anchor" href="#_interests_items"></a>interests.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of interests. If set to the empty list <code>[]</code>, the interests area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of strings</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>["Climbing","Snowboarding","Cooking"]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_interests_title"><a class="anchor" href="#_interests_title"></a>interests.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the interests section.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Interests"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_languages_items"><a class="anchor" href="#_languages_items"></a>languages.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of languages as attribute sets, requires <code>language</code>, and <code>level</code>.
+If set to the empty list <code>[]</code>, the languages area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"language":"English","level":"Native"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_languages_title"><a class="anchor" href="#_languages_title"></a>languages.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the languages section.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Languages"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_profile"><a class="anchor" href="#_profile"></a>profile</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Profile information, must have <code>name</code>, <code>tagline</code> and <code>image</code> attributes.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>attribute set</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>{"image":"profile.png","name":"John Doe","tagline":"Full Stack Developer"}</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_projects_icon"><a class="anchor" href="#_projects_icon"></a>projects.icon</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Code of the font awesome icon of the projects title.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"archive"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_projects_items"><a class="anchor" href="#_projects_items"></a>projects.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of projects as attribute sets, requires <code>title</code>, <code>url</code> and <code>content</code>.
+If set to the empty list <code>[]</code>, the projects area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"content":"lorem ipsum","title":"Simple FAQ Theme for Hugo","url":"https://github.com/aerohub/hugo-faq-theme"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_projects_title"><a class="anchor" href="#_projects_title"></a>projects.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the projects section</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Projects"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_author_2"><a class="anchor" href="#_site_author_2"></a>site.author</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Content of the author <code>meta</code> tag.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"John Doe"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_description_2"><a class="anchor" href="#_site_description_2"></a>site.description</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Content of the description <code>meta</code> tag.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Lorem ipsum..."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_title_3"><a class="anchor" href="#_site_title_3"></a>site.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the site.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Orbit theme"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_skills_icon"><a class="anchor" href="#_skills_icon"></a>skills.icon</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Code of the font awesome icon of the skills title.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"rocket"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_skills_items"><a class="anchor" href="#_skills_items"></a>skills.items</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>List of skills as attribute sets, requires <code>title</code> and <code>level</code>.
+If set to the empty list <code>[]</code>, the skills area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>list of attribute sets</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Example</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>[{"level":"98%","skill":"Python &amp; Django"},{"level":"50%","skill":"Javascript &amp; jQuery"}]</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_skills_title"><a class="anchor" href="#_skills_title"></a>skills.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the skills section.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Skills &amp; Proficiency"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_summary_content"><a class="anchor" href="#_summary_content"></a>summary.content</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>content of the profile area as HTML text.
+if set to <code>null</code>, the summary area will not be displayed.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>null or string</p>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_summary_icon"><a class="anchor" href="#_summary_icon"></a>summary.icon</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Code of the font awesome icon of the summary title.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"user"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_summary_title"><a class="anchor" href="#_summary_title"></a>summary.title</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Title of the summary section</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Career profile"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_site_source_4"><a class="anchor" href="#_example_site_source_4"></a>4.2. Example site source</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">/*-----------------------------------------------------------------------------
+   Init
+
+   Initialization of Styx, should not be edited
+-----------------------------------------------------------------------------*/
+{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Library loading
+  */
+  styxLib = import styx.lib args;
+
+
+/*-----------------------------------------------------------------------------
+   Themes setup
+
+-----------------------------------------------------------------------------*/
+
+  /* list the themes to load, paths or packages can be used
+     items at the end of the list have higher priority
+  */
+  themes = [
+    ../.
+  ];
+
+  /* Loading the themes data
+  */
+  themesData = styxLib.themes.load {
+    inherit styxLib themes;
+    templates.extraEnv = { inherit data pages; };
+    conf.extra = [ ./conf.nix extraConf ];
+  };
+
+  /* Bringing the themes data to the scope
+  */
+  inherit (themesData) conf lib files templates;
+
+
+/*-----------------------------------------------------------------------------
+   Data
+
+   This section declares the data used by the site
+-----------------------------------------------------------------------------*/
+
+  data = {
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Pages
+
+   This section declares the pages that will be generated
+-----------------------------------------------------------------------------*/
+
+  pages = {
+    index = {
+      path     = "/index.html";
+      template = templates.index;
+      layout   = lib.id;
+    };
+  };
+
+
+/*-----------------------------------------------------------------------------
+   generateSite arguments preparation
+
+-----------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------
+   Site rendering
+
+-----------------------------------------------------------------------------*/
+
+  pagesList = [ pages.index ];
+
+  site = lib.generateSite { inherit files pagesList; };
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="showcase"><a class="anchor" href="#showcase"></a>5. Showcase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A theme to show Styx main functionalities.
+This theme example site includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>navigation bar</p>
+</li>
+<li>
+<p>Split pages</p>
+</li>
+<li>
+<p>Multipages</p>
+</li>
+<li>
+<p>Taxonomies</p>
+</li>
+<li>
+<p>Atom feed</p>
+</li>
+<li>
+<p>Sitemap</p>
+</li>
+<li>
+<p>Breadcrumbs</p>
+</li>
+<li>
+<p>Archives page</p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://styx-static.github.io/styx-theme-showcase">Demo</a></p>
+</li>
+<li>
+<p><a href="https://github.com/styx-static/styx-theme-showcase">Homepage</a></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="imgs/showcase.png" alt="Showcase">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_interface_5"><a class="anchor" href="#_configuration_interface_5"></a>5.1. Configuration interface</h3>
+<hr>
+<div class="sect3">
+<h4 id="_archives_itemsperpage"><a class="anchor" href="#_archives_itemsperpage"></a>archives.itemsPerPage</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Number of posts on the archive page.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>15</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_index_itemsperpage"><a class="anchor" href="#_index_itemsperpage"></a>index.itemsPerPage</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Number of posts on the index page.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>integer</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>4</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_copyright"><a class="anchor" href="#_site_copyright"></a>site.copyright</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Site copyright, added in the footer.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"&amp;copy; 2017"</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_site_description_3"><a class="anchor" href="#_site_description_3"></a>site.description</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>Site description, added in the footer.</p>
+</dd>
+<dt class="hdlist1">Type</dt>
+<dd>
+<p>string</p>
+</dd>
+<dt class="hdlist1">Default</dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>"Write a description for your new site here."</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_site_source_5"><a class="anchor" href="#_example_site_source_5"></a>5.2. Example site source</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">/*-----------------------------------------------------------------------------
+   Init
+
+   Initialization of Styx, should not be edited
+-----------------------------------------------------------------------------*/
+{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Library loading
+  */
+  styxLib = import styx.lib args;
+
+
+/*-----------------------------------------------------------------------------
+   Themes setup
+
+-----------------------------------------------------------------------------*/
+
+  /* list the themes to load, paths or packages can be used
+     items at the end of the list have higher priority
+  */
+  themes = [
+    styx-themes.generic-templates
+    ../.
+  ];
+
+  /* Loading the themes data
+  */
+  themesData = styxLib.themes.load {
+    inherit styxLib themes;
+    templates.extraEnv = { inherit data pages; };
+    conf.extra = [ ./conf.nix extraConf ];
+  };
+
+  /* Bringing the themes data to the scope
+  */
+  inherit (themesData) conf lib files templates;
+
+
+/*-----------------------------------------------------------------------------
+   Data
+
+   This section declares the data used by the site
+-----------------------------------------------------------------------------*/
+
+  data = with lib; {
+
+    # loading a single page
+    about  = loadFile { dir = ./data/pages; file = "about.md"; };
+
+    # loading a list of contents
+    posts  = let
+      postsList = loadDir { dir = ./data/posts; };
+      # include drafts only when renderDrafts is true
+      draftsList = optionals (conf ? renderDrafts) (loadDir { dir = ./data/drafts; isDraft = true; });
+    in sortBy "date" "dsc" (postsList ++ draftsList);
+
+    # Navbar data
+    navbar = [
+      pages.about
+      (head pages.postsArchive)
+      (pages.feed // { navbarTitle = "RSS"; })
+      { title = "Styx"; url = "https://styx-static.github.io/styx-site/"; }
+    ];
+
+    # posts taxonomies
+    taxonomies.posts = mkTaxonomyData {
+      data = pages.posts;
+      taxonomies = [ "tags" "level" ];
+    };
+
+  };
+
+
+/*-----------------------------------------------------------------------------
+   Pages
+
+   This section declares the pages that will be generated
+-----------------------------------------------------------------------------*/
+
+  pages = with lib.pages; rec {
+
+    /* Index page
+       Example of splitting a list of items through multiple pages
+       For more complex needs, mkSplitCustom is available
+    */
+    index = mkSplit {
+      title           = conf.theme.site.title;
+      basePath        = "/index";
+      itemsPerPage    = conf.theme.index.itemsPerPage;
+      template        = templates.index;
+      data            = pages.posts;
+      breadcrumbTitle = templates.icon.font-awesome "home";
+    };
+
+    /* About page
+       Example of generating a page from a piece of data
+    */
+    about = {
+      path        = "/about.html";
+      template    = templates.page.full;
+      # setting breadcrumbs
+      breadcrumbs = [ (lib.head index) ];
+    } // data.about;
+
+    /* RSS feed page
+    */
+    feed = {
+      path     = "/feed.xml";
+      template = templates.feed.atom;
+      # Bypassing the layout
+      layout   = lib.id;
+      items    = lib.take 10 pages.posts;
+    };
+
+    /* 404 error page
+    */
+    e404 = {
+      path     = "/404.html";
+      template = templates.e404;
+      title    = "404";
+    };
+
+    /* Posts pages (as a list of pages)
+
+       mkPageList is a convenience function to generate a list of page from a
+       list of data
+    */
+    posts = mkPageList {
+      data        = data.posts;
+      pathPrefix  = "/posts/";
+      template    = templates.post.full;
+      breadcrumbs = [ (lib.head pages.index) ];
+    };
+
+    postsArchive = mkSplit {
+      title        = "Archives";
+      basePath     = "/archive/post";
+      template     = templates.archive;
+      breadcrumbs  = [ (lib.head index) ];
+      itemsPerPage = conf.theme.archives.itemsPerPage;
+      data         = pages.posts;
+    };
+
+    /* Subpages of multi-pages posts
+
+       subpages are not included in posts because we do not want to have the
+       subpages in the rss feed or posts list
+    */
+    postsMultiTail = mkMultiTail {
+      data        = data.posts;
+      pathPrefix  = "/posts/";
+      template    = templates.post.full;
+      breadcrumbs = [ (lib.head pages.index) ];
+    };
+
+    /* Taxonomy related pages
+    */
+    taxonomies = mkTaxonomyPages {
+      data             = data.taxonomies.posts;
+      taxonomyTemplate = templates.taxonomy.full;
+      termTemplate     = templates.taxonomy.term.full;
+    };
+
+  };
+
+  /* Sitemap
+     The sitemap is out of the pages attribute set because it has to loop
+     through all the pages
+  */
+  sitemap = {
+    path     = "/sitemap.xml";
+    template = templates.sitemap;
+    layout   = lib.id;
+    pages    = lib.pagesToList { inherit pages; };
+  };
+
+/*-----------------------------------------------------------------------------
+   Site rendering
+
+-----------------------------------------------------------------------------*/
+
+  pagesList =
+    # converting pages attribute set to a list
+    (lib.pagesToList {
+      inherit pages;
+      default.layout = templates.layout;
+    })
+    ++ [ sitemap ];
+
+  /* Substitutions
+  */
+  substitutions = {
+    siteUrl = conf.siteUrl;
+  };
+
+  site = lib.generateSite {
+    inherit files pagesList substitutions;
+    meta = (import ./meta.nix) { inherit lib; };
+  };
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

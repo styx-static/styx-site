@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generic templates - Styx Static Site Generator</title>
+<link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="https://styx-static.github.io/styx-site/">Styx Static Site Generator</a>
+</div>
+<div class="collapse navbar-collapse" id="navbar">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
+<li><a href="https://styx-static.github.io/styx-site/documentation/index.html">Documentation</a></li>
+<li class="active"><a href="https://styx-static.github.io/styx-site/themes.html">Themes</a></li>
+<li><a href="https://github.com/styx-static/styx/">GitHub <i class="fa fa-github" aria-hidden="true"></i></a></li>
+<li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container theme-full">
+<h1 class="text-capitalize">Generic templates</h1>
+
+<div class="description"><div class="paragraph">
+<p>Generic theme providing a template framework and templates for <a href="http://getbootstrap.com/components/">bootstrap components</a>.</p>
+</div>
+</div>
+
+
+
+<p class="license">License: <a href="http://spdx.org/licenses/MIT">MIT License</a></p>
+
+<p class="links">
+  <a href="https://styx-static.github.io/styx-theme-generic-templates" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+  <a href="https://github.com/styx-static/styx-theme-generic-templates" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+  </p>
+
+<img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/generic-templates.png" />
+
+<div class="conf"><div class="panel panel-primary">
+  <div class="panel-heading">Configuration interface</div>
+  
+  <div class="list-group-item">
+  <p><strong>html.doctype</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Doctype declaration to use.</p>
+</div>
+</dd><dt>Type:</dt><dd>one of "html5", "html4", "xhtml1"</dd><dt>Default:</dt><dd><code>"html5"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>lib.bootstrap.enable</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable bootstrap.</p>
+</div>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>lib.bootstrap.version</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Selects bootstrap version to use.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"3.3.7"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>lib.font-awesome.enable</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable font awesome.</p>
+</div>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>lib.font-awesome.version</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Selects font-awesome version to use.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"4.7.0"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>lib.jquery.enable</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable jQuery.</p>
+</div>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>lib.jquery.version</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Selects jQuery version to use.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"3.1.1"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>String to append to the site <code>title</code> tag contents.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Generic Templates"</code></dd></dl>
+</div>
+  
+</div></div>
+
+</div>
+
+<div class="navbar navbar-fixed-bottom" id="footer">
+  <div class="container">
+  <footer>
+    <p class="text-center">2017 - <a href="https://github.com/styx-static/styx-site/">Made with Styx!</a></p>
+  </footer>
+  </div>
+</div>
+<script crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

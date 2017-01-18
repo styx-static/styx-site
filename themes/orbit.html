@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit - Styx Static Site Generator</title>
+<link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand" href="https://styx-static.github.io/styx-site/">Styx Static Site Generator</a>
+</div>
+<div class="collapse navbar-collapse" id="navbar">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
+<li><a href="https://styx-static.github.io/styx-site/documentation/index.html">Documentation</a></li>
+<li class="active"><a href="https://styx-static.github.io/styx-site/themes.html">Themes</a></li>
+<li><a href="https://github.com/styx-static/styx/">GitHub <i class="fa fa-github" aria-hidden="true"></i></a></li>
+<li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="container theme-full">
+<h1 class="text-capitalize">Orbit</h1>
+
+<div class="description"><div class="paragraph">
+<p><a href="http://github.com/xriley/Orbit-Theme">Orbit</a> theme port - great looking resume/CV template designed for developers by Xiaoying Riley.</p>
+</div>
+</div>
+
+
+
+<p class="license">License: <a href="http://spdx.org/licenses/CC-BY-3.0">Creative Commons Attribution 3.0</a></p>
+
+<p class="links">
+  <a href="https://styx-static.github.io/styx-theme-generic-orbit" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+  <a href="https://github.com/styx-static/styx-theme-generic-orbit" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+  </p>
+
+<img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/orbit.png" />
+
+<div class="conf"><div class="panel panel-primary">
+  <div class="panel-heading">Configuration interface</div>
+  
+  <div class="list-group-item">
+  <p><strong>colorScheme</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Theme color scheme.</p>
+</div>
+</dd><dt>Type:</dt><dd>one of 1, 2, 3, 4, 5, 6</dd><dt>Default:</dt><dd><code>1</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>contact.items.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of contact link as attribute sets, requires <code>type</code>, <code>icon</code>, <code>url</code> and <code>title</code>.
+If set to the empty list <code>[]</code>, the skills area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"icon":"envelope","title":"john.doe@website.com","type":"email","url":"mailto: yourname@email.com"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>copyright</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Footer copyright text.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"copyright"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>education.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of education items as attribute sets, requires <code>degree</code>, <code>college</code> and <code>dates</code>.
+If set to the empty list <code>[]</code>, the education area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"college":"University of London","dates":"2006 - 2010","degree":"MSc in Computer Science"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>education.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the education section.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Education"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>experiences.icon</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Code of the font awesome icon of the experience title.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"briefcase"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>experiences.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of experiences as attribute sets, requires <code>position</code>, <code>dates</code>, <code>company</code> and <code>content</code>.
+If set to the empty list <code>[]</code>, the experiences area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"company":"Startup Hubs, San Francisco","content":"lorem ipsum","dates":"2015 - Present","position":"Lead Developer"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>experiences.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the experiences section</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Experiences"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>interests.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of interests. If set to the empty list <code>[]</code>, the interests area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>["Climbing","Snowboarding","Cooking"]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>interests.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the interests section.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Interests"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>languages.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of languages as attribute sets, requires <code>language</code>, and <code>level</code>.
+If set to the empty list <code>[]</code>, the languages area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"language":"English","level":"Native"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>languages.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the languages section.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Languages"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>profile</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Profile information, must have <code>name</code>, <code>tagline</code> and <code>image</code> attributes.</p>
+</div>
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><code>{"image":"profile.png","name":"John Doe","tagline":"Full Stack Developer"}</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>projects.icon</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Code of the font awesome icon of the projects title.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"archive"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>projects.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of projects as attribute sets, requires <code>title</code>, <code>url</code> and <code>content</code>.
+If set to the empty list <code>[]</code>, the projects area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"content":"lorem ipsum","title":"Simple FAQ Theme for Hugo","url":"https://github.com/aerohub/hugo-faq-theme"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>projects.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the projects section</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Projects"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.author</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Content of the author <code>meta</code> tag.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"John Doe"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.description</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Content of the description <code>meta</code> tag.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Lorem ipsum..."</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>site.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the site.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Orbit theme"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>skills.icon</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Code of the font awesome icon of the skills title.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"rocket"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>skills.items</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>List of skills as attribute sets, requires <code>title</code> and <code>level</code>.
+If set to the empty list <code>[]</code>, the skills area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><code>[]</code></dd><dt>Example:</dt><dd><code>[{"level":"98%","skill":"Python & Django"},{"level":"50%","skill":"Javascript & jQuery"}]</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>skills.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the skills section.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Skills & Proficiency"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>summary.content</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>content of the profile area as HTML text.
+if set to <code>null</code>, the summary area will not be displayed.</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>summary.icon</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Code of the font awesome icon of the summary title.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"user"</code></dd></dl>
+</div>
+<div class="list-group-item">
+  <p><strong>summary.title</strong></p>
+  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+<p>Title of the summary section</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Career profile"</code></dd></dl>
+</div>
+  
+</div></div>
+
+</div>
+
+<div class="navbar navbar-fixed-bottom" id="footer">
+  <div class="container">
+  <footer>
+    <p class="text-center">2017 - <a href="https://github.com/styx-static/styx-site/">Made with Styx!</a></p>
+  </footer>
+  </div>
+</div>
+<script crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
