@@ -20,8 +20,8 @@
   <link href="https://styx-static.github.io/styx-site/posts/2017-01-19-styx-0.5.0-released.html" rel="alternate" type="text/html"/>
   
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>Highlights:</p>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Highlights:</p>
 
 <ul>
 <li>New theme: generic-templates. The generic-templates theme provide a template framework and basic templates for common components.</li>
@@ -76,14 +76,15 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
 
 <hr />
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.5.0/index.html">Styx 0.5.0 Documentation</a>, <a href="https://styx-static.github.io/styx-site/documentation/v0.5.0/index.html#v0.5.0">release notes</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.5.0/index.html">Styx 0.5.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.5.0/index.html#v0.5.0">release notes</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
-    </div>
-  </content>
+      </div>
+    </content>
 </entry>
 
 <entry>
@@ -93,8 +94,8 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
   <link href="https://styx-static.github.io/styx-site/posts/2016-12-07-styx-0.4.0-released.html" rel="alternate" type="text/html"/>
   
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>Highlights:</p>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Highlights:</p>
 
 <ul>
 <li>Better integration with the Nix ecosystem, styx sites can be called from nix expressions with <code>callPackage</code></li>
@@ -109,14 +110,15 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
 <li><code>site.nix</code> init section was refactored</li>
 </ul>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.4.0/index.html">Styx 0.4.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.4.0/index.html">Styx 0.4.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.4.0/index.html#_release_notes">release notes</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
-    </div>
-  </content>
+      </div>
+    </content>
 </entry>
 
 <entry>
@@ -126,22 +128,23 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
   <link href="https://styx-static.github.io/styx-site/posts/2016-10-29-styx-0.3.1-released.html" rel="alternate" type="text/html"/>
   
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>This release contains the following bug fixes:</p>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>This release contains the following bug fixes:</p>
 
 <ul>
 <li><code>styx server</code> and <code>styx preview</code> command <code>--site-url</code> flag handling</li>
 <li><code>styx --help</code> fix</li>
 </ul>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.3.1/index.html">Styx 0.3.1 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.3.1/index.html">Styx 0.3.1 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.3.1/index.html#_release_notes">release notes</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
-    </div>
-  </content>
+      </div>
+    </content>
 </entry>
 
 <entry>
@@ -151,8 +154,8 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
   <link href="https://styx-static.github.io/styx-site/posts/2016-10-26-styx-0.3.0-released.html" rel="alternate" type="text/html"/>
   
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>Highlights:</p>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Highlights:</p>
 
 <ul>
 <li>Themes as first class citizens</li>
@@ -165,16 +168,15 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
 <li>Easier updates</li>
 </ul>
 
-<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation/v0.3.0/index.html#_release_notes">release notes</a>.</p>
-
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.3.0/index.html">Styx 0.3.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.3.0/index.html">Styx 0.3.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.3.0/index.html#_release_notes">release notes</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
-    </div>
-  </content>
+      </div>
+    </content>
 </entry>
 
 <entry>
@@ -184,8 +186,8 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
   <link href="https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html" rel="alternate" type="text/html"/>
   
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>Highlights:</p>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>Highlights:</p>
 
 <ul>
 <li>New live preview mode</li>
@@ -194,16 +196,15 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
 <li>Themes</li>
 </ul>
 
-<p>Detailed <a href="https://styx-static.github.io/styx-site/documentation/v0.2.0/index.html#_release_notes">release notes</a>.</p>
-
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.2.0/index.html">Styx 0.2.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.2.0/index.html">Styx 0.2.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.2.0/index.html#_release_notes">release notes</a>.</p>
 
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
-    </div>
-  </content>
+      </div>
+    </content>
 </entry>
 
 <entry>
@@ -213,8 +214,8 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
   <link href="https://styx-static.github.io/styx-site/posts/2016-10-07-styx-0.1.0-released.html" rel="alternate" type="text/html"/>
   
   <content type="xhtml">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-      <p>First release of Styx!</p>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>First release of Styx!</p>
 
 <p>Styx is a functional static site generator based on the <a href="http://nixos.org/nix/">Nix package manager</a>.</p>
 
@@ -230,14 +231,15 @@ $ styx --help
 $ styx --help
 </code></pre>
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.1.0/index.html">Styx 0.1.0 Documentation</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.1.0/index.html">Styx 0.1.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.1.0/index.html#_release_notes">release notes</a>.</p>
 
 <p>If you want to contribute to Styx, please join the <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
 
 <p>Bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
 
-    </div>
-  </content>
+      </div>
+    </content>
 </entry>
 
 </feed>

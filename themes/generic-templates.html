@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
 <link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css" rel="stylesheet" type="text/css" />
 <link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -46,74 +47,125 @@
 <p class="license">License: <a href="http://spdx.org/licenses/MIT">MIT License</a></p>
 
 <p class="links">
-  <a href="https://styx-static.github.io/styx-theme-generic-templates" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
-  <a href="https://github.com/styx-static/styx-theme-generic-templates" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+    <a href="https://styx-static.github.io/styx-theme-generic-templates" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+    <a href="https://github.com/styx-static/styx-theme-generic-templates" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
   </p>
 
 <img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/generic-templates.png" />
 
-<div class="conf"><div class="panel panel-primary">
-  <div class="panel-heading">Configuration interface</div>
-  
-  <div class="list-group-item">
+<div class="theme-conf"><div class="panel panel-default">
+<div class="panel-heading">Configuration interface</div>
+<ul class="list-group">
+<li class="list-group-item">
   <p><strong>html.doctype</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Doctype declaration to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>one of "html5", "html4", "xhtml1"</dd><dt>Default:</dt><dd><code>"html5"</code></dd></dl>
+</dd><dt>Type:</dt><dd>one of "html5", "html4", "xhtml1"</dd><dt>Default:</dt><dd><pre><code>&quot;html5&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>html.lang</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>An ISO 639-1 language code to set to the <code>html</code> tag.</p>
 </div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;en&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>lib.bootstrap.enable</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable bootstrap.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>lib.bootstrap.version</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects bootstrap version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"3.3.7"</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;3.3.7&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>lib.font-awesome.enable</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable font awesome.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>lib.font-awesome.version</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects font-awesome version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"4.7.0"</code></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;4.7.0&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.googlefonts</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Google Fonts to load, for available fonts see <a href="https://fonts.google.com/" class="bare">https://fonts.google.com/</a>.</p>
 </div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ &quot;Barrio&quot; &quot;Fjalla One&quot; ]</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.highlightjs.enable</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable highlightjs.</p>
+</div>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.highlightjs.extraLanguages</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Extra languages to highlight, for available languages see <a href="https://highlightjs.org/static/demo/" class="bare">https://highlightjs.org/static/demo/</a>.</p>
+</div>
+</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ &quot;nix&quot; ]</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.highlightjs.style</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Style used by highlight.js, for available styles see <a href="https://highlightjs.org/static/demo/" class="bare">https://highlightjs.org/static/demo/</a>.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;default&quot;</code></pre></dd><dt>Example:</dt><dd><pre><code>&quot;agate&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.highlightjs.version</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Selects highlightjs version to use.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;9.9.0&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>lib.jquery.enable</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable jQuery.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><code>false</code></dd><dt>Example:</dt><dd><code>true</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>lib.jquery.version</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects jQuery version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"3.1.1"</code></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;3.1.1&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.mathjax.enable</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable mathjax.</p>
 </div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>services.disqus.shortname</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Disqus service shortname. See <a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-">What&#8217;s a shortname?</a> page for details.</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>services.google-analytics.trackingID</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Google analytics service tracker ID, Google analytics is disabled if set to null.</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>services.mixpanel.key</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Mixpanel service key, Mixpanel service is disabled if set to null.</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>site.title</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
-<p>String to append to the site <code>title</code> tag contents.</p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Site title.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Generic Templates"</code></dd></dl>
-</div>
-  
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Generic Templates&quot;</code></pre></dd></dl>
+</li></ul>
 </div></div>
-
 </div>
 
 <div class="navbar navbar-fixed-bottom" id="footer">
@@ -124,5 +176,17 @@
   </div>
 </div>
 <script crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/nix.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90618087-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

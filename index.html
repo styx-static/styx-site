@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
 <link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css" rel="stylesheet" type="text/css" />
 <link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -50,7 +51,7 @@
   <p>nix-shell -p styx</p>
   <p>styx new site mysite && cd mysite</p>
 </div>
-<p class="text-center">Then have a look at readme.md file or at the <a href="https://styx-static.github.io/styx-site/documentation.html">documentation</a> to learn how to customize your site.</p>
+<p class="text-center">Then have a look at readme.md file or at the <a href="https://styx-static.github.io/styx-site/documentation/index.html">documentation</a> to learn how to customize your site.</p>
 </div>
 <div class="top-news container">
 <h2>Latest News</h2>
@@ -86,5 +87,17 @@
   </div>
 </div>
 <script crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/nix.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90618087-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>

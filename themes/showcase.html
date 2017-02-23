@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
 <link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css" rel="stylesheet" type="text/css" />
 <link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -77,46 +78,41 @@
 <p class="license">License: <a href="http://spdx.org/licenses/MIT">MIT License</a></p>
 
 <p class="links">
-  <a href="https://styx-static.github.io/styx-theme-showcase" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
-  <a href="https://github.com/styx-static/styx-theme-showcase" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+    <a href="https://styx-static.github.io/styx-theme-showcase" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+    <a href="https://github.com/styx-static/styx-theme-showcase" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
   </p>
 
 <img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/showcase.png" />
 
-<div class="conf"><div class="panel panel-primary">
-  <div class="panel-heading">Configuration interface</div>
-  
-  <div class="list-group-item">
+<div class="theme-conf"><div class="panel panel-default">
+<div class="panel-heading">Configuration interface</div>
+<ul class="list-group">
+<li class="list-group-item">
   <p><strong>archives.itemsPerPage</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Number of posts on the archive page.</p>
 </div>
-</dd><dt>Type:</dt><dd>integer</dd><dt>Default:</dt><dd><code>15</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>integer</dd><dt>Default:</dt><dd><pre><code>15</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>index.itemsPerPage</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Number of posts on the index page.</p>
 </div>
-</dd><dt>Type:</dt><dd>integer</dd><dt>Default:</dt><dd><code>4</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>integer</dd><dt>Default:</dt><dd><pre><code>4</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>site.copyright</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Site copyright, added in the footer.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"&copy; 2017"</code></dd></dl>
-</div>
-<div class="list-group-item">
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;&copy; 2017&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>site.description</strong></p>
-  <dl class="dl-horizontal"><dt>Description:</dt><dd><div class="paragraph">
+  <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Site description, added in the footer.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><code>"Write a description for your new site here."</code></dd></dl>
-</div>
-  
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Write a description for your new site here.&quot;</code></pre></dd></dl>
+</li></ul>
 </div></div>
-
 </div>
 
 <div class="navbar navbar-fixed-bottom" id="footer">
@@ -127,5 +123,17 @@
   </div>
 </div>
 <script crossorigin="anonymous" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/nix.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90618087-1', 'auto');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>
