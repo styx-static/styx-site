@@ -153,11 +153,23 @@
 </div>
 </dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
 </li><li class="list-group-item">
-  <p><strong>services.mixpanel.key</strong></p>
+  <p><strong>services.piwik.IDsite</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Mixpanel service key, Mixpanel service is disabled if set to null.</p>
+<p>idsite of the website you are tracking in Piwik.</p>
 </div>
-</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd></dl>
+</li><li class="list-group-item">
+  <p><strong>services.piwik.enable</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Whether to enable Piwik.</p>
+</div>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>services.piwik.url</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Piwik url.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd></dl>
 </li><li class="list-group-item">
   <p><strong>site.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
@@ -187,6 +199,21 @@
 
   ga('create', 'UA-90618087-1', 'auto');
   ga('send', 'pageview');
+
 </script>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.synap.fr/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
 </body>
 </html>
