@@ -18,14 +18,14 @@ normalTemplate ''
     <p>nix-shell -p styx</p>
     <p>styx new site mysite && cd mysite</p>
   </div>
-  <p class="text-center">Then have a look at readme.md file or at the ${templates.tag.ilink { path = "/documentation.html"; content = "documentation"; }} to learn how to customize your site.</p>
+  <p class="text-center">Then have a look at readme.md file or at the ${templates.tag.ilink { to = "/documentation/index.html"; content = "documentation"; }} to learn how to customize your site.</p>
   </div>
   <div class="top-news container">
   <h2>Latest News</h2>
-    ${optionalString ((length pages.posts) >1) ''
+    ${optionalString ((length pages.posts.list) >1) ''
       <div class="container article-archives">
-      ${mapTemplate templates.post.list (take 3 pages.posts)}
-      <div class="past-news">${templates.tag.ilink { page = pages.news; content = "Past News"; }}</div>
+      ${mapTemplate templates.post.list (take 3 pages.posts.list)}
+      <div class="past-news">${templates.tag.ilink { to = pages.news; content = "Past News"; }}</div>
       </div>
     ''}
   </div>

@@ -33,13 +33,13 @@ rec {
   */
   themesData = styxLib.themes.load {
     inherit styxLib themes;
-    templates.extraEnv = { inherit data pages; };
-    conf.extra = [ ./conf.nix extraConf ];
+    extraEnv  = { inherit data pages; };
+    extraConf = [ ./conf.nix extraConf ];
   };
 
   /* Bringing the themes data to the scope
   */
-  inherit (themesData) conf lib files templates;
+  inherit (themesData) conf lib files templates env;
 
 
 /*-----------------------------------------------------------------------------
@@ -49,12 +49,11 @@ rec {
 -----------------------------------------------------------------------------*/
 
   data = with lib; {
+    posts  = sortBy "date" "dsc" (loadDir { dir = ./posts; inherit env; });
 
-    posts  = let
-      postsList = loadDir { inherit substitutions; dir = ./posts; };
-      # include drafts only when renderDrafts is true
-      draftsList = optionals (conf ? renderDrafts) (loadDir { inherit substitutions; dir = ./drafts; isDraft = true; });
-    in sortBy "date" "dsc" (postsList ++ draftsList);
+    doc = lib.fold (v: acc:
+      acc // { "${v}" = mkDocPath v; }
+    ) {} versions;
 
     navbar = [
       pages.news
@@ -81,7 +80,6 @@ rec {
                       in styxLib.utils.merge [ preMeta t postMeta ]
                     ) data;
       in data';
-
   };
 
 
@@ -108,7 +106,7 @@ rec {
     feed = {
       path     = "/feed.xml";
       template = templates.feed.atom;
-      items    = lib.take 10 pages.posts;
+      items    = lib.take 10 pages.posts.list;
       layout   = lib.id;
     };
 
@@ -116,7 +114,7 @@ rec {
       data       = data.posts;
       pathPrefix = "/posts/";
       template   = templates.post.full;
-        breadcrumbs = with pages; [ index news ];
+      breadcrumbs = [ index news ];
     };
 
     themesList = {
@@ -130,7 +128,7 @@ rec {
         path        = "/themes/${t.id}.html";
         template    = templates.theme.full;
         title       = t.meta.name;
-        breadcrumbs = with pages; [ index themesList ];
+        breadcrumbs = [ index themesList ];
       }
     ) data.themes;
 
@@ -142,8 +140,9 @@ rec {
 
 -----------------------------------------------------------------------------*/
 
+  name = "Styx Official Site";
   
-  pagesList = lib.pagesToList {
+  pageList = lib.pagesToList {
     inherit pages;
     default = { layout = templates.layout; };
   };
@@ -152,7 +151,9 @@ rec {
   fetchStyx = version:
     import (fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz") {};
 
+  # list of versions to generate documentation from
   versions = [
+    "v0.6.0"
     "v0.5.0"
     "v0.4.0"
     "v0.3.1"
@@ -163,19 +164,12 @@ rec {
 
   substitutions = {
     siteUrl = conf.siteUrl;
-    doc = lib.fold (v: acc:
-      acc // { "${v}" = mkDocUrl v; }
-    ) {} versions;
   };
 
-  mkDocPath = v:
-    "/documentation/${v}/";
+  mkDocPath = v: "/documentation/${v}/";
 
-  mkDocUrl = v:
-    conf.siteUrl + (mkDocPath v) + "index.html";
-
-  site = lib.generateSite {
-    inherit files pagesList substitutions;
+  site = lib.mkSite {
+    inherit files pageList substitutions;
 
     postGen = with lib; ''
       # Themes screenshots

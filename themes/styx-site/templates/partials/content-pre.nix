@@ -1,7 +1,7 @@
 { templates, data, conf, ... }:
 { page }:
 templates.bootstrap.navbar.default {
-  brand = templates.tag.ilink { path = "/"; class = "navbar-brand"; content = conf.theme.site.title; };
+  brand = templates.tag.ilink { to = "/"; class = "navbar-brand"; content = conf.theme.site.title; };
   extraClasses = [ "navbar-fixed-top" ];
   content = [
     (templates.bootstrap.navbar.nav {

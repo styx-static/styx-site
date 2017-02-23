@@ -5,8 +5,17 @@
 
   theme = {
     site.title = "Styx Static Site Generator";
-    lib.bootstrap.enable = true;
-    lib.font-awesome.enable = true;
+    lib = {
+      bootstrap.enable    = true;
+      jquery.enable       = true;
+      font-awesome.enable = true;
+      highlightjs = {
+        enable = true;
+        style = "github";
+        extraLanguages = [ "nix" ];
+      };
+    };
+    services.google-analytics.trackingID = "UA-90618087-1";
   };
 
 }

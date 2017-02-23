@@ -1,0 +1,77 @@
+{---
+title = "Styx ${version} released";
+version = "0.6.0";
+release = "v${version}";
+---}
+
+== Highlights
+
+* Nix expressions can be embedded in markup files.
+* Site building perfomance improvements.
+
+New commands:
+
+* `styx site-doc`: generate documentation for a styx site.
+* `styx gen-sample-data`: generate sample data.
+* `styx linkcheck`: check the internal links of a site.
+
+New features in the generic templates theme:
+
+* `templates.media.*`: For embedding media. (giphy, github gists, slideshare, speakerdeck, twitter, vimeo and youtube)
+* `conf.services.*`: For third party services integration. (disqus, piwik and google analytics)
+* `conf.lib.*`: highlightjs, google fonts and mathjax support added.
+
+== Improvements
+
+* Performance.
+* Drafts can be automatically handled with metadata.
+* `mkPageList` automatically handle multipage pages.
+* Themes and library documentations.
+
+== Breaking Changes
+
+* Substitutions in data files have been removed in favor embedded nix. (substitutions can still be used in static files)
+* `themes.load` function arguments were renamed:
+** `templates.extraEnv` renamed to `extraEnv`.
+** `conf.extraConf` renamed to `extraConf`.
+* `loadDir` and `loadFile` functions arguments have changed.
+* `mkMultiTail` function have been removed in favor of `mkPageList`.
+* `loadDir` and `loadFile` functions arguments has been modified.
+* `generateSite` was renamed to `mkSite` and its `pagesList` argument was renamed to `pageList`.
+* `mkPageList` now outputs a pages set, with a `list` attribute containing the page list. To refer pages generated with `mkPageList` use the `list` attribute, eg `pages.posts.list`.
+
+---
+
+Thoughts:
+
+At the moment of writing, styx 0.6.0 is only available in the `nixpkgs-unstable` channel.  
+If you are on a different channel and want to test / install styx 0.6.0, use the following command:
+
+Testing with nix-shell:
+
+```
+$ nix-shell -p styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+```
+
+Installing:
+
+```
+$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+```
+
+Note that the `build`, `preview`, `live`, `serve` and `deploy` commands require system active `nixpkgs` to provide the same version of styx as the one used, 0.5.0.  
+For these commands `-I nixpkgs=...` can also be used to set the version of `nixpkgs` to use, for example:
+
+```
+$ styx preview -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+```
+
+---
+
+Learn more in the +++{{ with meta; templates.tag.ilink { to = data.doc."{{ release }}" + "index.html"; content = "Styx {{ version }} Documentation"; } }}+++,
++++{{ with meta; templates.tag.ilink { to = data.doc."{{ release }}" + "index.html#{{ release }}"; content = "release notes"; } }}+++.
+
+Contribute to Styx via https://github.com/styx-static/styx/[GitHub repository].
+
+Problems and bugs should be reported to the https://github.com/styx-static/styx/issues[issue tracker].
+

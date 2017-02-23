@@ -140,7 +140,7 @@ article header {
   border-bottom:1px solid #eee;
 }
 
-.theme-full .conf {
+.theme-full .theme-conf {
   margin: 1em 0;
 }
 
@@ -150,6 +150,10 @@ article header {
 
 .theme-full .conf dd p {
   margin: 0;
+}
+
+pre {
+  padding: 0;
 }
 
 /* Top news
