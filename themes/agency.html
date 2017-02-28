@@ -74,14 +74,14 @@
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Last about bubble text.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Be part&lt;br&gt;of our&lt;br&gt;story!&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Be part&lt;br&gt;of our&lt;br&gt;story!&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>about.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>List of about events as attribute sets, requires <code>img</code>, <code>date</code>, <code>title</code>, and <code>content</code>.
 If set to the empty list <code>[]</code>, the about area will not be displayed.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   content = &quot;Lorem ipsum dolor sit amet consectetur.&quot;;
   date = &quot;2009-2011&quot;;
   img = &quot;1.jpg&quot;;
@@ -92,20 +92,20 @@ If set to the empty list <code>[]</code>, the about area will not be displayed.<
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Subtitle of the about area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>about.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the about area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;About&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;About&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>clients</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>List of clients as attribute sets, requires <code>logo</code> and <code>link</code>.
 If set to the empty list <code>[]</code>, the clients area will not be displayed.";</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   link = &quot;#&quot;;
   logo = &quot;envato.jpg&quot;;
 } {
@@ -117,19 +117,19 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Text of the contact area button.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Send message&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Send message&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>contact.enable</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable contact area.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>contact.form.email</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Contact form email input label</p>
 </div>
-</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code>{
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code class="nix">{
   text = &quot;Your Email *&quot;;
   warning = &quot;Please enter your email address.&quot;;
 }</code></pre></dd></dl>
@@ -138,7 +138,7 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Contact form message input label</p>
 </div>
-</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code>{
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code class="nix">{
   text = &quot;Your Message *&quot;;
   warning = &quot;Please enter a message.&quot;;
 }</code></pre></dd></dl>
@@ -147,7 +147,7 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Contact form name input label</p>
 </div>
-</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code>{
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code class="nix">{
   text = &quot;Your Name *&quot;;
   warning = &quot;Please enter your name.&quot;;
 }</code></pre></dd></dl>
@@ -156,7 +156,7 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Contact form phone input label</p>
 </div>
-</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code>{
+</dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code class="nix">{
   text = &quot;Your Phone *&quot;;
   warning = &quot;Please enter your phone number.&quot;;
 }</code></pre></dd></dl>
@@ -165,31 +165,31 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Contact area from receiver mail address.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;your@email.com&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;your@email.com&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>contact.subtitle</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Subtitle of the contact area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>contact.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the contact area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>footer.copyright</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Footer copyright text.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Published under the Apache License 2.0.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Published under the Apache License 2.0.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>footer.quicklinks</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Footer links.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   link = &quot;#&quot;;
   text = &quot;Privacy Policy&quot;;
 } {
@@ -201,7 +201,7 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Social media links to display in the footer.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   icon = &quot;fa-twitter&quot;;
   link = &quot;#&quot;;
 } {
@@ -216,25 +216,25 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Button text of the hero area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Tell me more&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Tell me more&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>hero.subtitle</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Subtitle of the hero area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;It's nice to meet you&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;It's nice to meet you&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>hero.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the hero area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Welcome To Our Studio!&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Welcome To Our Studio!&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>menu.append</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Menu items to add at the end of the navigation.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   name = &quot;Styx&quot;;
   url = &quot;https://styx-static.github.io/styx-site/&quot;;
 } ]</code></pre></dd></dl>
@@ -243,7 +243,7 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Menu items to add at the beginning of the navigation.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   name = &quot;Styx&quot;;
   url = &quot;https://styx-static.github.io/styx-site/&quot;;
 } ]</code></pre></dd></dl>
@@ -253,7 +253,7 @@ If set to the empty list <code>[]</code>, the clients area will not be displayed
 <p>List of portfolio projects as attribute sets, requires <code>title</code>, <code>subtitle</code>, <code>img</code>, <code>preview</code>, <code>client</code>, <code>clientLink</code>, <code>category</code> and <code>content</code>.
 If set to the empty list <code>[]</code>, the portfolio area will not be displayed.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   category = &quot;Graphic Design&quot;;
   client = &quot;Start Bootstrap&quot;;
   clientLink = &quot;#&quot;;
@@ -269,20 +269,20 @@ If set to the empty list <code>[]</code>, the portfolio area will not be display
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Subtitle of the portolio area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>portfolio.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the portfolio area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Services&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Services&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>services.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>List of services as attribute sets, requires <code>title</code>, <code>icon</code> and <code>content</code> attributes.
 If set to the empty list <code>[]</code>, the services area will not be displayed.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   content = &quot;Lorem ipsum dolor sit amet consectetur.&quot;;
   icon = &quot;fa-shopping-cart&quot;;
   title = &quot;E-Commerce&quot;;
@@ -292,44 +292,44 @@ If set to the empty list <code>[]</code>, the services area will not be displaye
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Subtitle of the services area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>services.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the services area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Services&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Services&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>site.author</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Content of the author <code>meta</code> tag.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Your name&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Your name&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>site.description</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Content of the description <code>meta</code> tag.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Your description&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Your description&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>site.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the site.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;The Agency&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;The Agency&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>team.description</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Description of the team</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>team.members</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>List of team members as attribute sets, requires <code>img</code>, <code>name</code>, <code>position</code>, and <code>social</code>. <code>social</code> have the same format to <code>footer.social</code>.
 If set to the empty list <code>[]</code>, the team area will not be displayed.";</p>
 </div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ {
+</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   img = &quot;1.jpg&quot;;
   name = &quot;Kay Garland&quot;;
   position = &quot;Lead Designer&quot;;
@@ -349,13 +349,13 @@ If set to the empty list <code>[]</code>, the team area will not be displayed.";
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Subtitle of the team area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Lorem ipsum dolor sit amet consectetur.&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>team.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Title of the team area.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;About&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;About&quot;</code></pre></dd></dl>
 </li></ul>
 </div></div>
 </div>
@@ -382,19 +382,5 @@ If set to the empty list <code>[]</code>, the team area will not be displayed.";
   ga('send', 'pageview');
 
 </script>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//piwik.synap.fr/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Piwik Code -->
 </body>
 </html>

@@ -86,7 +86,7 @@ If you are on a different channel and want to test / install styx 0.5.0, use the
 
 <p>Installing:</p>
 
-<pre><code>$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable-small.tar.gz
+<pre><code>$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
 </code></pre>
 
 <p>Note that the <code>build</code>, <code>preview</code>, <code>live</code>, <code>serve</code> and <code>deploy</code> commands require system active <code>nixpkgs</code> to provide the same version of styx as the one used, 0.5.0.<br/>
@@ -132,19 +132,5 @@ For these commands <code>-I nixpkgs=...</code> can also be used to set the versi
   ga('send', 'pageview');
 
 </script>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//piwik.synap.fr/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Piwik Code -->
 </body>
 </html>

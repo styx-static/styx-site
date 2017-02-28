@@ -61,97 +61,97 @@
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Doctype declaration to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>one of "html5", "html4", "xhtml1"</dd><dt>Default:</dt><dd><pre><code>&quot;html5&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>one of "html5", "html4", "xhtml1"</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;html5&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>html.lang</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>An ISO 639-1 language code to set to the <code>html</code> tag.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;en&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;en&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.bootstrap.enable</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable bootstrap.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.bootstrap.version</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects bootstrap version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;3.3.7&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;3.3.7&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.font-awesome.enable</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable font awesome.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.font-awesome.version</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects font-awesome version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;4.7.0&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;4.7.0&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.googlefonts</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Google Fonts to load, for available fonts see <a href="https://fonts.google.com/" class="bare">https://fonts.google.com/</a>.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ &quot;Barrio&quot; &quot;Fjalla One&quot; ]</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ &quot;Barrio&quot; &quot;Fjalla One&quot; ]</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.highlightjs.enable</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable highlightjs.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.highlightjs.extraLanguages</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Extra languages to highlight, for available languages see <a href="https://highlightjs.org/static/demo/" class="bare">https://highlightjs.org/static/demo/</a>.</p>
 </div>
-</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code>[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code>[ &quot;nix&quot; ]</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ &quot;nix&quot; ]</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.highlightjs.style</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Style used by highlight.js, for available styles see <a href="https://highlightjs.org/static/demo/" class="bare">https://highlightjs.org/static/demo/</a>.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;default&quot;</code></pre></dd><dt>Example:</dt><dd><pre><code>&quot;agate&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;default&quot;</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">&quot;agate&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.highlightjs.version</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects highlightjs version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;9.9.0&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;9.9.0&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.jquery.enable</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable jQuery.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.jquery.version</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Selects jQuery version to use.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;3.1.1&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;3.1.1&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.mathjax.enable</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable mathjax.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>services.disqus.shortname</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Disqus service shortname. See <a href="https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-">What&#8217;s a shortname?</a> page for details.</p>
 </div>
-</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>services.google-analytics.trackingID</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Google analytics service tracker ID, Google analytics is disabled if set to null.</p>
 </div>
-</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code>null</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>services.piwik.IDsite</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
@@ -163,7 +163,7 @@
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Whether to enable Piwik.</p>
 </div>
-</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code>false</code></pre></dd><dt>Example:</dt><dd><pre><code>true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>boolean</dd><dt>Default:</dt><dd><pre><code class="nix">false</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>services.piwik.url</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
@@ -175,7 +175,7 @@
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Site title.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code>&quot;Generic Templates&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Generic Templates&quot;</code></pre></dd></dl>
 </li></ul>
 </div></div>
 </div>
@@ -202,19 +202,5 @@
   ga('send', 'pageview');
 
 </script>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//piwik.synap.fr/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', '2']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Piwik Code -->
 </body>
 </html>
