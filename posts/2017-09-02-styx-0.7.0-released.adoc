@@ -1,0 +1,92 @@
+{---
+title = "Styx ${version} released";
+version = "0.7.0";
+release = "v${version}";
+---}
+
+:leveloffset: -2
+
+==== Highlights:
+
+* Styx use its own version without relying on global `<nixpkgs>`, this ensure that `site.nix` format, used styx-themes and styx versions are matching.
+* Instructions and helpers for <<multilocale,multi-locale>> sites.
+* Block feature for flexible single page websites, used in the Agency theme.
+* Better support for Darwin platforms.
+
+==== New themes:
+
+* Nix
+* Ghostwriter
+
+==== New commands:
+
+* `styx preview-theme`: Preview a styx-theme theme, eg: `styx preview-theme ghostwriter`.
+
+==== Breaking Changes:
+
+`site.nix` format have been simplified. Required arguments are `styx` and `extraConf` only.
+The themes set `styx-themes`, can be accessed with `import styx.themes` and is tied to the styx version.
+
+[source, nix]
+.Pre 0.7.0 site.nix
+----
+{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Importing styx library
+  */
+  styxLib = import styx.lib args;
+----
+
+[source, nix]
+.Post 0.7.0 site.nix
+----
+{ styx
+, extraConf ? {}
+}:
+
+rec {
+
+  /* Importing styx library
+  */
+  styxLib = import styx.lib styx;
+
+
+  /* Importing styx themes from styx
+  */
+  styx-themes = import styx.themes;
+----
+
+
+---
+
+Thoughts:
+
+At the moment of writing, styx {{ meta.version }} is only available in the `nixpkgs-unstable` channel.  
+If you are on a different channel and want to test / install styx {{ meta.version }}, use the following command:
+
+Testing with nix-shell:
+
+```
+$ nix-shell -p styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+```
+
+Installing:
+
+```
+$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
+```
+
+---
+
+Learn more in the +++{{ with meta; templates.tag.ilink { to = data.doc."{{ release }}" + "index.html"; content = "Styx {{ version }} Documentation"; } }}+++,
++++{{ with meta; templates.tag.ilink { to = data.doc."{{ release }}" + "index.html#{{ release }}"; content = "release notes"; } }}+++.
+
+Contribute to Styx via https://github.com/styx-static/styx/[GitHub repository].
+
+Problems and bugs should be reported to the https://github.com/styx-static/styx/issues[issue tracker].
+

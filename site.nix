@@ -3,8 +3,7 @@
 
    Initialization of Styx, should not be edited
 -----------------------------------------------------------------------------*/
-{ lib, styx, runCommand, writeText
-, styx-themes
+{ styx
 , extraConf ? {}
 , imagemagick
 }@args:
@@ -13,13 +12,15 @@ rec {
 
   /* Library loading
   */
-  styxLib = import styx.lib args;
+  styxLib = import styx.lib styx;
 
 
 /*-----------------------------------------------------------------------------
    Themes setup
 
 -----------------------------------------------------------------------------*/
+
+  styx-themes = import styx.themes;
 
   /* list the themes to load, paths or packages can be used
      items at the end of the list have higher priority
@@ -60,23 +61,23 @@ rec {
       { title = "Documentation"; path = "/documentation/index.html"; }
       pages.themesList
       { title = "GitHub ${templates.icon.font-awesome "github"}"; url = "https://github.com/styx-static/styx/"; }
-      (pages.feed // { navbarTitle = templates.icon.font-awesome "rss-square"; })
+      (pages.feed // { navbarTitle = (templates.icon.font-awesome "rss-square") + ''<span class="sr-only">RSS</span>''; })
     ];
 
     # themes meta information to generate the themes list
     themes = with lib;
       let
-        themesDrv = (filterAttrs (k: v: isDerivation v) styx-themes);
-        data      = map (t: styxLib.themes.loadData { inherit styxLib; theme = t; }) (attrValues themesDrv);
+        data      = map (t: styxLib.themes.loadData { inherit styxLib; theme = t; }) (attrValues styx-themes);
         # adding screenshot data
         data'     = map (t:
                       let
                         preMeta = { meta.name = t.meta.id; };
-                        postMeta = if t.meta ? screenshot 
-                                   then { meta = {
-                                      screenshotPath = "/imgs/themes/${t.meta.id}.png";
-                                      thumbnailPath  = "/imgs/themes/${t.meta.id}-thumb.png";
-                                   }; } else {};
+                        postMeta = optionalAttrs (t.meta ? screenshot) { 
+                                     meta = {
+                                       screenshotPath = "/imgs/themes/${t.meta.id}.png";
+                                       thumbnailPath  = "/imgs/themes/${t.meta.id}-thumb.png";
+                                     };
+                                   };
                       in styxLib.utils.merge [ preMeta t postMeta ]
                     ) data;
       in data';
@@ -144,7 +145,7 @@ rec {
   
   pageList = lib.pagesToList {
     inherit pages;
-    default = { layout = templates.layout; };
+    default.layout = templates.layout;
   };
 
   # fetch the versions to create the documentations
@@ -153,6 +154,7 @@ rec {
 
   # list of versions to generate documentation from
   versions = [
+    "v0.7.0"
     "v0.6.0"
     "v0.5.0"
     "v0.4.0"
