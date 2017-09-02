@@ -12,10 +12,10 @@
 <link href="https://styx-static.github.io/styx-site/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
 <div class="container">
 <div class="navbar-header">
-  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
     <span class="sr-only">Toggle navigation</span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
@@ -23,13 +23,13 @@
   </button>
   <a class="navbar-brand" href="https://styx-static.github.io/styx-site/">Styx Static Site Generator</a>
 </div>
-<div class="collapse navbar-collapse" id="navbar">
+<div class="collapse navbar-collapse" id="navbar-collapse">
 <ul class="nav navbar-nav navbar-right">
 <li class="active"><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
 <li><a href="https://styx-static.github.io/styx-site/documentation/index.html">Documentation</a></li>
 <li><a href="https://styx-static.github.io/styx-site/themes.html">Themes</a></li>
 <li><a href="https://github.com/styx-static/styx/">GitHub <i class="fa fa-github" aria-hidden="true"></i></a></li>
-<li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a></li>
+<li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i><span class="sr-only">RSS</span></a></li>
 </ul>
 </div>
 </div>
@@ -38,124 +38,107 @@
   <div class="container">
   <article>
     <header class="article-header">
-      <h1><a href="https://styx-static.github.io/styx-site/posts/2017-02-28-styx-0.6.0-released.html">Styx 0.6.0 released</a></h1>
+      <h1><a href="https://styx-static.github.io/styx-site/posts/2017-09-02-styx-0.7.0-released.html">Styx 0.7.0 released</a></h1>
 
-      <time datetime="2017-02-28T00:00:00Z">2017-02-28</time>
+      <time datetime="2017-09-02T00:00:00Z">2017-09-02</time>
     </header>
     <div class="container">
     <div class="sect1">
-<h2 id="_highlights">Highlights</h2>
+<h2 id="_highlights">Highlights:</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Nix expressions can be embedded in markup files.</p>
+<p>Styx use its own version without relying on global <code>&lt;nixpkgs&gt;</code>, this ensure that <code>site.nix</code> format, used styx-themes and styx versions are matching.</p>
 </li>
 <li>
-<p>Site building perfomance improvements.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>New commands:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>styx site-doc</code>: generate documentation for a styx site.</p>
+<p>Instructions and helpers for <a href="#multilocale">multi-locale</a> sites.</p>
 </li>
 <li>
-<p><code>styx gen-sample-data</code>: generate sample data.</p>
+<p>Block feature for flexible single page websites, used in the Agency theme.</p>
 </li>
 <li>
-<p><code>styx linkcheck</code>: check the internal links of a site.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>New features in the generic templates theme:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>templates.media.*</code>: For embedding media. (giphy, github gists, slideshare, speakerdeck, twitter, vimeo and youtube)</p>
-</li>
-<li>
-<p><code>conf.services.*</code>: For third party services integration. (disqus, piwik and google analytics)</p>
-</li>
-<li>
-<p><code>conf.lib.*</code>: highlightjs, google fonts and mathjax support added.</p>
+<p>Better support for Darwin platforms.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_improvements">Improvements</h2>
+<h2 id="_new_themes">New themes:</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Performance.</p>
+<p>Nix</p>
 </li>
 <li>
-<p>Drafts can be automatically handled with metadata.</p>
-</li>
-<li>
-<p><code>mkPageList</code> automatically handle multipage pages.</p>
-</li>
-<li>
-<p>Themes and library documentations.</p>
+<p>Ghostwriter</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_breaking_changes">Breaking Changes</h2>
+<h2 id="_new_commands">New commands:</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>Substitutions in data files have been removed in favor embedded nix. (substitutions can still be used in static files)</p>
-</li>
-<li>
-<p><code>themes.load</code> function arguments were renamed:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>templates.extraEnv</code> renamed to <code>extraEnv</code>.</p>
-</li>
-<li>
-<p><code>conf.extraConf</code> renamed to <code>extraConf</code>.</p>
+<p><code>styx preview-theme</code>: Preview a styx-theme theme, eg: <code>styx preview-theme ghostwriter</code>.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><code>loadDir</code> and <code>loadFile</code> functions arguments have changed.</p>
-</li>
-<li>
-<p><code>mkMultiTail</code> function have been removed in favor of <code>mkPageList</code>.</p>
-</li>
-<li>
-<p><code>loadDir</code> and <code>loadFile</code> functions arguments has been modified.</p>
-</li>
-<li>
-<p><code>generateSite</code> was renamed to <code>mkSite</code> and its <code>pagesList</code> argument was renamed to <code>pageList</code>.</p>
-</li>
-<li>
-<p><code>mkPageList</code> now outputs a pages set, with a <code>list</code> attribute containing the page list. To refer pages generated with <code>mkPageList</code> use the <code>list</code> attribute, eg <code>pages.posts.list</code>.</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">Breaking Changes:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>site.nix</code> format have been simplified. Required arguments are <code>styx</code> and <code>extraConf</code> only.
+The themes set <code>styx-themes</code>, can be accessed with <code>import styx.themes</code> and is tied to the styx version.</p>
+</div>
+<div class="listingblock">
+<div class="title">Pre 0.7.0 site.nix</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Importing styx library
+  */
+  styxLib = import styx.lib args;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Post 0.7.0 site.nix</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">{ styx
+, extraConf ? {}
+}:
+
+rec {
+
+  /* Importing styx library
+  */
+  styxLib = import styx.lib styx;
+
+
+  /* Importing styx themes from styx
+  */
+  styx-themes = import styx.themes;</code></pre>
+</div>
 </div>
 <hr/>
 <div class="paragraph">
 <p>Thoughts:</p>
 </div>
 <div class="paragraph">
-<p>At the moment of writing, styx 0.6.0 is only available in the <code>nixpkgs-unstable</code> channel.
-If you are on a different channel and want to test / install styx 0.6.0, use the following command:</p>
+<p>At the moment of writing, styx 0.7.0 is only available in the <code>nixpkgs-unstable</code> channel.
+If you are on a different channel and want to test / install styx 0.7.0, use the following command:</p>
 </div>
 <div class="paragraph">
 <p>Testing with nix-shell:</p>
@@ -173,19 +156,10 @@ If you are on a different channel and want to test / install styx 0.6.0, use the
 <pre class="highlight"><code>$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Note that the <code>build</code>, <code>preview</code>, <code>live</code>, <code>serve</code> and <code>deploy</code> commands require system active <code>nixpkgs</code> to provide the same version of styx as the one used, 0.5.0.
-For these commands <code>-I nixpkgs=&#8230;&#8203;</code> can also be used to set the version of <code>nixpkgs</code> to use, for example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>$ styx preview -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz</code></pre>
-</div>
-</div>
 <hr/>
 <div class="paragraph">
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.6.0/index.html">Styx 0.6.0 Documentation</a>,
-<a href="https://styx-static.github.io/styx-site/documentation/v0.6.0/index.html#v0.6.0">release notes</a>.</p>
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.7.0/index.html">Styx 0.7.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.7.0/index.html#v0.7.0">release notes</a>.</p>
 </div>
 <div class="paragraph">
 <p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
@@ -204,6 +178,12 @@ For these commands <code>-I nixpkgs=&#8230;&#8203;</code> can also be used to se
 
 
   <div class="container article-archives">
+<article class="article-list">
+  <a href="https://styx-static.github.io/styx-site/posts/2017-02-28-styx-0.6.0-released.html"><strong>Styx 0.6.0 released</strong>
+<time datetime="2017-02-28T00:00:00Z">2017-02-28</time>
+</a>
+</article>
+
 <article class="article-list">
   <a href="https://styx-static.github.io/styx-site/posts/2017-01-19-styx-0.5.0-released.html"><strong>Styx 0.5.0 released</strong>
 <time datetime="2017-01-19T00:00:00Z">2017-01-19</time>

@@ -3,7 +3,7 @@
   <title>Styx Static Site Generator</title>
   
   <generator>Styx</generator>
-  <updated>2017-02-28T00:00:00Z</updated>
+  <updated>2017-09-02T00:00:00Z</updated>
   <id>https://styx-static.github.io/styx-site/feed.xml</id>
   <link href="https://styx-static.github.io/styx-site/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://styx-static.github.io/styx-site/" rel="alternate"/>
@@ -14,6 +14,145 @@
   
   
   <entry>
+  <id>https://styx-static.github.io/styx-site/posts/2017-09-02-styx-0.7.0-released.html</id>
+  <title>Styx 0.7.0 released</title>
+  <updated>2017-09-02T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2017-09-02-styx-0.7.0-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <div class="sect1">
+<h2 id="_highlights">Highlights:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Styx use its own version without relying on global <code>&lt;nixpkgs&gt;</code>, this ensure that <code>site.nix</code> format, used styx-themes and styx versions are matching.</p>
+</li>
+<li>
+<p>Instructions and helpers for <a href="#multilocale">multi-locale</a> sites.</p>
+</li>
+<li>
+<p>Block feature for flexible single page websites, used in the Agency theme.</p>
+</li>
+<li>
+<p>Better support for Darwin platforms.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_new_themes">New themes:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Nix</p>
+</li>
+<li>
+<p>Ghostwriter</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_new_commands">New commands:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><code>styx preview-theme</code>: Preview a styx-theme theme, eg: <code>styx preview-theme ghostwriter</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_breaking_changes">Breaking Changes:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>site.nix</code> format have been simplified. Required arguments are <code>styx</code> and <code>extraConf</code> only.
+The themes set <code>styx-themes</code>, can be accessed with <code>import styx.themes</code> and is tied to the styx version.</p>
+</div>
+<div class="listingblock">
+<div class="title">Pre 0.7.0 site.nix</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">{ lib, styx, runCommand, writeText
+, styx-themes
+, extraConf ? {}
+}@args:
+
+rec {
+
+  /* Importing styx library
+  */
+  styxLib = import styx.lib args;</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Post 0.7.0 site.nix</div>
+<div class="content">
+<pre class="highlight"><code class="language-nix" data-lang="nix">{ styx
+, extraConf ? {}
+}:
+
+rec {
+
+  /* Importing styx library
+  */
+  styxLib = import styx.lib styx;
+
+
+  /* Importing styx themes from styx
+  */
+  styx-themes = import styx.themes;</code></pre>
+</div>
+</div>
+<hr/>
+<div class="paragraph">
+<p>Thoughts:</p>
+</div>
+<div class="paragraph">
+<p>At the moment of writing, styx 0.7.0 is only available in the <code>nixpkgs-unstable</code> channel.
+If you are on a different channel and want to test / install styx 0.7.0, use the following command:</p>
+</div>
+<div class="paragraph">
+<p>Testing with nix-shell:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ nix-shell -p styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Installing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz</code></pre>
+</div>
+</div>
+<hr/>
+<div class="paragraph">
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.7.0/index.html">Styx 0.7.0 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.7.0/index.html#v0.7.0">release notes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+
+      </div>
+    </content>
+</entry>
+
+<entry>
   <id>https://styx-static.github.io/styx-site/posts/2017-02-28-styx-0.6.0-released.html</id>
   <title>Styx 0.6.0 released</title>
   <updated>2017-02-28T00:00:00Z</updated>

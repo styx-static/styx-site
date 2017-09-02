@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agency - Styx Static Site Generator</title>
+<title>Ghostwriter - Styx Static Site Generator</title>
 <link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -35,103 +35,105 @@
 </div>
 </nav>
 <div class="container theme-full">
-<h1 class="text-capitalize">Agency</h1>
+<h1 class="text-capitalize">Ghostwriter</h1>
 
 <div class="description"><div class="paragraph">
-<p>Port of the <a href="https://github.com/digitalcraftsman/hugo-agency-theme">Agency</a> theme for Styx.</p>
+<p>Port of the <a href="https://github.com/jbub/ghostwriter">Ghostwriter</a> theme.<br/>
+Use the <code>generic-templates</code> theme.</p>
 </div>
 </div>
 
-<div class="longDescription"><div class="paragraph">
-<p>Originally made by <a href="https://github.com/digitalcraftsman">digitalcraftsman</a>.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/digitalcraftsman/hugo-agency-theme">Original Theme</a></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Agency Theme is a one page portfolio for companies and freelancers based on the original Bootstrap theme by David Miller. This Hugo theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a timeline, and a contact form.</p>
-</div>
-</blockquote>
-</div>
-</div>
 
-<p class="license">License: <a href="http://spdx.org/licenses/Apache-2.0">Apache License 2.0</a></p>
+
+<p class="license">License: <a href="http://spdx.org/licenses/MIT">MIT License</a></p>
 
 <p class="links">
-    <a href="https://styx-static.github.io/styx-theme-agency" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
-    <a href="https://github.com/styx-static/styx-theme-agency" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+    <a href="https://styx-static.github.io/styx-theme-ghostwriter" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+    <a href="https://github.com/styx-static/styx-theme-ghostwriter" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
   </p>
 
-<img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/agency.png" />
+<img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/ghostwriter.png" />
 
 <div class="theme-conf"><div class="panel panel-default">
 <div class="panel-heading">Configuration interface</div>
 <ul class="list-group">
 <li class="list-group-item">
-  <p><strong>footer.copyright</strong></p>
+  <p><strong>itemsPerPage</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Footer copyright text.</p>
+<p>Number of posts per page.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Published under the Apache License 2.0.&quot;</code></pre></dd></dl>
-</li><li class="list-group-item">
-  <p><strong>footer.quicklinks</strong></p>
-  <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Footer links.</p>
-</div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
-  link = &quot;#&quot;;
-  text = &quot;Privacy Policy&quot;;
-} {
-  link = &quot;#&quot;;
-  text = &quot;Terms of Use&quot;;
-} ]</code></pre></dd></dl>
-</li><li class="list-group-item">
-  <p><strong>footer.social</strong></p>
-  <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Social media links to display in the footer.</p>
-</div>
-</dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
-  icon = &quot;fa-twitter&quot;;
-  link = &quot;#&quot;;
-} {
-  icon = &quot;fa-facebook&quot;;
-  link = &quot;#&quot;;
-} {
-  icon = &quot;fa-linkedin&quot;;
-  link = &quot;#&quot;;
-} ]</code></pre></dd></dl>
-</li><li class="list-group-item">
-  <p><strong>lib.bootstrap.enable</strong></p>
-  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>integer</dd><dt>Default:</dt><dd><pre><code class="nix">3</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.font-awesome.enable</strong></p>
   <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.googlefonts</strong></p>
-  <dl><dt>Default:</dt><dd><pre><code class="nix">[ &quot;Montserrat:400,700&quot; &quot;Kaushan Script&quot; &quot;Droid Serif:400,700,400italic,700italic&quot; &quot;Roboto Slab:400,100,300,700&quot; ]</code></pre></dd></dl>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">[ &quot;Open Sans:300italic,400italic,600italic,700italic,400,600,700,300&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic&quot; ]</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>lib.jquery.enable</strong></p>
   <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
 </li><li class="list-group-item">
-  <p><strong>site.author</strong></p>
+  <p><strong>site.copyright</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Content of the author <code>meta</code> tag.</p>
+<p>Site copyright.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Your name&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;&amp;copy; 2017. All rights reserved. 
+&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>site.description</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Content of the description <code>meta</code> tag.</p>
+<p>Site description.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Your description&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Ghostwriter blog description
+&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
   <p><strong>site.title</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>Title of the site.</p>
+<p>Site title.</p>
 </div>
-</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;The Agency&quot;</code></pre></dd></dl>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Ghostwriter Blog&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.email</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>GitHub link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.github</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>GitHub link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.gitlab</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>GitHub link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.google-plus</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Google plus link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.linked-in</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Linked in link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.stack-overflow</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Stack overflow link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>social.twitter</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Twitter link</p>
+</div>
+</dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
 </li></ul>
 </div></div>
 </div>

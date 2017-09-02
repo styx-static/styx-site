@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Styx 0.1.0 released - Styx Static Site Generator</title>
+<title>Nix - Styx Static Site Generator</title>
 <link href="https://styx-static.github.io/styx-site/feed.xml" rel="alternate" type="application/atom+xml" />
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -25,56 +25,72 @@
 </div>
 <div class="collapse navbar-collapse" id="navbar-collapse">
 <ul class="nav navbar-nav navbar-right">
-<li class="active"><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
+<li><a href="https://styx-static.github.io/styx-site/news.html">News</a></li>
 <li><a href="https://styx-static.github.io/styx-site/documentation/index.html">Documentation</a></li>
-<li><a href="https://styx-static.github.io/styx-site/themes.html">Themes</a></li>
+<li class="active"><a href="https://styx-static.github.io/styx-site/themes.html">Themes</a></li>
 <li><a href="https://github.com/styx-static/styx/">GitHub <i class="fa fa-github" aria-hidden="true"></i></a></li>
 <li><a href="https://styx-static.github.io/styx-site/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i><span class="sr-only">RSS</span></a></li>
 </ul>
 </div>
 </div>
 </nav>
-<div class="container">
-  <article>
-    <header class="article-header">
-      <h1>Styx 0.1.0 released</h1>
+<div class="container theme-full">
+<h1 class="text-capitalize">Nix</h1>
 
-      <time datetime="2016-10-07T00:00:00Z">2016-10-07</time>
-    </header>
-    <div class="container">
-    <p>First release of Styx!</p>
+<div class="description"><div class="paragraph">
+<p>Port of the <a href="https://github.com/LordMathis/hugo-theme-nix">nix</a> theme.<br/>
+Requires the <code>generic-templates</code> theme.</p>
+</div>
+</div>
 
-<p>Styx is a functional static site generator based on the <a href="http://nixos.org/nix/">Nix package manager</a>.</p>
 
-<p>It is possible to test this release of Styx in a <code>nix-shell</code>:</p>
 
-<pre><code>$ nix-shell -p $(nix-build https://github.com/ericsagnes/styx/archive/0.1.0.tar.gz)
-$ styx --help
-</code></pre>
+<p class="license">License: <a href="http://spdx.org/licenses/MIT">MIT License</a></p>
 
-<p>Styx can be installed with the <code>nix-env</code> command:</p>
+<p class="links">
+    <a href="https://styx-static.github.io/styx-theme-nix" class="btn btn-info"><i class="fa fa-desktop" aria-hidden="true"></i> Demo</a> 
+    <a href="https://github.com/styx-static/styx-theme-nix" class="btn btn-info"><i class="fa fa-home" aria-hidden="true"></i> Homepage</a>
+  </p>
 
-<pre><code>$ nix-env -i $(nix-build https://github.com/ericsagnes/styx/archive/0.1.0.tar.gz)
-$ styx --help
-</code></pre>
+<img class="img-responsive center-block" src="https://styx-static.github.io/styx-site/imgs/themes/nix.png" />
 
-<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.1.0/index.html">Styx 0.1.0 Documentation</a>,
-<a href="https://styx-static.github.io/styx-site/documentation/v0.1.0/index.html#_release_notes">release notes</a>.</p>
-
-<p>If you want to contribute to Styx, please join the <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
-
-<p>Bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
-
-    </div>
-  </article>
-
-  <hr /><nav aria-label="...">
-<ul class="pager">
-<li class="previous"><a href="https://styx-static.github.io/styx-site/posts/2016-10-10-styx-0.2.0-released.html"><span aria-hidden="true">&larr;</span> Styx 0.2.0 released</a></li>
-
-</ul>
-</nav>
-
+<div class="theme-conf"><div class="panel panel-default">
+<div class="panel-heading">Configuration interface</div>
+<ul class="list-group">
+<li class="list-group-item">
+  <p><strong>lib.bootstrap.enable</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.font-awesome.enable</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.googlefonts</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">[ &quot;Inconsolata&quot; &quot;Open+Sans&quot; &quot;Roboto&quot; &quot;Montserrat&quot; &quot;Concert One&quot; ]</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.jquery.enable</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>site.copyright</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Site copyright.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;&amp;copy; 2017. All rights reserved. 
+&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>site.description</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Site description.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Nix blog description
+&quot;</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>site.title</strong></p>
+  <dl><dt>Description:</dt><dd><div class="paragraph">
+<p>Site title.</p>
+</div>
+</dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;styx@styx ~ $&quot;</code></pre></dd></dl>
+</li></ul>
+</div></div>
 </div>
 
 <div class="navbar navbar-fixed-bottom" id="footer">
