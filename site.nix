@@ -3,45 +3,40 @@
 
    Initialization of Styx, should not be edited
 -----------------------------------------------------------------------------*/
-{ styx
+{ pkgs
 , extraConf ? {}
-, imagemagick
 }@args:
 
 rec {
 
-  /* Library loading
-  */
-  styxLib = import styx.lib styx;
-
-
 /*-----------------------------------------------------------------------------
-   Themes setup
+   Setup
 
+   This section setup required variables
 -----------------------------------------------------------------------------*/
 
-  styx-themes = import styx.themes;
+  styx = import pkgs.styx {
+    # Used packages
+    inherit pkgs;
 
-  /* list the themes to load, paths or packages can be used
-     items at the end of the list have higher priority
-  */
-  themes = [
-    styx-themes.generic-templates
-    ./themes/styx-site
-  ];
+    # Used configuration
+    config = [
+      ./conf.nix
+      extraConf
+    ];
 
-  /* Loading the themes data
-  */
-  themesData = styxLib.themes.load {
-    inherit styxLib themes;
-    extraEnv  = { inherit data pages; };
-    extraConf = [ ./conf.nix extraConf ];
+    # Loaded themes
+    themes = [
+      pkgs.styx.themes.generic-templates
+      ./themes/styx-site
+    ];
+
+    # Environment propagated to templates
+    env = { inherit data pages; };
   };
 
-  /* Bringing the themes data to the scope
-  */
-  inherit (themesData) conf lib files templates env;
-
+  # Propagating initialized data
+  inherit (styx.themes) conf files templates env lib;
 
 /*-----------------------------------------------------------------------------
    Data
@@ -52,9 +47,7 @@ rec {
   data = with lib; {
     posts  = sortBy "date" "dsc" (loadDir { dir = ./posts; inherit env; });
 
-    doc = lib.fold (v: acc:
-      acc // { "${v}" = mkDocPath v; }
-    ) {} versions;
+    doc = lib.mapAttrs (v: _: mkDocPath v) versions;
 
     navbar = [
       pages.news
@@ -67,7 +60,7 @@ rec {
     # themes meta information to generate the themes list
     themes = with lib;
       let
-        data      = map (t: styxLib.themes.loadData { inherit styxLib; theme = t; }) (attrValues styx-themes);
+        data      = map (t: lib.themes.loadData { inherit lib; theme = t; }) (attrValues (removeAttrs pkgs.styx.themes ["outPath"]));
         # adding screenshot data
         data'     = map (t:
                       let
@@ -78,7 +71,7 @@ rec {
                                        thumbnailPath  = "/imgs/themes/${t.meta.id}-thumb.png";
                                      };
                                    };
-                      in styxLib.utils.merge [ preMeta t postMeta ]
+                      in lib.utils.merge [ preMeta t postMeta ]
                     ) data;
       in data';
   };
@@ -149,20 +142,22 @@ rec {
   };
 
   # fetch the versions to create the documentations
-  fetchStyx = version:
-    import (fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz") {};
+  fetchStyx = version: fetchTarball "https://github.com/styx-static/styx/archive/${version}.tar.gz";
+  fetchDivnixStyx = version: fetchTarball "https://github.com/divnix/styx/archive/${version}.tar.gz";
+  fetchNixpkgs = rev: fetchTarball "https://github.com/nixos/nixpkgs/archive/${rev}.tar.gz";
 
   # list of versions to generate documentation from
-  versions = [
-    "v0.7.0"
-    "v0.6.0"
-    "v0.5.0"
-    "v0.4.0"
-    "v0.3.1"
-    "v0.3.0"
-    "v0.2.0"
-    "v0.1.0"
-  ];
+  versions = {
+    "v1.0.0-dev" = (import (fetchDivnixStyx "476e4276960c9445246fa0ce90054dd26950dbe4")).default;
+    "v0.7.0" = import (fetchStyx "v0.7.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.6.0" = import (fetchStyx "v0.6.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.5.0" = import (fetchStyx "v0.5.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.4.0" = import (fetchStyx "v0.4.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.3.1" = import (fetchStyx "v0.3.1") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.3.0" = import (fetchStyx "v0.3.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.2.0" = import (fetchStyx "v0.2.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+    "v0.1.0" = import (fetchStyx "v0.1.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
+  };
 
   substitutions = {
     siteUrl = conf.siteUrl;
@@ -178,17 +173,17 @@ rec {
       ${mapTemplate (t:
         optionalString (t.meta ? screenshotPath) ''
           mkdir -p $(dirname "$out${t.meta.screenshotPath}")
-          ${imagemagick}/bin/convert "${t.meta.screenshot}" "$out${t.meta.screenshotPath}"
-          ${imagemagick}/bin/convert "${t.meta.screenshot}" -resize 720 -gravity north -extent 720x500 "$out${t.meta.thumbnailPath}"
+          ${pkgs.imagemagick}/bin/convert "${t.meta.screenshot}" "$out${t.meta.screenshotPath}"
+          ${pkgs.imagemagick}/bin/convert "${t.meta.screenshot}" -resize 720 -gravity north -extent 720x500 "$out${t.meta.thumbnailPath}"
         ''
       ) data.themes}
 
       # Manuals
-      ${lib.concatStringsSep "\n" (map (version: ''
+      ${lib.concatStringsSep "\n" (mapAttrsToList (version: package: ''
         mkdir -p $out/documentation/${version}/
-        cp -r ${fetchStyx version}/share/doc/styx/* $out${mkDocPath version}
+        cp -r ${package}/share/doc/styx/* $out/documentation/${version}/
       '') versions)}
-      cp -r ${fetchStyx (lib.head versions)}/share/doc/styx/* $out/documentation/
+      cp -r ${versions.${head (attrNames versions)}}/share/doc/styx/* $out/documentation/
     '';
   };
 
