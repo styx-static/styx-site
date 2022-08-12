@@ -1,0 +1,29 @@
+{---
+title = "Styx ${version} released";
+version = "0.7.2";
+release = "v${version}";
+---}
+
+:leveloffset: -2
+
+==== Highlights:
+
+* Uses now niv to pin dependencies
+* New maintainership
+
+==== Bug fixes:
+
+* caddy now is caddy2
+* caddy fails with `no bin`, removing the .bin fixes it
+* proofreading 
+* Fixed `styx` command path resolution when styx was installed globally.
+
+---
+
+Learn more in the +++{{ with meta; templates.tag.ilink { to = data.doc."{{ release }}" + "index.html"; content = "Styx {{ version }} Documentation"; } }}+++,
++++{{ with meta; templates.tag.ilink { to = data.doc."{{ release }}" + "index.html#{{ release }}"; content = "release notes"; } }}+++.
+
+Contribute to Styx via https://github.com/styx-static/styx/[GitHub repository].
+
+Problems and bugs should be reported to the https://github.com/styx-static/styx/issues[issue tracker].
+
