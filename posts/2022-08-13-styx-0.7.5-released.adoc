@@ -1,22 +1,18 @@
 ---
 title: "Styx ${version} released"
-version: "0.7.2"
+version: "0.7.5"
 release: "v${version}"
 ---
 
 :leveloffset: -2
 
-==== Highlights:
+==== Highlights / Breaking Changes:
 
-* Uses now niv to pin dependencies
-* New maintainership
-
-==== Bug fixes:
-
-* caddy now is caddy2
-* caddy fails with `no bin`, removing the .bin fixes it
-* proofreading 
-* Fixed `styx` command path resolution when styx was installed globally.
+* Simplified template loading in `site.nix`
+* More flexible interface for `conf.nix`
+* Compatible frontmatter according to usual standards written in `yaml` and enclosed by `---`
+* New intro section separator in Markdown: `<!-- more -->`
+* New intro section separator in Markdown: `[more]`
 
 ---
 

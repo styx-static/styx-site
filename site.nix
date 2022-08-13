@@ -3,45 +3,35 @@
 
    Initialization of Styx, should not be edited
 -----------------------------------------------------------------------------*/
-{ styx
+{ pkgs ? import <nixpkgs> {}
 , extraConf ? {}
-, imagemagick
-}@args:
+}:
+
 
 rec {
+  styx-themes = import pkgs.styx.themes;
+  styx = import pkgs.styx {
+    # Used packages
+    inherit pkgs;
 
-  /* Library loading
-  */
-  styxLib = import styx.lib styx;
+    # Used configuration
+    config = [
+      ./conf.nix
+      extraConf
+    ];
 
+    # Loaded themes
+    themes = [
+      styx-themes.generic-templates
+      ./themes/styx-site
+    ];
 
-/*-----------------------------------------------------------------------------
-   Themes setup
-
------------------------------------------------------------------------------*/
-
-  styx-themes = import styx.themes;
-
-  /* list the themes to load, paths or packages can be used
-     items at the end of the list have higher priority
-  */
-  themes = [
-    styx-themes.generic-templates
-    ./themes/styx-site
-  ];
-
-  /* Loading the themes data
-  */
-  themesData = styxLib.themes.load {
-    inherit styxLib themes;
-    extraEnv  = { inherit data pages; };
-    extraConf = [ ./conf.nix extraConf ];
+    # Environment propagated to templates
+    env = { inherit data pages; };
   };
 
-  /* Bringing the themes data to the scope
-  */
-  inherit (themesData) conf lib files templates env;
-
+  # Propagating initialized data
+  inherit (styx.themes) conf files templates env lib;
 
 /*-----------------------------------------------------------------------------
    Data
@@ -65,7 +55,7 @@ rec {
     # themes meta information to generate the themes list
     themes = with lib;
       let
-        data      = map (t: styxLib.themes.loadData { inherit styxLib; theme = t; }) (attrValues styx-themes);
+        data      = map (t: lib.themes.loadData { inherit lib; theme = t; }) (attrValues styx-themes);
         # adding screenshot data
         data'     = map (t:
                       let
@@ -76,7 +66,7 @@ rec {
                                        thumbnailPath  = "/imgs/themes/${t.meta.id}-thumb.png";
                                      };
                                    };
-                      in styxLib.utils.merge [ preMeta t postMeta ]
+                      in lib.utils.merge [ preMeta t postMeta ]
                     ) data;
       in data';
   };
@@ -152,6 +142,7 @@ rec {
 
   # list of versions to generate documentation from
   versions = {
+    "v0.7.5" = import (fetchStyx "v0.7.5") { pkgs = import (fetchNixpkgs "a977252b40f766dec5bd997c2b81a0833ca7c962") {};};
     "v0.7.2" = import (fetchStyx "v0.7.2") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
     "v0.7.0" = import (fetchStyx "v0.7.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
     "v0.6.0" = import (fetchStyx "v0.6.0") { pkgs = import (fetchNixpkgs "2c1838ab99b086dccad930e8dcc504b867149a0c") {};};
@@ -179,8 +170,8 @@ rec {
       ${mapTemplate (t:
         optionalString (t.meta ? screenshotPath) ''
           mkdir -p $(dirname "$out${t.meta.screenshotPath}")
-          ${imagemagick}/bin/convert "${t.meta.screenshot}" "$out${t.meta.screenshotPath}"
-          ${imagemagick}/bin/convert "${t.meta.screenshot}" -resize 720 -gravity north -extent 720x500 "$out${t.meta.thumbnailPath}"
+          ${pkgs.imagemagick}/bin/convert "${t.meta.screenshot}" "$out${t.meta.screenshotPath}"
+          ${pkgs.imagemagick}/bin/convert "${t.meta.screenshot}" -resize 720 -gravity north -extent 720x500 "$out${t.meta.thumbnailPath}"
         ''
       ) data.themes}
 
