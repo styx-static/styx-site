@@ -403,23 +403,23 @@ For these commands <code>-I nixpkgs=&#8230;&#8203;</code> can also be used to se
 
 <ul>
 <li>Many, among others:</li>
-<li><code>site.nix</code> was greatly refactored.</li>
-<li>Themes <code>theme.nix</code> was removed, its functionality is divided in two files, <code>conf.nix</code> and <code>meta.nix</code>. <code>conf.nix</code> for configuration interface and <code>meta.nix</code> for theme metadata.</li>
-<li>Themes <code>meta.nix</code> file <strong>must</strong> be present and <strong>must</strong> declare a <code>id</code> attribute specifying the theme identifier.</li>
-<li><code>lib.pages.setDefaultLayout</code> was removed (default pages values can be set with the <code>default</code> argument of <code>lib.generation.pagesToList</code>).</li>
-<li>all occurences of <code>href</code> in function names / parameters and template variables has been replaced with <code>path</code>, pages <code>path</code> attribute must start with a <code>/</code>.</li>
+<li> <code>site.nix</code> was greatly refactored.</li>
+<li> Themes <code>theme.nix</code> was removed, its functionality is divided in two files, <code>conf.nix</code> and <code>meta.nix</code>. <code>conf.nix</code> for configuration interface and <code>meta.nix</code> for theme metadata.</li>
+<li> Themes <code>meta.nix</code> file <strong>must</strong> be present and <strong>must</strong> declare a <code>id</code> attribute specifying the theme identifier.</li>
+<li> <code>lib.pages.setDefaultLayout</code> was removed (default pages values can be set with the <code>default</code> argument of <code>lib.generation.pagesToList</code>).</li>
+<li> all occurences of <code>href</code> in function names / parameters and template variables has been replaced with <code>path</code>, pages <code>path</code> attribute must start with a <code>/</code>.</li>
 </ul>
 
 <p>Upgrading:</p>
 
-<p>This release brings many incompatible changes that requires to refactor <code>site.nix</code> to upgrade.<br/>
+<p>This release brings many incompatible changes that requires to refactor <code>site.nix</code> to upgrade.<br />
 Changes involve, among others, the init section of <code>site.nix</code>, <code>site.nix</code> returning a set instead of a <code>generateSite</code> call and <code>href</code> occurrences replaced by <code>path</code> (<code>path</code> attributes must start with a <code>/</code>).</p>
 
 <hr />
 
 <p>Thoughts:</p>
 
-<p>At the moment of writing, styx 0.5.0 is only available in the <code>nixpkgs-unstable</code> channel.<br/>
+<p>At the moment of writing, styx 0.5.0 is only available in the <code>nixpkgs-unstable</code> channel.<br />
 If you are on a different channel and want to test / install styx 0.5.0, use the following command:</p>
 
 <p>Testing with nix-shell:</p>
@@ -432,7 +432,7 @@ If you are on a different channel and want to test / install styx 0.5.0, use the
 <pre><code>$ nix-env -A styx -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz
 </code></pre>
 
-<p>Note that the <code>build</code>, <code>preview</code>, <code>live</code>, <code>serve</code> and <code>deploy</code> commands require system active <code>nixpkgs</code> to provide the same version of styx as the one used, 0.5.0.<br/>
+<p>Note that the <code>build</code>, <code>preview</code>, <code>live</code>, <code>serve</code> and <code>deploy</code> commands require system active <code>nixpkgs</code> to provide the same version of styx as the one used, 0.5.0.<br />
 For these commands <code>-I nixpkgs=...</code> can also be used to set the version of <code>nixpkgs</code> to use, for example:</p>
 
 <pre><code>$ styx preview -I nixpkgs=https://github.com/NixOS/nixpkgs-channels/archive/nixpkgs-unstable.tar.gz

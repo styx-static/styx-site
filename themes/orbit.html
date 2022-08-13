@@ -65,8 +65,7 @@
 </li><li class="list-group-item">
   <p><strong>contact.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of contact link as attribute sets, requires <code>type</code>, <code>icon</code>, <code>url</code> and <code>title</code>.
-If set to the empty list <code>[]</code>, the skills area will not be displayed.</p>
+<p>List of contact link as attribute sets, requires <code>type</code>, <code>icon</code>, <code>url</code> and <code>title</code>.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   icon = &quot;envelope&quot;;
@@ -83,8 +82,7 @@ If set to the empty list <code>[]</code>, the skills area will not be displayed.
 </li><li class="list-group-item">
   <p><strong>education.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of education items as attribute sets, requires <code>degree</code>, <code>college</code> and <code>dates</code>.
-If set to the empty list <code>[]</code>, the education area will not be displayed.</p>
+<p>List of education items as attribute sets, requires <code>degree</code>, <code>college</code> and <code>dates</code>.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   college = &quot;University of London&quot;;
@@ -106,8 +104,7 @@ If set to the empty list <code>[]</code>, the education area will not be display
 </li><li class="list-group-item">
   <p><strong>experiences.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of experiences as attribute sets, requires <code>position</code>, <code>dates</code>, <code>company</code> and <code>content</code>.
-If set to the empty list <code>[]</code>, the experiences area will not be displayed.</p>
+<p>List of experiences as attribute sets, requires <code>position</code>, <code>dates</code>, <code>company</code> and <code>content</code>.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   company = &quot;Startup Hubs, San Francisco&quot;;
@@ -124,7 +121,7 @@ If set to the empty list <code>[]</code>, the experiences area will not be displ
 </li><li class="list-group-item">
   <p><strong>interests.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of interests. If set to the empty list <code>[]</code>, the interests area will not be displayed.</p>
+<p>List of interests.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of strings</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ &quot;Climbing&quot; &quot;Snowboarding&quot; &quot;Cooking&quot; ]</code></pre></dd></dl>
 </li><li class="list-group-item">
@@ -136,8 +133,7 @@ If set to the empty list <code>[]</code>, the experiences area will not be displ
 </li><li class="list-group-item">
   <p><strong>languages.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of languages as attribute sets, requires <code>language</code>, and <code>level</code>.
-If set to the empty list <code>[]</code>, the languages area will not be displayed.</p>
+<p>List of languages as attribute sets, requires <code>language</code>, and <code>level</code>.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   language = &quot;English&quot;;
@@ -150,12 +146,24 @@ If set to the empty list <code>[]</code>, the languages area will not be display
 </div>
 </dd><dt>Type:</dt><dd>string</dd><dt>Default:</dt><dd><pre><code class="nix">&quot;Languages&quot;</code></pre></dd></dl>
 </li><li class="list-group-item">
+  <p><strong>lib.bootstrap.enable</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.font-awesome.enable</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.googlefonts</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">[ &quot;Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic&quot; ]</code></pre></dd></dl>
+</li><li class="list-group-item">
+  <p><strong>lib.jquery.enable</strong></p>
+  <dl><dt>Default:</dt><dd><pre><code class="nix">true</code></pre></dd></dl>
+</li><li class="list-group-item">
   <p><strong>profile</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
 <p>Profile information, must have <code>name</code>, <code>tagline</code> and <code>image</code> attributes.</p>
 </div>
 </dd><dt>Type:</dt><dd>attribute set</dd><dt>Default:</dt><dd><pre><code class="nix">{
-  image = &quot;profile.png&quot;;
+  image = &quot;/assets/images/profile.png&quot;;
   name = &quot;John Doe&quot;;
   tagline = &quot;Full Stack Developer&quot;;
 }</code></pre></dd></dl>
@@ -168,8 +176,7 @@ If set to the empty list <code>[]</code>, the languages area will not be display
 </li><li class="list-group-item">
   <p><strong>projects.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of projects as attribute sets, requires <code>title</code>, <code>url</code> and <code>content</code>.
-If set to the empty list <code>[]</code>, the projects area will not be displayed.</p>
+<p>List of projects as attribute sets, requires <code>title</code>, <code>url</code> and <code>content</code>.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   content = &quot;lorem ipsum&quot;;
@@ -209,8 +216,7 @@ If set to the empty list <code>[]</code>, the projects area will not be displaye
 </li><li class="list-group-item">
   <p><strong>skills.items</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>List of skills as attribute sets, requires <code>title</code> and <code>level</code>.
-If set to the empty list <code>[]</code>, the skills area will not be displayed.</p>
+<p>List of skills as attribute sets, requires <code>title</code> and <code>level</code>.</p>
 </div>
 </dd><dt>Type:</dt><dd>list of attribute sets</dd><dt>Default:</dt><dd><pre><code class="nix">[  ]</code></pre></dd><dt>Example:</dt><dd><pre><code class="nix">[ {
   level = &quot;98%&quot;;
@@ -228,8 +234,7 @@ If set to the empty list <code>[]</code>, the skills area will not be displayed.
 </li><li class="list-group-item">
   <p><strong>summary.content</strong></p>
   <dl><dt>Description:</dt><dd><div class="paragraph">
-<p>content of the profile area as HTML text.
-if set to <code>null</code>, the summary area will not be displayed.</p>
+<p>content of the profile area as HTML text.</p>
 </div>
 </dd><dt>Type:</dt><dd>null or string</dd><dt>Default:</dt><dd><pre><code class="nix">null</code></pre></dd></dl>
 </li><li class="list-group-item">
