@@ -3,7 +3,7 @@
   <title>Styx Static Site Generator</title>
   
   <generator>Styx</generator>
-  <updated>2017-09-02T00:00:00Z</updated>
+  <updated>2022-08-12T00:00:00Z</updated>
   <id>https://styx-static.github.io/styx-site/feed.xml</id>
   <link href="https://styx-static.github.io/styx-site/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://styx-static.github.io/styx-site/" rel="alternate"/>
@@ -14,6 +14,66 @@
   
   
   <entry>
+  <id>https://styx-static.github.io/styx-site/posts/2022-08-12-styx-0.7.2-released.html</id>
+  <title>Styx 0.7.2 released</title>
+  <updated>2022-08-12T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2022-08-12-styx-0.7.2-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <div class="sect1">
+<h2 id="_highlights">Highlights:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Uses now niv to pin dependencies</p>
+</li>
+<li>
+<p>New maintainership</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bug_fixes">Bug fixes:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>caddy now is caddy2</p>
+</li>
+<li>
+<p>caddy fails with <code>no bin</code>, removing the .bin fixes it</p>
+</li>
+<li>
+<p>proofreading</p>
+</li>
+<li>
+<p>Fixed <code>styx</code> command path resolution when styx was installed globally.</p>
+</li>
+</ul>
+</div>
+<hr/>
+<div class="paragraph">
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.7.2/index.html">Styx 0.7.2 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.7.2/index.html#v0.7.2">release notes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+
+      </div>
+    </content>
+</entry>
+
+<entry>
   <id>https://styx-static.github.io/styx-site/posts/2017-09-02-styx-0.7.0-released.html</id>
   <title>Styx 0.7.0 released</title>
   <updated>2017-09-02T00:00:00Z</updated>
