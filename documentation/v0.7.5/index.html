@@ -2607,7 +2607,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dapibus aliquet 
 <p>It is possible to declare a section on an imported markup file as the introduction.</p>
 </div>
 <div class="paragraph">
-<p>Introduction and main contents are separated by <code>[more]</code> (asciidoc) or <code>&lt;!-- more -&#8594;</code> (markdown), content prior the separator will be inserted in the <code>intro</code> attribute of the data set.<br></p>
+<p>Introduction and main contents are separated by <code>[more]</code> (asciidoc) or <code><!-- more --></code> (markdown), content prior the separator will be inserted in the <code>intro</code> attribute of the data set.<br></p>
 </div>
 <div class="listingblock">
 <div class="title">Adding an introduction to a markdown file</div>
@@ -4449,10 +4449,10 @@ Currently only GitHub pages are supported.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Cleanup the code with the help of a new <code>site.nix</code> &amp; <code>conf.nix</code> interface</p>
+<p>Cleanup the codebase via a new <code>site.nix</code> &amp; <code>conf.nix</code> interface</p>
 </li>
 <li>
-<p>Implemet a new markup parser for <code>markdown</code> &amp; <code>markup</code></p>
+<p>Implemet a new frontmatter parser for <code>markdown</code> &amp; <code>asciidoc</code></p>
 </li>
 </ul>
 </div>

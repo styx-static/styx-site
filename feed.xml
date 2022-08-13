@@ -3,7 +3,7 @@
   <title>Styx Static Site Generator</title>
   
   <generator>Styx</generator>
-  <updated>2022-08-12T00:00:00Z</updated>
+  <updated>2022-08-13T00:00:00Z</updated>
   <id>https://styx-static.github.io/styx-site/feed.xml</id>
   <link href="https://styx-static.github.io/styx-site/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="https://styx-static.github.io/styx-site/" rel="alternate"/>
@@ -14,6 +14,54 @@
   
   
   <entry>
+  <id>https://styx-static.github.io/styx-site/posts/2022-08-13-styx-0.7.5-released.html</id>
+  <title>Styx 0.7.5 released</title>
+  <updated>2022-08-13T00:00:00Z</updated>
+  <link href="https://styx-static.github.io/styx-site/posts/2022-08-13-styx-0.7.5-released.html" rel="alternate" type="text/html"/>
+  
+  <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <div class="sect1">
+<h2 id="_highlights_breaking_changes">Highlights / Breaking Changes:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Simplified template loading in <code>site.nix</code></p>
+</li>
+<li>
+<p>More flexible interface for <code>conf.nix</code></p>
+</li>
+<li>
+<p>Compatible frontmatter according to usual standards written in <code>yaml</code> and enclosed by <code>---</code></p>
+</li>
+<li>
+<p>New intro section separator in Markdown: <code>&lt;!-- more -&#8594;</code></p>
+</li>
+<li>
+<p>New intro section separator in Markdown: <code>[more]</code></p>
+</li>
+</ul>
+</div>
+<hr/>
+<div class="paragraph">
+<p>Learn more in the <a href="https://styx-static.github.io/styx-site/documentation/v0.7.5/index.html">Styx 0.7.5 Documentation</a>,
+<a href="https://styx-static.github.io/styx-site/documentation/v0.7.5/index.html#v0.7.5">release notes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Contribute to Styx via <a href="https://github.com/styx-static/styx/">GitHub repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>Problems and bugs should be reported to the <a href="https://github.com/styx-static/styx/issues">issue tracker</a>.</p>
+</div>
+</div>
+</div>
+
+      </div>
+    </content>
+</entry>
+
+<entry>
   <id>https://styx-static.github.io/styx-site/posts/2022-08-12-styx-0.7.2-released.html</id>
   <title>Styx 0.7.2 released</title>
   <updated>2022-08-12T00:00:00Z</updated>
